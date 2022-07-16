@@ -1,0 +1,1842 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Drive / Storage - SwiftCloud</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/swiftcloud_global.css" rel="stylesheet">
+        <link href="css/font.awesome.css" rel="stylesheet">
+        <link href="css/menu.css" rel="stylesheet">
+        <link href="css/bootstrap-tagsinput.css" rel="stylesheet">
+        <link href="css/bootstrap-select.css" rel="stylesheet">
+        <link href="css/jquery.dataTables.min.css" rel="stylesheet">
+        <link href="css/sc_lc_switch.css" rel="stylesheet">
+        <link href="css/advanced_tag_search.css" rel="stylesheet">
+        <link href="css/intlTelInput.min.css" rel="stylesheet">
+        <link href="css/global_filter_view.css" rel="stylesheet">
+        <link href="css/socializer.css" rel="stylesheet">
+        <link href="css/drive.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="left-section">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="user_status" title="{username}">
+                            <img src="images/avatar.gif" class="rounded-circle" />
+                            <span class="user-online"></span>
+                        </a>
+                        <ul>
+                            <li class="menu_working_as">Working as {username}</li>
+                            <li><a href="javascript:;" id="status_online"><span class="user-status user-online"></span> Online</a></li>
+                            <li><a href="javascript:;" id="status_dnd"><span class="user-status user-offline"></span> Do Not Disturb</a></li>
+                            <li><a href="javascript:;" id="status_away"><span class="user-status user-dnd"></span> Show as Away</a></li>
+                            <li><a href="javascript:;" id="status_on_call"><span class="user-status user-on-call"></span> On a Call</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav_active" title="Home"><i class="fa fa-home"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-home"></i> My Feed</a></li>
+                            <li><a href="#"><i class="fa fa-inbox"></i> Inbox</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="leftNavFilterContainer">
+                        <a href="javascript:;" title="Filter"><i class="fa fa-bullseye"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-home"></i> Filter 1</a></li>
+                            <li><a href="#"><i class="fa fa-home"></i> Filter 2</a></li>
+                            <li><a href="#"><i class="fa fa-home"></i> Filter 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="fa fa-search"></i></a>
+                        <ul style="top: 184px; left: 79px;">
+                            <li>
+                                <form class="navbar-form" role="search" action="#" method="GET">
+                                    <div class="input-group searchBox">
+                                        <input type="text" name="v" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="button-addon2">
+                                        <button class="btn btnSearch" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contacts.html" title="Contacts"><i class="fa fa-user"></i></a>
+                        <ul>
+                            <li><a href="contacts.html"><i class="fa fa-users"></i> All Contacts</a></li>
+                            <li><a href="contact_add.html"><i class="fa fa-user-plus"></i> Add New Contact</a></li>
+                            <li>
+                                <a href="contact_group.html"><i class="fa fa-users"></i> Audiences &amp; Groups</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-edit"></i> Waivers / Petition Signers</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="#"><i class="fa fa-table"></i> Import Spreadsheet</a></li>
+                            <li><a href="#"><i class="fa-brands fa-wpforms"></i> Web Form &amp; Chat Sessions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="drive.html" title="Drive / Storage"><i class="fa fa-database"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-database"></i> Drive</a></li>
+                            <li><a href="globalpopups.html"><i class="fa fa-cloud-upload"></i> Upload</a></li>
+                            <li><a href="#newDocModal" data-bs-toggle="modal"><i class="fa-regular fa-file"></i> New Doc</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="Tasks &amp; Projects"><i class="fa-solid fa-list-check"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-list-check"></i> All Tasks</a></li>
+                            <li><a href="#"><i class="fa fa-list-check"></i> New Task / Job / Sales Opportunity</a></li>
+                            <li>
+                                <a href="#"><i class="fa fa-life-ring"></i> Support</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-ticket"></i> Open Tickets</a></li>
+                                    <li><a href="#"><i class="fa-regular fa-star"></i> Customer Feedback</a></li>
+                                    <li><a href="#"><i class="fa fa-question-circle"></i> Knowledgebase</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="fa fa-rocket"></i> Templates &amp; Playbooks</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Marketing"><i class="fa fa-bullhorn"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-bullhorn"></i> Campaigns &amp; Experiments</a></li>
+                            <li>
+                                <a href="contact_group.html"><i class="fa fa-users"></i> Audiences &amp; Groups</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-edit"></i> Waivers / Petition Signers</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="fa fa-align-justify"></i> Messages / Ads / Creative</a></li>
+                            <li><a href="#"><i class="fa fa-plus"></i> New Message / Ad / Creative</a></li>
+                            <li><a href="#"><i class="fa fa-th-list"></i> Sequences</a></li>
+                            <li>
+                                <a href="#"><i class="fa-regular fa-star"></i> Reviews &amp; Referrals</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa-regular fa-star"></i> Review Intake Forms</a></li>
+                                    <li><a href="#"><i class="fa fa-user-plus"></i> Refer a Friend</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="fa fa-sign-in"></i> Lead Intake</a></li>
+                            <li><a href="#"><i class="fa fa-sign-in"></i> Landing Pages</a></li>
+                            <li>
+                                <a href="#menu2"><i class="fa fa-book"></i> Web Forms</a>
+                                <ul>
+                                    <li><a href="https://swiftcloud.io/form/my-forms" target="_blank"><i class="fa fa-list-alt"></i> My Forms</a></li>
+                                    <li><a href="https://swiftcloud.io/form/create-form" target="_blank"><i class="fa fa-plus-square"></i> Create New Web Form</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="Calendar"><i class="fa-regular fa-calendar-days"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa-regular fa-calendar-days"></i> Calendar</a></li>
+                            <li><a href="#"><i class="fa fa-history fa-flip-horizontal"></i> Agenda</a></li>
+                            <li><a href="#"><i class="fa-regular fa-clock"></i> Timeclock</a></li>
+                            <li><a href="#"><i class="fa-regular fa-calendar-days"></i> Upcoming Appointments</a></li>
+                            <li><a href="#"><i class="fa-regular fa-calendar-plus"></i> Add Event</a></li>
+                            <li><a href="#"><i class="fa-regular fa-calendar"></i> Schedulers</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="Accounting"><i class="fa fa-dollar"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-exchange"></i> Accounting</a></li>
+                            <li>
+                                <a href="#"><i class="fa fa-sign-in"></i> Incoming</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i> SKUs / Items you sell</a></li>
+                                    <li><a href="#"><i class="fa fa-file-text"></i> Create New Invoice</a></li>
+                                    <li><a href="#"><i class="fa-regular fa-clock"></i> Invoices (Receivable)</a></li>
+                                    <li><a href="#"><i class="fa-regular fa-handshake"></i> Billing Agreements</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-sign-out"></i> Outgoing</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-share"></i> Purchase History</a></li>
+                                    <li><a href="#"><i class="fa-regular fa-handshake"></i> Billing Agreements</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Settings"><i class="fa fa-gear"></i></a>
+                        <ul>
+                            <li><a href="javascript:;" class="btnThemeMode"><i class="fa-regular fa-moon"></i> Change to Dark Mode</a></li>
+                            <li><a href="settings.html"><i class="fa fa-gear"></i> General Settings</a></li>
+                            <li><a href="urls.html"><i class="fa fa-chain"></i> URLs</a></li>
+                            <li><a href="#"><i class="fa fa-dollar"></i> Financial Settings</a></li>
+                            <li><a href="javascript:;" id="change_password"><i class="fa fa-key"></i> Change Password</a></li>
+                            <li><a href="#audioSettingModal" data-toggle="modal"><i class="fa fa-volume-up"></i> Audio Settings</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Support"><i class="fa fa-question-circle"></i></a>
+                        <ul>
+                            <li><a href="https://swiftcloud.ai/support/" target="_blank"><i class="fa fa-question-circle"></i>  This Page Help</a></li>
+                            <li><a href="https://swiftcloud.ai/support/" target="_blank"><i class="fa fa-laptop"></i> Support Center</a></li>
+                            <li><a href="https://swiftcloud.ai/support/resources" target="_blank"><i class="fa-regular fa-folder-open"></i>  Resource Library</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="nav_logout"><i class="fa fa-power-off"></i></a>
+        </div>
+
+        <!-- Mobile menu start -->
+        <div class="mobileMenuContainer d-md-none">
+            <div class="row no-gutters">
+                <div class="col-lg-12 mobileHeader">
+                    <a href="javascript:;" class="mobileToggleLeft"><i class="fa fa-navicon fa-lg"></i></a>
+                    <a href="#" class="logo_block m_change_site"><img src="images/SwiftCloud-logo.png"></a>
+                    <a href="javascript:;" class="mobileToggleRight"><i class="fa fa-navicon fa-lg"></i></a>
+                </div>
+                <div id="mobileNavLeft" class="mobileNav">
+                    <div class="overlay hidden"></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <div class="profile_block">
+                                <a href="#mobile_menu_profile" class="list-group-item collapsed p-lr-10" data-bs-toggle="collapse" data-parent="#profile_block" aria-expanded="false">
+                                    <img class="rounded-circle" width="40" height="40"  src="images/avatar.gif" />
+                                    <span class="user-logged-in-as">
+                                        Logged in as {Username}
+                                        <div class="user_status"><span></span> Online</div>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="collapse" id="mobile_menu_profile">
+                                <a href="javascript:void(0);" class="list-group-item" id="status_online" data-parent="#menu_profile">
+                                    <div class="user_status user-online"><span class="user-status user-online"></span> Online</div>
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item" id="status_dnd" data-parent="#menu_profile">
+                                    <div class="user_status user-offline"><span class="user-status user-offline"></span> Do Not Disturb</div>
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item" id="status_away" data-parent="#menu_profile">
+                                    <div class="user_status user-dnd"><span class="user-status user-dnd"></span> Show as Away</div>
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item" id="status_on_call" data-parent="#menu_profile">
+                                    <div class="user_status user-dnd"><span class="user-status user-on-call"></span> On a Call</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu_icons list-group-item" >
+                                <a href="#mobile_top_menu_icon_1" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i class="fa fa-user"></i></a>
+                                <a href="#mobile_top_menu_icon_2" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i class="fa fa-database"></i></a>
+                                <a href="#mobile_top_menu_icon_5" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i class="fa fa-check"></i></a>
+                                <a href="#mobile_top_menu_icon_7" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i class="fa fa-bullhorn"></i></a>
+                                <a href="#mobile_top_menu_icon_4" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i class="fa fa-calendar"></i></a>
+                                <a href="#mobile_top_menu_icon_6" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i id="currencyIcon" class="fa fa-dollar"></i></a>
+                            </div>
+                            <div class="menu_icons_container">
+                                <div class="collapse" id="mobile_top_menu_icon_1">
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_1"><i class="fa fa-users"></i> All Contacts</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_1"><i class="fa fa-user-plus"></i> Add New Contact</a>
+                                    <a href="#mobile_menu11" class="list-group-item collapsed" data-bs-toggle="collapse" data-parent="#mobile_top_menu_icon_1" aria-expanded="false"><i class="fa fa-users"></i> Audiences &amp; Groups</a>
+                                    <div class="collapse menu_thirdLevel" id="mobile_menu11">
+                                        <a href="#" class="list-group-item" data-parent="#mobile_menu11"><i class="fa fa-edit"></i> Waivers / Petition Signers</a>
+                                    </div>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_1"><i class="fa fa-table"></i> Import Spreadsheet</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_1"><i class="fa-brands fa-wpforms"></i> Web Form &amp; Chat Sessions</a>
+                                </div>
+
+                                <div class="collapse" id="mobile_top_menu_icon_2">
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_2"><i class="fa fa-database" aria-hidden="true"></i> Drive</a>
+                                    <a href="#" data-toggle="modal" data-target="#global_image_tool_container" class="list-group-item" data-parent="#mobile_top_menu_icon_2"><i class="fa fa-cloud-upload"></i> Upload</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_2"><i class="fa-regular fa-file"></i> New Doc</a>
+                                </div>
+
+                                <div class="collapse" id="mobile_top_menu_icon_5">
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_5"><i class="fa fa-list-check"></i> All Tasks</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_5"><i class="fa fa-list-check"></i> New Task / Job / Sales Opportunity</a>
+
+                                    <a href="#mobile_menu51" class="list-group-item collapsed" data-bs-toggle="collapse" data-parent="#mobile_top_menu_icon_5" aria-expanded="false"><i class="fa fa-life-ring"></i> Support</a>
+                                    <div class="collapse menu_thirdLevel" id="mobile_menu51">
+                                        <a href="#" class="list-group-item" data-parent="#mobile_menu51"><i class="fa fa-ticket"></i> Open Tickets</a>
+                                        <a href="#" class="list-group-item" data-parent="#mobile_menu51"><i class="fa fa-star-o"></i> Customer Feedback</a>
+                                        <a href="#" class="list-group-item" data-parent="#mobile_menu51"><i class="fa fa-question-circle"></i> Knowledgebase</a>
+                                    </div>
+                                    <a href="#" class="list-group-item" data-parent="#top_menu_icon_5"><i class="fa fa-rocket"></i> Templates &amp; Playbooks</a>
+                                </div>
+
+                                <div class="collapse" id="mobile_top_menu_icon_7">
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-th-list"></i> Campaigns &amp; Experiments</a>
+                                    <a href="#mobile_menu71" class="list-group-item collapsed" data-bs-toggle="collapse" data-parent="#mobile_top_menu_icon_7" aria-expanded="false"><i class="fa fa-users"></i> Audiences &amp; Groups</a>
+                                    <div class="collapse menu_thirdLevel" id="mobile_menu71">
+                                        <a href="#" class="list-group-item" data-parent="#mobile_menu11"><i class="fa fa-edit"></i> Waivers / Petition Signers</a>
+                                    </div>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-align-justify"></i> Messages / Ads / Creative</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-plus"></i> New Message / Ad / Creative</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-th-list"></i> Sequences</a>
+
+                                    <a href="#mobile_top_menu_icon_71" class="list-group-item collapsed" data-bs-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-star"></i> Reviews &amp; Referrals</a>
+                                    <div class="collapse menu_thirdLevel" id="mobile_top_menu_icon_71">
+                                        <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_71"><i class="fa fa-star"></i> Review Intake Forms</a>
+                                        <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_71"><i class="fa fa-user-plus"></i> Refer a Friend</a>
+                                    </div>
+
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-sign-in"></i> Lead Intake</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-sign-in"></i> Landing Pages</a>
+
+                                    <a href="#mobile_top_menu_icon_72" class="list-group-item collapsed" data-bs-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> Web Forms</a>
+                                    <div class="collapse menu_thirdLevel" id="mobile_top_menu_icon_72">
+                                        <a href="https://swiftcloud.io/form/my-forms" class="list-group-item" data-parent="#mobile_top_menu_icon_72"><i class="fa fa-list-alt"></i> My Forms</a>
+                                        <a href="https://swiftcloud.io/form/create-form" class="list-group-item" data-parent="#mobile_top_menu_icon_72"><i class="fa fa-plus-square"></i> Create New Web Form</a>
+                                    </div>
+                                </div>
+
+                                <div class="collapse" id="mobile_top_menu_icon_4">
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa-regular fa-calendar-days"></i> Calendar</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa fa-history fa-flip-horizontal"></i> Agenda</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa-regular fa-clock"></i> Timeclock</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa-regular fa-calendar-days"></i> Upcoming Appointments</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa-regular fa-calendar-plus"></i> Add Event</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa-regular fa-calendar"></i> Schedulers</a>
+                                </div>
+
+                                <div class="collapse" id="mobile_top_menu_icon_6">
+                                    <a href="#" class="list-group-item" data-parent="#top_menu_icon_1"><i class="fa fa-exchange"></i> Accounting</a>
+                                    <a href="#incoming_submenu_mobile" class="list-group-item collapsed" data-bs-toggle="collapse" aria-expanded="false" data-parent="#mobile_top_menu_icon_6"><i class="fa fa-sign-in"></i> Incoming</a>
+                                    <div class="collapse menu_thirdLevel" id="incoming_submenu_mobile">
+                                        <a href="#" class="list-group-item" data-parent="#incoming_submenu_mobile"><i class="fa fa-shopping-cart"></i> SKUs / Items you sell</a>
+                                        <a href="#" class="list-group-item" data-parent="#incoming_submenu_mobile"><i class="fa fa-file-text"></i> Create New Invoice</a>
+                                        <a href="#" class="list-group-item" data-parent="#incoming_submenu_mobile"><i class="fa-regular fa-clock"></i> Invoices (Receivable)</a>
+                                        <a href="#" class="list-group-item" data-parent="#incoming_submenu_mobile"><i class="fa-regular fa-handshake"></i> Billing Agreements</a>
+                                    </div>
+                                    <a href="#outgoing_submenu_mobile" class="list-group-item collapsed" data-bs-toggle="collapse" aria-expanded="false" data-parent="#mobile_top_menu_icon_6"><i class="fa fa-sign-out"></i> Outgoing</a>
+                                    <div class="collapse menu_thirdLevel" id="outgoing_submenu_mobile">
+                                        <a href="#" class="list-group-item" data-parent="#outgoing_submenu_mobile"><i class="fa fa-share"></i> Purchase History</a>
+                                        <a href="#" class="list-group-item" data-parent="#outgoing_submenu_mobile"><i class="fa-regular fa-handshake"></i> Billing Agreements</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="search_block list-group-item">
+                                <form class="navbar-form" role="search">
+                                    <div class="input-group searchBox">
+                                        <input type="text" name="v" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="button-addon2">
+                                        <button class="btn btnSearch" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="mobileNavRight" class="mobileNav">
+                    <div class="overlay hidden"></div>
+                    <ul class="navbar-nav">
+                        <li>
+                            <div class="menu_icons list-group-item">
+                                <a href="#menu_right_icon_1" class="collapsed" data-bs-toggle="collapse" data-parent="#menu_icons" aria-expanded="false"><i class="fa fa-question-circle"></i></a>
+                                <a href="#menu_right_icon_2" class="collapsed" data-bs-toggle="collapse" data-parent="#menu_icons" aria-expanded="false"><i class="fa fa-gear"></i></a>
+                                <a href="#"><i class="fa fa-power-off"></i></a>
+                            </div>
+                            <div class="menu_icons_container">
+                                <div class="collapse menu_secondLevel" id="menu_right_icon_1">
+                                    <a href="https://swiftcloud.ai/support/" class="list-group-item" data-parent="#menu_icon_3"><i class="fa fa-question-circle"></i> This Page Help</a>
+                                    <a href="https://swiftcloud.ai/support/" class="list-group-item" data-parent="#menu_icon_3"><i class="fa fa-laptop"></i> Support Center</a>
+                                    <a href="https://swiftcloud.ai/support/resources" class="list-group-item" data-parent="#menu_icon_3"><i class="fa-regular fa-folder-open"></i>  Resource Library</a></a>
+                                </div>
+                                <div class="collapse menu_secondLevel" id="menu_right_icon_2">
+                                    <a href="javascript:;" class="list-group-item btnThemeMode" data-parent="#menu_icon_5"><i class="fa-regular fa-moon"></i> Change to Dark Mode</a>
+                                    <a href="#" class="list-group-item" data-parent="#menu_icon_5"><i class="fa fa-gear"></i> General Settings</a>
+                                    <a href="#" class="list-group-item" data-parent="#menu_icon_5"><i class="fa fa-chain"></i> URLs</a>
+                                    <a href="#" class="list-group-item" data-parent="#menu_icon_5"><i class="fa fa-dollar"></i> Financial Settings</a>
+                                    <a href="#" class="list-group-item" data-parent="#menu_icon_5"><i class="fa fa-key"></i> Change Password</a>
+                                    <a href="#audioSettingModal" class="list-group-item" data-parent="#menu_icon_5" data-toggle="modal"><i class="fa fa-volume-up"></i> Audio Settings</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu end -->
+
+        <!--Container Main start-->
+        <div id="right-section" class="h-100">
+            <div class="row g-0">
+                <div class="col" id="page-urls">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <select data-width="55px" class="btn-DriveFilterView btn-secondary float-start">
+                                <option value="0" data-icon="" disabled="" selected="">== Saved Filtered Views ==</option>
+                                <option value="1" data-icon="fa-bullseye">Option 1</option>
+                                <option value="2" data-icon="fa-bullseye">Option 2</option>
+                                <option value="3" data-icon="fa-bullseye">Option 3</option>
+                                <option value="Create_New_Filtered_View" data-icon="fa-plus" class="createNewFilterView">Create New Filtered View</option>
+                            </select>
+                            <div class="float-end">
+                                <ul class="nav nav-tabs swiftCloudTabs d-none d-md-flex" role="tablist">
+                                    <li class="nav-item">
+                                        <div class="btn-group btnAddNewDropdown" role="group">
+                                            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-plus"></i> <span class="d-none d-md-inline">Add New</span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newDocModal"><i class="fa fa-file"></i> Doc</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newSheetModal"><i class="fa fa-table"></i> Spreadsheet</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newInvoiceModal"><i class="fa fa-table"></i> Estimate / Invoice / Etc.</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newWebFormModal"><i class="fa fa-th-list"></i> Web Form</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newFolderWorkroomModal"><i class="fa-solid fa-folder"></i> Folder / <i class="fa fa-users"></i> Workroom</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newEnvelopeModal"><i class="fa fa-envelope"></i> Envelope</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newItemModal"><i class="fa fa-shopping-cart"></i> SKU / Item You Sell</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newSequenceModal"><i class="fa fa-ellipsis-h"></i> Sequence of Events</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newSchedulerModal"><i class="far fa-calendar"></i> Scheduler</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa fa-clone"></i> Template</a></li>
+                                                <li class="dropdown-submenu">
+                                                    <a class="dropdown-item dropdown-toggle" href="#" id="multilevelDropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-filter"></i> 1-Click Funnels</a>
+                                                    <ul class="dropdown-menu" aria-labelledby="multilevelDropdownMenu1">
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#FreeBaitLeadGen" data-bs-toggle="modal">Free Bait + LeadGen</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#DirectSellUpsell" data-bs-toggle="modal">Direct Sell + Upsell</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#QualifierAppointmentScheduler" data-bs-toggle="modal">Qualifier + Appointment Scheduler</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#NewtoMarketValidator" data-bs-toggle="modal">New-to-Market Validator</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#FreeShippingUpsells" data-bs-toggle="modal">Free w/ Shipping + Upsells</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#FreeTripwireSale" data-bs-toggle="modal">Free &gt; Tripwire &gt; Sale</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#FreeBaitWebinarVideo" data-bs-toggle="modal">Free Bait &gt; Webinar / Video</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newPhoneModal"><i class="fa fa-phone"></i> Phone Number</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newPaywallModal"><i class="fa fa-sign-in"></i> Paywall</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newLedgerModal"><i class="fa fa-exchange"></i> Ledger</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newShortcutModal"><i class="fa fa-sign-out"></i> Shortcut</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newSignalMonitorModal"><i class="fa fa-bullseye"></i> Signal Monitor</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="btn btn-secondary btnUpload"><i class="fa-solid fa-cloud-arrow-up"></i> <span class="d-none d-md-inline">Upload</span></button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" id="drive-tab" data-bs-toggle="tab" data-bs-target="#drive" role="tab" aria-controls="drive" aria-selected="false" data-toggle="tooltip" data-placement="top" title="Drive"><i class="fa fa-database"></i></a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="small-icon-tab" data-bs-toggle="tab" data-bs-target="#small-icon" role="tab" aria-controls="small-icon" aria-selected="false" data-toggle="tooltip" data-placement="top" title="Small Icons"><i class="fa-solid fa-table-cells-large"></i></a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="large-icon-tab" data-bs-toggle="tab" data-bs-target="#large-icon" role="tab" aria-controls="large-icon" aria-selected="false" data-toggle="tooltip" data-placement="top" title="Large Icons"><i class="fa fa-stop"></i></a>
+                                    </li>
+                                    <li class="nav-item nav-item-trash" role="presentation">
+                                        <a class="nav-link" href="#" data-toggle="tooltip" data-placement="top" title="View Templates"><i class="fa-regular fa-clone"></i></a>
+                                    </li>
+                                    <li class="nav-item nav-item-trash" role="presentation">
+                                        <a class="nav-link" href="#" data-toggle="tooltip" data-placement="top" title="Trash"><i class="fa fa-trash-alt"></i></a>
+                                    </li>
+                                </ul>
+
+                                <!-- mobile view-->
+                                <ul class="nav nav-tabs swiftCloudTabs mobileTabs d-md-none d-flex mb-1" role="tablist">
+                                    <li class="nav-item">
+                                        <button type="button" class="btn btn-secondary btnUpload me-1"><i class="fa-solid fa-cloud-arrow-up"></i></button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="btn-group btnAddNewDropdown" role="group">
+                                            <button id="btnGroupDrop2" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newDocModal"><i class="fa fa-file"></i> Doc</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newSheetModal"><i class="fa fa-table"></i> Spreadsheet</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newInvoiceModal"><i class="fa fa-table"></i> Estimate / Invoice / Etc.</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newWebFormModal"><i class="fa fa-th-list"></i> Web Form</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newFolderWorkroomModal"><i class="fa-solid fa-folder"></i> Folder / <i class="fa fa-users"></i> Workroom</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newEnvelopeModal"><i class="fa fa-envelope"></i> Envelope</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newItemModal"><i class="fa fa-shopping-cart"></i> SKU / Item You Sell</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newSequenceModal"><i class="fa fa-ellipsis-h"></i> Sequence of Events</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newSchedulerModal"><i class="far fa-calendar"></i> Scheduler</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa fa-clone"></i> Template</a></li>
+                                                <li class="dropdown-submenu">
+                                                    <a class="dropdown-item dropdown-toggle" href="#" id="multilevelDropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-filter"></i> 1-Click Funnels</a>
+                                                    <ul class="dropdown-menu" aria-labelledby="multilevelDropdownMenu1">
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#FreeBaitLeadGen" data-bs-toggle="modal">Free Bait + LeadGen</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#DirectSellUpsell" data-bs-toggle="modal">Direct Sell + Upsell</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#QualifierAppointmentScheduler" data-bs-toggle="modal">Qualifier + Appointment Scheduler</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#NewtoMarketValidator" data-bs-toggle="modal">New-to-Market Validator</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#FreeShippingUpsells" data-bs-toggle="modal">Free w/ Shipping + Upsells</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#FreeTripwireSale" data-bs-toggle="modal">Free &gt; Tripwire &gt; Sale</a></li>
+                                                        <li class="dropdown-item"><a class="dropdown-item" tabindex="-1" href="#FreeBaitWebinarVideo" data-bs-toggle="modal">Free Bait &gt; Webinar / Video</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newLedgerModal"><i class="fa fa-exchange"></i> Ledger</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newShortcutModal"><i class="fa fa-sign-out"></i> Shortcut</a></li>
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" href="#newSignalMonitorModal"><i class="fa fa-bullseye"></i> Signal Monitor</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="btn-group btnDriveView" role="group">
+                                            <button id="btnGroupDrop3" type="button" class="btn btn-default dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-database"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                                                <li><a class="dropdown-item" id="drive-tab" data-bs-toggle="tab" data-bs-target="#drive" role="tab" aria-controls="drive" aria-selected="false"><i class="fa fa-database"></i> Drive</a></li>
+                                                <li><a class="dropdown-item" id="small-icon-tab" data-bs-toggle="tab" data-bs-target="#small-icon" role="tab" aria-controls="small-icon" aria-selected="false"><i class="fa-solid fa-table-cells-large"></i> Small Icons</a></li>
+                                                <li><a class="dropdown-item" id="large-icon-tab" data-bs-toggle="tab" data-bs-target="#large-icon" role="tab" aria-controls="large-icon" aria-selected="false"><i class="fa fa-stop"></i> Large Icons</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-clone"></i> Templates</a></li>
+                                                <li><a class="dropdown-item" href="#"><i class="fa fa-trash-alt"></i> Trash</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="drive" role="tabpanel" aria-labelledby="drive-tab">
+                                    <table id="tblDrive" class="table dataTable" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th width="5%">&nbsp;</th>
+                                                <th width="70%">Name/Label <button type="button" class="btn btn-sm btnTHSoryByTags float-end me-3" onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#ContactsSortByTagModal" title="Advanced Tag Search"><span data-toggle="tooltip" title="Advanced Tag Search"><i class="fa fa-tag"></i></span></button></th>
+                                                <th width="18%" class="d-none d-md-table-cell">Last Activity</th>
+                                                <th width="7%" class="text-end d-none d-lg-table-cell"></th>
+                                            </tr>
+                                            <tr class="d-none table_action_container">
+                                                <td colspan="4" class="text-left">
+                                                    <div class="batch-action-container">
+                                                        <button class="btn btn-trash"><i class="fa fa-trash-alt"></i> Move to Trash</button>
+                                                        <button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Archive (Searchable but Hidden)"><i class="fa fa-archive"></i> Archive</button>
+                                                        <button class="btn btn-secondary"><i class="fa fa-tags"></i> Apply Tag(s)</button>
+                                                        <button class="btn btn-success"><i class="fa fa-user-plus"></i> Manage Sharing</button>
+                                                        <button class="btn btn-primary"><i class="fa fa-unlock"></i> Manage Permissions</button>
+                                                        <button class="btn btn-secondary"><i class="fa fa-arrows"></i> Move To...</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="d-none filter_table_action_container">
+                                                <td colspan="4" class="">
+                                                    <div class="filter-batch-action-container">
+                                                        <div class="row">
+                                                            <div class="col-lg-9 col-sm-12">
+                                                                <form id="filterViewForm" class="filterViewRowForm">
+                                                                    <div class="row row-cols-lg-auto g-2 align-items-center mb-3">
+                                                                        <div class="col-12">Show me</div>
+                                                                        <div class="col-12">
+                                                                            <select data-width="220px" class="helpDeskTaskFilter filesOpt" name="mainCriteria" id="helpDeskTaskFilterSelect" data-toggle="selectpicker">
+                                                                                <option value="people" data-icon="fa-user" selected="selected">Contacts</option>
+                                                                                <option value="tasks&amp;Projects" data-icon="fa-check">Task / Job / Sales Opportunities</option>
+                                                                                <option value="Messages&amp;Notifications" data-icon="fa-inbox">Messages &amp; Notifications</option>
+                                                                                <option value="calendar" data-icon="fa-calendar">Calendar Events</option>
+                                                                                <option value="accounting" data-icon="fa-exchange">Accounting Records</option>
+                                                                                <option value="agreements" data-icon="fa-handshake">Agreements</option>
+                                                                                <option value="filesWorkrooms" data-icon="fa-folder">Files / Workrooms / Custom Assets</option>
+                                                                                <option value="timeclockRecords" data-icon="fa-clock">Timeclock Records</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            that are
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <select class="form-select inputFeedType" name="options[]">
+                                                                                <option value="opt_1">Tagged with...</option>
+                                                                                <option value="opt_3">Search Results Include</option>
+                                                                                <option value="ScheduledInto">Scheduled Into...</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row mb-3">
+                                                                        <div class="col-lg-12">
+                                                                            <div class="filterOpts" id="newfilter_1">
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <div class="columnFilter opt_1">
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-12 sortbytag_row">
+                                                                                                    <div class="input-group mb-3">
+                                                                                                        <select name="FV_sortbytag_with_or_without" id="FV_sortbytag_with_or_without" class="form-select">
+                                                                                                            <option value="Tagged with">Tagged with</option>
+                                                                                                            <option value="Not Tagged with">Not Tagged with</option>
+                                                                                                        </select>
+                                                                                                        <input type="text" name="FV_sortbytag_input" id="FV_sortbytag_input" class="form-control" value="tag" />
+                                                                                                        <select name="FV_sortbytag_score_opt" id="FV_sortbytag_score_opt" class="form-select">
+                                                                                                            <option value="Any">Any TagScore</option>
+                                                                                                            <option value="Above">TagScore Above</option>
+                                                                                                            <option value="Below">TagScore Below</option>
+                                                                                                        </select>
+                                                                                                        <input type="number" name="FV_sortbytag_score_input" id="FV_sortbytag_score_input" class="form-control d-none" placeholder="Value" value="50" />
+                                                                                                        <select name="FV_sortbytag_asc_desc" class="form-select">
+                                                                                                            <option value="Ascending">Ascending</option>
+                                                                                                            <option value="Descending">Descending</option>
+                                                                                                            <option value="Newest">Newest</option>
+                                                                                                            <option value="Oldest">Oldest</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-lg-12 mb-3 FV_sortbytag_search_within_row display-none">
+                                                                                                    <input type="text" name="FV_sortbytag_search_within" id='FV_sortbytag_search_within' placeholder="Search Within Results" class="form-control">
+                                                                                                    <a href='javascript:;' class="btnRemoveSearchWithinTag" data-toggle="tooltip" title="Remove search"><i class="fa fa-close"></i></a>
+                                                                                                </div>
+                                                                                                <div class="col-lg-12 FV_addsortbytag_search_within_row">
+                                                                                                    <button type="button" class="btnAddNewGreenDashed btnAddSortbyTagFilerCondition" data-toggle="tooltip" title="Add filter condition"><i class="fa fa-plus"></i></button>
+                                                                                                    <button type="button" class="btnAddNewGreenDashed btnAddSortbyTagSearchCondition" data-toggle="tooltip" title="Search"><i class="fa fa-search"></i></button>
+                                                                                                    <div class="hidden_FV_sortbytag_filter_condition_row display-none">
+                                                                                                        <div class="input-group mb-3">
+                                                                                                            <select name="sortbytagSearchCondition" class="form-select">
+                                                                                                                <option value="OR">OR Tag...</option>
+                                                                                                                <option value="AND">AND Tag...</option>
+                                                                                                                <option value="NOT">NOT Tag...</option>
+                                                                                                            </select>
+                                                                                                            <input type="text" class="form-control FV_sortbytagSearchTaginput">
+                                                                                                        </div>
+                                                                                                        <a href='javascript:;' class="btnRemoveSortbyTagFilter" data-toggle="tooltip" title="Remove filter"><i class="fa fa-close"></i></a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="columnFilter opt_3 d-none">
+                                                                                            <input type="text" name="search_keyword" value="" class="form-control">
+                                                                                        </div>
+                                                                                        <div class="columnFilter ScheduledInto d-none">
+                                                                                            <select class="form-control form-select">
+                                                                                                <option value="All Calendars">All Calendars (Blended View)</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group text-center mb-0 filteredViewBtnGroup">
+                                                                        <button type="button" class="btn btn-default btnCloseFilteredView"><i class="fa fa-close"></i> Cancel</button>
+                                                                        <button class="btn btn-secondary btnSaveFilteredView" data-toggle="modal" data-target="#newFilterModal"><i class="fa fa-save"></i> Save Filtered View <i class="fa fa-bullseye"></i></button>
+                                                                        <button class="btn btn-primary" id="viewFilterResult"><i class="fa fa-check"></i> View Results <i class="fa fa-bullseye"></i></button>
+                                                                        <button class="btn btnDeleteFilterView display-none"><i class="fa fa-trash"></i> Delete Filtered View</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-12 savedFilterdView mt-3 mt-lg-0">
+                                                                <h4>Saved Filtered Views</h4>
+                                                                <ul id="savedFilteredList">
+                                                                    <li>
+                                                                        <a href="#" class="btn btn-default"><i class="fa fa-folder"></i> Real estate listing</a>
+                                                                        <a href="javascript:;" data-toggle="tooltip" title="Edit" class="editFiltered"><i class="fa fa-edit"></i></a>
+                                                                        <a href="javascript:;" data-toggle="tooltip" title="Delete" class="deleteFilter"><i class="fa fa-trash"></i></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="btn btn-default"><i class="fa fa-check"></i> Plumber Transaction</a>
+                                                                        <a href="javascript:;" data-toggle="tooltip" title="Edit" class="editFiltered"><i class="fa fa-edit"></i></a>
+                                                                        <a href="javascript:;" data-toggle="tooltip" title="Delete" class="deleteFilter"><i class="fa fa-trash"></i></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="btn btn-default"><i class="fa fa-user"></i> Doctors Appointment</a>
+                                                                        <a href="javascript:;" data-toggle="tooltip" title="Edit" class="editFiltered"><i class="fa fa-edit"></i></a>
+                                                                        <a href="javascript:;" data-toggle="tooltip" title="Delete" class="deleteFilter"><i class="fa fa-trash"></i></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="folderRow">
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID1" class="css-checkbox" />
+                                                    <label for="C_ID1" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-folder"><i class="fa-solid fa-folder"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Incoming</a>
+                                                    <div class="SwiftCloudTableTags">
+                                                        <ul>
+                                                            <li><a href="javaScript:void(0);" data-tagname="Tag1">Tag1</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-01"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr class="folderRow">
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID2" class="css-checkbox" />
+                                                    <label for="C_ID2" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-folder"><i class="fa-solid fa-folder"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Tasks and Projects</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-01"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID14" class="css-checkbox" />
+                                                    <label for="C_ID14" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan archiveIconBg"><i class="fa-regular fa-file-zipper"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="file_zip.html">Abc.zip</a>
+                                                    <div class="SwiftCloudTableTags">
+                                                        <ul>
+                                                            <li><a href="javaScript:void(0);" data-tagname="Zip">Zip</a></li>
+                                                            <li><a href="javaScript:void(0);" data-tagname="Tag1">Tag1</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="SwiftCloudSharedWithUsers">
+                                                        <ul>
+                                                            <li><a href="SOCIALIZERPOPUP_SHOWCURRENTSTATUS" data-toggle="tooltip" title="SwiftCloud"><img src="images/swift_cloud_flag.jpg" /></a></li>
+                                                            <li><a href="SOCIALIZERPOPUP_SHOWCURRENTSTATUS" data-toggle="tooltip" title="Rover V."><img src="images/roger.jpg" /></a></li>
+                                                            <li><a href="SOCIALIZERPOPUP_SHOWCURRENTSTATUS" data-toggle="tooltip" title="Amitabh Bachchan"><img src="images/bachchan-amitabh-image.jpg" /></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-edit" data-toggle="tooltip" title="Download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID15" class="css-checkbox" />
+                                                    <label for="C_ID15" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan videoIconBg"><i class="fa-regular fa-file-video"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="file_video.html">Video.mp4</a>
+                                                    <div class="SwiftCloudTableTags">
+                                                        <ul>
+                                                            <li><a href="javaScript:void(0);" data-tagname="Video">Video</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="SwiftCloudSharedWithUsers">
+                                                        <ul>
+                                                            <li><a href="SOCIALIZERPOPUP_SHOWCURRENTSTATUS" data-toggle="tooltip" title="Stephanie Harris"><img src="images/Stephanie_Harris.jpg" /></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-edit" data-toggle="tooltip" title="Download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID16" class="css-checkbox" />
+                                                    <label for="C_ID16" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan audioIconBg"><i class="fa-regular fa-file-audio"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="file_audio.html">Audio.mp3</a>
+                                                    <div class="SwiftCloudTableTags">
+                                                        <ul>
+                                                            <li><a href="javaScript:void(0);" data-tagname="Audio">Audio</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="SwiftCloudSharedWithUsers">
+                                                        <ul>
+                                                            <li><a href="SOCIALIZERPOPUP_SHOWCURRENTSTATUS" data-toggle="tooltip" title="Rover V."><img src="images/roger.jpg" /></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-edit" data-toggle="tooltip" title="Download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID17" class="css-checkbox" />
+                                                    <label for="C_ID17" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan pdfIconBg"><i class="fa-regular fa-file-pdf"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="file_pdf.html">XYZ.pdf</a>
+                                                    <div class="SwiftCloudSharedWithUsers">
+                                                        <ul>
+                                                            <li><a href="SOCIALIZERPOPUP_SHOWCURRENTSTATUS" data-toggle="tooltip" title="SwiftCloud"><img src="images/swift_cloud_flag.jpg" /></a></li>
+                                                            <li><a href="SOCIALIZERPOPUP_SHOWCURRENTSTATUS" data-toggle="tooltip" title="Rover V."><img src="images/roger.jpg" /></a></li>
+                                                            <li><a href="SOCIALIZERPOPUP_SHOWCURRENTSTATUS" data-toggle="tooltip" title="Amitabh Bachchan"><img src="images/bachchan-amitabh-image.jpg" /></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-edit" data-toggle="tooltip" title="Download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID18" class="css-checkbox" />
+                                                    <label for="C_ID18" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan"><img src="images/1.jpg" /></span>
+                                                </td>
+                                                <td>
+                                                    <a href="file_image.html">Image.jpg</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-edit" data-toggle="tooltip" title="Download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID3" class="css-checkbox" />
+                                                    <label for="C_ID3" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-file"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">eDoc</a>
+                                                    <div class="SwiftCloudTableTags">
+                                                        <ul>
+                                                            <li><a href="javaScript:void(0);" data-tagname="Tag1">Tag1</a></li>
+                                                            <li><a href="javaScript:void(0);" data-tagname="Tag2">Tag2</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID4" class="css-checkbox" />
+                                                    <label for="C_ID4" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-table"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Spreadsheet</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID5" class="css-checkbox" />
+                                                    <label for="C_ID5" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-table"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Invoice</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID6" class="css-checkbox" />
+                                                    <label for="C_ID6" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-th-list"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Web form</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID7" class="css-checkbox" />
+                                                    <label for="C_ID7" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-envelope"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Envelope</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID19" class="css-checkbox" />
+                                                    <label for="C_ID19" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-users"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Workroom</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID8" class="css-checkbox" />
+                                                    <label for="C_ID8" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-shopping-cart"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Item you sell</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID9" class="css-checkbox" />
+                                                    <label for="C_ID9" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-ellipsis-h"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Sequence</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID10" class="css-checkbox" />
+                                                    <label for="C_ID10" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="far fa-calendar"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Scheduler</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID11" class="css-checkbox" />
+                                                    <label for="C_ID11" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-clone"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Template</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID12" class="css-checkbox" />
+                                                    <label for="C_ID12" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-phone"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Phone number</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center tableColChkDel">
+                                                    <input type="checkbox" name="fileid[]" id="C_ID13" class="css-checkbox" />
+                                                    <label for="C_ID13" class="css-checkbox-label"></label>
+                                                    <span class="tableColChkSpan btn-secondary"><i class="fa fa-sign-in"></i></span>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Paywall</a>
+                                                    <a href="LINK_TO_SOCIALIZER_POPUP" class="btnSocializer" data-toggle="tooltip" title="Share / Attach to Contact"><i class="fa fa-user-plus"></i></a>
+                                                </td>
+                                                <td class="d-none d-md-table-cell"><time class="timeago" datetime="2022-05-15"></time></td>
+                                                <td class="text-end tableColAction d-none d-lg-table-cell">
+                                                    <a href="javascript:;" class="btn btn-delete" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="small-icon" role="tabpanel" aria-labelledby="small-icon-tab">
+                                    <ul class="smallIconList">
+                                        <li class="folderIcon">
+                                            <a href="#">
+                                                <span><i class="fa-solid fa-folder"></i></span>
+                                                <span class="fileName">Incoming</span>
+                                            </a>
+                                        </li>
+                                        <li class="folderIcon">
+                                            <a href="#">
+                                                <span><i class="fa-solid fa-folder"></i></span>
+                                                <span class="fileName">Tasks and Projects</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-file"></i></span>
+                                                <span class="fileName">eDoc</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-table"></i></span>
+                                                <span class="fileName">Spreadsheet</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-table"></i></span>
+                                                <span class="fileName">Invoice</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-th-list"></i></span>
+                                                <span class="fileName">Web form</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-envelope"></i></span>
+                                                <span class="fileName">Envelope</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-users"></i></span>
+                                                <span class="fileName">Workroom</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-shopping-cart"></i></span>
+                                                <span class="fileName">Item you sell</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-ellipsis-h"></i></span>
+                                                <span class="fileName">Sequence</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="far fa-calendar"></i></span>
+                                                <span class="fileName">Scheduler</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-clone"></i></span>
+                                                <span class="fileName">Template</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-phone"></i></span>
+                                                <span class="fileName">Phone number</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="btn-secondary fileTypeIcon"><i class="fa fa-sign-in"></i></span>
+                                                <span class="fileName">Paywall</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fileTypeIcon" style="background: url(images/1.jpg) no-repeat center / cover" /></span>
+                                                <span class="fileName">Doc with featured image</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade" id="large-icon" role="tabpanel" aria-labelledby="large-icon-tab">
+                                    <ul class="largeIconList">
+                                        <li class="folderIcon">
+                                            <a href="#">
+                                                <span><i class="fa-solid fa-folder"></i></span>
+                                                <span class="fileName">Incoming</span>
+                                            </a>
+                                        </li>
+                                        <li class="folderIcon">
+                                            <a href="#">
+                                                <span><i class="fa-solid fa-folder"></i></span>
+                                                <span class="fileName">Tasks and Projects</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-file"></i></span>
+                                                <span class="fileName">eDoc</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-table"></i></span>
+                                                <span class="fileName">Spreadsheet</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-table"></i></span>
+                                                <span class="fileName">Invoice</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-th-list"></i></span>
+                                                <span class="fileName">Web form</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-envelope"></i></span>
+                                                <span class="fileName">Envelope</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-users"></i></span>
+                                                <span class="fileName">Workroom</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-shopping-cart"></i></span>
+                                                <span class="fileName">Item you sell</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-ellipsis-h"></i></span>
+                                                <span class="fileName">Sequence</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="far fa-calendar"></i></span>
+                                                <span class="fileName">Scheduler</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-clone"></i></span>
+                                                <span class="fileName">Template</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-phone"></i></span>
+                                                <span class="fileName">Phone number</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary">
+                                            <a href="#">
+                                                <span class="fileTypeIcon"><i class="fa fa-sign-in"></i></span>
+                                                <span class="fileName">Paywall</span>
+                                            </a>
+                                        </li>
+                                        <li class="btn-secondary" style="background: url(images/1.jpg) no-repeat center / cover">
+                                            <a href="#">
+                                                <span class="fileName">Doc with featured image</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Container Main end-->
+
+        <!-- Advanced Tag Search modal -->
+        <div class="modal fade" id="ContactsSortByTagModal" tabindex="-1" role="dialog" aria-labelledby="ContactsSortByTagModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ContactsSortByTagModalTitle"><i class="fa fa-sort"></i> Advanced Tag Search</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12 sortbytag_row">
+                                <div class="input-group mb-3">
+                                    <select name="sortbytag_with_or_without" id="sortbytag_with_or_without" class="form-select">
+                                        <option value="Tagged with">Tagged with</option>
+                                        <option value="Not Tagged with">Not Tagged with</option>
+                                    </select>
+                                    <input type="text" name="sortbytag_input" id="sortbytag_input" class="form-control" value="tag" />
+                                    <select name="sortbytag_score_opt" id="sortbytag_score_opt" class="form-select">
+                                        <option value="Any">Any TagScore</option>
+                                        <option value="Above">TagScore Above</option>
+                                        <option value="Below">TagScore Below</option>
+                                    </select>
+                                    <input type="number" name="sortbytag_score_input" id="sortbytag_score_input" class="form-control d-none" placeholder="Value" value="50" />
+                                    <select name="sortbytag_asc_desc" class="form-select">
+                                        <option value="Ascending">Ascending</option>
+                                        <option value="Descending">Descending</option>
+                                        <option value="Newest">Newest</option>
+                                        <option value="Oldest">Oldest</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-3 sortbytag_search_within_row display-none">
+                                <input type="text" name="sortbytag_search_within" id='sortbytag_search_within' placeholder="Search Within Results" class="form-control">
+                                <a href='javascript:;' class="btnRemoveSearchWithinTag" data-toggle="tooltip" title="Remove search"><i class="fa fa-close"></i></a>
+                            </div>
+                            <div class="col-lg-12 addsortbytag_search_within_row">
+                                <button type="button" class="btnAddNewGreenDashed btnAddSortbyTagFilerCondition" data-toggle="tooltip" title="Add filter condition"><i class="fa fa-plus"></i></button>
+                                <button type="button" class="btnAddNewGreenDashed btnAddSortbyTagSearchCondition" data-toggle="tooltip" title="Search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="hidden_sortbytag_filter_condition_row display-none">
+                            <div class="col-lg-12 sortbytag_filter_condition_row">
+                                <div class="input-group mb-3">
+                                    <select name="sortbytagSearchCondition" class="form-select">
+                                        <option value="OR">OR Tag...</option>
+                                        <option value="AND">AND Tag...</option>
+                                        <option value="NOT">NOT Tag...</option>
+                                    </select>
+                                    <input type="text" class="form-control sortbytagSearchTaginput">
+                                </div>
+                                <a href='javascript:;' class="btnRemoveSortbyTagFilter" data-toggle="tooltip" title="Remove filter"><i class="fa fa-close"></i></a>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-danger btnDropResult"><i class="fa fa-trash-alt"></i> Drop Results</button>
+                        <button type="button" class="btn btn-secondary"><i class="fa fa-save"></i> Save Filtered View <i class="fa fa-bullseye"></i></button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Tag Search - Drop result modal -->
+        <div class="modal fade" id="sortByTagDropResultModal" tabindex="-1" role="dialog" aria-labelledby="sortByTagDropResultModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="sortByTagDropResultModalTitle"><i class="fa fa-trash-alt"></i> Drop Results</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="sortbytag_drop_result_container mx-auto w-100 text-center">
+                            <div class="alert alert-warning" role="alert">
+                                <i class="fa-solid fa-triangle-exclamation"></i> Ok to drop 1234 matches? This cannot be undone.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Abort Unchanged</button>
+                        <button type="button" class="btn btn-danger btnDropResult"><i class="fa fa-check"></i> Yes, Proceed & Drop <i class="fa fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Doc modal -->
+        <div class="modal fade" id="newDocModal" tabindex="-1" role="dialog" aria-labelledby="newDocModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newDocModalTitle"><i class="fa fa-file"></i> Doc</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <label for="docName" class="col-sm-4 col-form-label">Doc Name</label>
+                            <div class="col-sm-8">
+                                <input name="docName" id="docName" placeholder="Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <label for="docType" class="col-sm-4 col-form-label">Type</label>
+                            <div class="col-sm-8">
+                                <select name="docType" id="docType" class="form-select">
+                                    <option value="eSignDoc">E-Sign Doc</option>
+                                    <option value="form">Doc Form</option>
+                                    <option value="embedform">Embeddable Form</option>
+                                    <option value="playbook">Playbook / SOP / Policy</option>
+                                    <option value="dashboardFullscreen">Dashboard / Fullscreen TV / Radar</option>
+                                    <option value="faq">FAQs/Snippets</option>
+                                    <option value="review">Review</option>
+                                    <option value="emailTemplate">Template</option>
+                                    <option value="mailMergeDoc">Mail Merge Doc</option>
+                                    <option value="jobPostOpening">Job Post Opening</option>
+                                    <option value="CVResume">CV Resume</option>
+                                    <option value="ComplianceChecklist">Compliance Checklist</option>
+                                    <option value="RFP">RFP (Request for Proposal)</option>
+                                    <option value="quiz">Quiz / Test</option>
+                                    <option value="poll">Poll</option>
+                                    <option value="election">Election</option>
+                                    <option value="regularDoc">Regular Doc (No Inputs)</option>
+                                    <option value="Mini">Mini / Mobile / Focused</option>
+                                    <option value="vLandigPage">Landing Page</option>
+                                    <option value="vPSUPage">Sales / Upsell Page</option>
+                                    <option value="vOnDemandPage">Video on Demand / Webinar Style</option>
+                                    <option value="webpage">Webpage</option>
+                                    <option value="Fullscreen">Fullscreen</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="justify-content-start me-auto"><small>Templates</small></a>
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New SpreadSheet modal -->
+        <div class="modal fade" id="newSheetModal" tabindex="-1" role="dialog" aria-labelledby="newSheetModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newSheetModalTitle"><i class="fa fa-table"></i> SpreadSheet</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <label for="sheetName" class="col-sm-4 col-form-label">SpreadSheet Name</label>
+                            <div class="col-sm-8">
+                                <input name="sheetName" id="sheetName" placeholder="Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Invoice modal -->
+        <div class="modal fade" id="newInvoiceModal" tabindex="-1" role="dialog" aria-labelledby="newInvoiceModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newInvoiceModalTitle"><i class="fa fa-table"></i> Estimate / Invoice / Receipt / Etc.</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <label for="invoiceName" class="col-sm-4 col-form-label">Title <span data-toggle="tooltip" title="A descriptive name so you know what it's for. Will display to all parties."><i class="fa fa-question-circle"></i></span></label>
+                            <div class="col-sm-8">
+                                <input name="invoiceName" id="invoiceName" placeholder="Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="mb-3 row align-items-center">
+                            <label for="invoiceTypeOpts" class="col-sm-4 col-form-label">Status</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <select class="form-select mb-1" name="invoiceType" id="invoiceTypeOpts">
+                                        <option value="Invoice">Invoice</option>
+                                        <option value="Estimate" selected="selected">Estimate</option>
+                                        <option value="Proposal">Proposal</option>
+                                        <option value="Quote">Quote</option>
+                                        <option value="Purchase_Order">Purchase Order</option>
+                                        <option value="Credit_Memo">Credit Memo</option>
+                                        <option value="Receipt">Receipt</option>
+                                    </select>
+                                    <select class="form-select mb-1" name="invoiceStatus" id="invoice_status_opts">
+                                        <option value="Not_Yet_Committed" selected="selected">Not Yet Committed</option>
+                                        <option value="Committed">Committed</option>
+                                        <option value="Due">Due</option>
+                                        <option value="Paid_Partial">Paid Partial</option>
+                                        <option value="Paid">PAID</option>
+                                        <option value="Canceled">Canceled</option>
+                                        <option value="Refunded">Refunded</option>
+                                        <option value="Unpaid_Overdue">Unpaid Overdue</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Form modal -->
+        <div class="modal fade" id="newWebFormModal" tabindex="-1" role="dialog" aria-labelledby="newWebFormModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newWebFormModalTitle"><i class="fa fa-th-list"></i> Web Form</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <label for="formName" class="col-sm-4 col-form-label">Web Form Name</label>
+                            <div class="col-sm-8">
+                                <input name="formName" id="formName" placeholder="Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Folder / Workroom modal -->
+        <div class="modal fade" id="newFolderWorkroomModal" tabindex="-1" role="dialog" aria-labelledby="newFolderWorkroomModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newFolderWorkroomModalTitle"><i class="fa fa-folder"></i> Folder / <i class="fa fa-users"></i> Workroom</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body pt-0">
+                        <div class="row stepProcess d-none">
+                            <div class="col-lg-12 p-0">
+                                <!-- ONLY YELLOW (ACTIVE STEP) SHOW FULL LABEL, ALL OTHERS ICON ONLY -->
+                                <!-- THIS STATUS CORRESPONDS TO NEXT STEP, WHICH ALSO CORRESPONDS TO PREVIOUS DISPOSITION -->
+                                <ul class="nav nav-wizard">
+                                    <li class="SaleStatus_Pending" data-step="1"><a href="javascript:;" data-toggle="tooltip" title="Recipient(s)"><i class="fa fa-user"></i> <span>Recipient(s)</span></a></li>
+                                    <li class="SaleStatus_NotStarted" data-step="2"><a href="javascript:;" data-toggle="tooltip" title="Edit & Send Message" onclick="event.stopPropagation();"><i class="fa fa-paper-plane"></i> <span>Send Message</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="my-3 row align-items-center">
+                            <label for="folderName" class="col-sm-4 col-form-label">Folder Name</label>
+                            <div class="col-sm-8">
+                                <input name="folderName" id="folderName" placeholder="Name / Label" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="mb-3 row align-items-center">
+                            <div class="col-md-12 shareWithOtherPeopleOpts">
+                                <input type="checkbox" name="sendWorkroomInvitation" id="sendWithOtherPeople" class="css-checkbox">
+                                <label for="sendWithOtherPeople" class="css-checkbox-label radGroup2 form-inline mr-sm-2"><i class="fa fa-users"></i> Share with other people</label>
+                            </div>
+                        </div>
+                        <div class="mb-3 row align-items-center shareWithOtherPeopleContainer d-none">
+                            <div class="col-md-12">
+                                <div class="row mb-3 position-relative">
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="text" name="userEmailName" placeholder="Email or Username" autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <select name="userRoleSelect" class="form-select">
+                                            <option>List of Roles</option>
+                                        </select>
+                                        <a href="javascript:;" class="btnRemovePeople" data-toggle="tooltip" title="Remove User"><i class="fa fa-trash-alt"></i></a>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 btnAddNewPeopleRow">
+                                    <div class="col-lg-12 text-center">
+                                        <button type="button" class="btnAddNewGreenDashed btnAddNewPeople" data-toggle="tooltip" title="Add New"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <input type="checkbox" name="sendInvitation" id="sendInvitation" class="css-checkbox">
+                                        <label for="sendInvitation" class="css-checkbox-label"><i class="fa fa-paper-plane"></i> Send Invitation</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Envelope modal -->
+        <div class="modal fade" id="newEnvelopeModal" tabindex="-1" role="dialog" aria-labelledby="newEnvelopeModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newEnvelopeModalTitle"><i class="fa fa-envelope"></i> Envelope</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <label for="envelopeName" class="col-sm-4 col-form-label">Envelope Name</label>
+                            <div class="col-sm-8">
+                                <input name="envelopeName" id="envelopeName" placeholder="Name / Label" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Item modal -->
+        <div class="modal fade" id="newItemModal" tabindex="-1" role="dialog" aria-labelledby="newItemModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newItemModalTitle"><i class="fa fa-shopping-cart"></i> SKU / Item You Sell</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <label for="itemName" class="col-sm-4 col-form-label">Item Name</label>
+                            <div class="col-sm-8">
+                                <input name="itemName" id="itemName" placeholder="Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Sequence modal -->
+        <div class="modal fade" id="newSequenceModal" tabindex="-1" role="dialog" aria-labelledby="newSequenceModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newSequenceModalTitle"><i class="fa fa-ellipsis-h"></i> New Sequence</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <label for="sequenceName" class="col-sm-4 col-form-label">Sequence Name <span data-toggle="tooltip" title="Often yourself, but could be an employee, or any asset (i.e. boat, backhoe, or conference room, etc) - anything or anyone you want to schedule access to."><i class="fa fa-question-circle"></i></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="sequenceName" id="sequenceName" placeholder="Sequence Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Scheduler modal -->
+        <div class="modal fade" id="newSchedulerModal" tabindex="-1" role="dialog" aria-labelledby="newSchedulerModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newSchedulerModalTitle"><i class="far fa-calendar"></i> Add New Scheduler</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <label for="schedulerName" class="col-sm-4 col-form-label">Name <span data-toggle="tooltip" title="Who or what? i.e. Jane Doe, Boardroom A. You'll define purpose and block of time on the next step."><i class="fa fa-question-circle"></i></span></label>
+                            <div class="col-sm-8">
+                                <input name="schedulerName" id="schedulerName" placeholder="Name" class="form-control" type="text" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Phone modal -->
+        <div class="modal fade" id="newPhoneModal" tabindex="-1" role="dialog" aria-labelledby="newPhoneModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newPhoneModalTitle"><i class="fa fa-phone"></i> Phone Number</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-5 row align-items-center">
+                            <div class="col-sm-12">
+                                <!--Add {PHONE} to 01_Settings >> Phone AND to Main Drive -->
+                                <input class="form-control form-control-lg" type="tel" name="add_phone_search" id="add_phone_search" placeholder="" />
+                                <div class="phone_search_result_container display-none">
+                                    <div class="phone_search_loader display-none"><div class="phone_search_loader_content"><i class="fa fa-spinner fa-spin-2x fa-pulse fa-fw"></i> Provisioning</div></div>
+                                    <ul id="show_phone_number_ul"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-12 text-center">
+                                <p>What country & area code?</p>
+                                <p><a href="https://portal.SwiftCRM.com/swiftcloud/phoneportrequest" target="_blank">Click here to migrate (port in) an existing phone number.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Paywall modal -->
+        <div class="modal fade" id="newPaywallModal" tabindex="-1" role="dialog" aria-labelledby="newPaywallModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newPaywallModalTitle"><i class="fa fa-sign-in"></i> Paywall</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <label for="paywallName" class="col-sm-4 col-form-label">Paywall Name</label>
+                            <div class="col-sm-8">
+                                <input name="paywallName" id="paywallName" placeholder="Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FreeBaitLeadGen modal -->
+        <div class="modal fade" id="FreeBaitLeadGen" tabindex="-1" role="dialog" aria-labelledby="FreeBaitLeadGenTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="FreeBaitLeadGenTitle"><i class="fa fa-folder"></i> Select Folder</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <div class="col-sm-12">
+                                <select class="form-select">
+                                    <option>Select Folder</option>
+                                    <option>Root</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DirectSellUpsell modal -->
+        <div class="modal fade" id="DirectSellUpsell" tabindex="-1" role="dialog" aria-labelledby="DirectSellUpsellTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="DirectSellUpsellTitle"><i class="fa fa-folder"></i> Select Folder</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <div class="col-sm-12">
+                                <select class="form-select">
+                                    <option>Select Folder</option>
+                                    <option>Root</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QualifierAppointmentScheduler modal -->
+        <div class="modal fade" id="QualifierAppointmentScheduler" tabindex="-1" role="dialog" aria-labelledby="QualifierAppointmentSchedulerTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="QualifierAppointmentSchedulerTitle"><i class="fa fa-folder"></i> Select Folder</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <div class="col-sm-12">
+                                <select class="form-select">
+                                    <option>Select Folder</option>
+                                    <option>Root</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NewtoMarketValidator modal -->
+        <div class="modal fade" id="NewtoMarketValidator" tabindex="-1" role="dialog" aria-labelledby="NewtoMarketValidatorTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="NewtoMarketValidatorTitle"><i class="fa fa-folder"></i> Select Folder</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <div class="col-sm-12">
+                                <select class="form-select">
+                                    <option>Select Folder</option>
+                                    <option>Root</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FreeShippingUpsells modal -->
+        <div class="modal fade" id="FreeShippingUpsells" tabindex="-1" role="dialog" aria-labelledby="FreeShippingUpsellsTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="FreeShippingUpsellsTitle"><i class="fa fa-folder"></i> Select Folder</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <div class="col-sm-12">
+                                <select class="form-select">
+                                    <option>Select Folder</option>
+                                    <option>Root</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FreeTripwireSale modal -->
+        <div class="modal fade" id="FreeTripwireSale" tabindex="-1" role="dialog" aria-labelledby="FreeTripwireSaleTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="FreeTripwireSaleTitle"><i class="fa fa-folder"></i> Select Folder</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <div class="col-sm-12">
+                                <select class="form-select">
+                                    <option>Select Folder</option>
+                                    <option>Root</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FreeBaitWebinarVideo modal -->
+        <div class="modal fade" id="FreeBaitWebinarVideo" tabindex="-1" role="dialog" aria-labelledby="FreeBaitWebinarVideoTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="FreeBaitWebinarVideoTitle"><i class="fa fa-folder"></i> Select Folder</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row align-items-center">
+                            <div class="col-sm-12">
+                                <select class="form-select">
+                                    <option>Select Folder</option>
+                                    <option>Root</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="js/swiftcloud_functions.js"></script>
+        <script type="text/javascript" src="js/bootstrap-tagsinput.js"></script>
+        <script type="text/javascript" src="js/bootstrap-select.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap5.min.js"></script>
+        <script type="text/javascript" src="js/jquery.timeago.js"></script>
+        <script type="text/javascript" src="js/advanced_tag_search.js"></script>
+        <script type="text/javascript" src="js/intlTelInput-jquery.min.js"></script>
+        <script type="text/javascript" src="js/global_filter_view.js"></script>
+        <script type="text/javascript" src="js/drive.js"></script>
+    </body>
+</html>

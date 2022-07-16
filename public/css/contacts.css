@@ -1,0 +1,258 @@
+#tblContacts_wrapper .dataTables_filter{
+    top: -37px;
+}
+#tblContacts .contactListCompany{
+    margin: 0 8px;
+    background: #e7e7e7;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+#tblContacts .contactListQuickTools {
+    display: none;
+}
+#tblContacts tbody tr:hover .contactListQuickTools {
+    display: inline-block;
+    margin-right: 8px;
+}
+#tblContacts .contactListQuickTools a{
+    color: #186abc;
+    margin: 0 3px;
+}
+.btnTHSoryByTags {
+    background: none !important;
+    color: #fff;
+}
+.btn-helpDeskTask{
+    margin-top: 2px;
+}
+
+
+/* ============= ADD NEW CONTACT ============= */
+#addContactTemplate h1{
+    font-size: 28px;
+    font-weight: bold;
+}
+#addContactTemplate .addNewContactPhoneType .btn-secondary{
+    background: #EAE8E8;
+    border-color: #EAE8E8;
+    color: #292b2c
+}
+#addContactTemplate .CL_range_slider{
+    width: calc(100% - 120px);
+    padding: 5px 15px 0;
+}
+#addContactTemplate .addNewContactAvatar {
+    position: relative;
+}
+#addContactTemplate .addNewContactAvatar img {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50% !important;
+}
+#addContactTemplate .addNewContactAvatar .btnEditAvatar {
+    background-color: #eae8e8;
+    border-radius: 50%;
+    color: #7e7e7e;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: -5px;
+    top: -3px;
+    width: 20px;
+    border: none;
+    display: none;
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 18px;
+}
+#addContactTemplate .addNewContactAvatar:hover .btnEditAvatar {
+    display: block;
+}
+
+.schedulerServiceOptsShow{
+    max-width: 850px;
+}
+.bg-light-yellow {
+    float: right;
+    background-color: #FFFDEB;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    width: 100%;
+}
+.step-sidebar-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    background: #fff6a2;
+    color: #7e7e7e;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+ul.step3-time-suggest {
+    padding: 0 15px;
+}
+ul.step3-time-suggest li {
+    list-style: none;
+    padding: 0;
+}
+ul.step3-time-suggest li label {
+    font-weight: normal;
+    margin: 0px;
+    line-height: 24px !important;
+}
+/* ============= ADD NEW CONTACT ============= */
+
+
+/* rating 1-5 and 1-10 */
+.rattings .my-3{
+    margin: 0 !important;
+}
+.sr-field input{
+    width: 100%;
+    border: 1px solid #d1d1d1;
+    border-radius: 2px;
+    padding: 7px;
+    width: 100%;
+}
+.sr-field{
+    margin: 0;
+    float: left;
+    width: 100%;
+}
+.rating {
+    float: left;
+    line-height: normal;
+}
+.rating-5Star {
+    float: left;
+    margin-bottom: 5px;
+}
+.rating-text {
+    line-height: normal;
+    width: 100%;
+}
+.rating-text-left {
+    float: left;
+    font-size: 14px;
+    color: #bbb;
+}
+.rating-text-right {
+    float: right;
+    font-size: 14px;
+    color: #bbb;
+}
+.rating .rating-5Star > input{
+    display: none;
+}
+.rating .rating-5Star > label{
+    color: #ddd;
+    float: right;
+    margin-bottom: 0;
+}
+.rating .rating-5Star > label:before{
+    margin: 0 10px 0 0;
+    font-size: 4em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+.rating .rating-5Star > .half:before{
+    content: "\f089";
+    position: absolute;
+}
+.rating.rating-sm .rating-5Star > label:before{
+    font-size: 2em;
+}
+.rating.rating-sm .rating-text-right,
+.rating.rating-sm .rating-text-left{
+    font-size: 12px;
+}
+.rating.rating-lg .rating-5Star > label:before{
+    font-size: 6em;
+}
+/*.rating .rating-5Star .zero:checked ~ .star0,
+.rating .rating-5Star .zero ~ label.star0:hover{
+    color:#000 !important;
+}*/
+.rating .rating-5Star > input:checked ~ label,
+.rating .rating-5Star:not(:checked) > label:hover,
+.rating .rating-5Star:not(:checked) > label:hover ~ label{
+    color: #FFD700;
+}
+.rating .rating-5Star > input:checked + label:hover,
+.rating .rating-5Star > input:checked ~ label:hover,
+.rating .rating-5Star > label:hover ~ input:checked ~ label,
+.rating .rating-5Star > input:checked ~ label:hover ~ label{
+    color: #FFED85;
+}
+
+.star-icon {color: #ddd;position: relative;display: inline-block;font-size: 44px;line-height: 50px;font-family: "FontAwesome";margin: 0 2px;}
+.star-icon.full:before {text-shadow: none;color: #FFD700;content: '\f005';position: absolute;overflow: hidden;left: 0;}
+.star-icon.half:before {text-shadow: none;color: #FFD700;content: '\f089';position: absolute;left: 0;overflow: hidden;}
+
+.rating-10stars {
+    float: left;
+    line-height: 60px;
+}
+.rating.rating-sm .rating-10stars{
+    line-height: 40px;
+}
+.rating-10stars input {
+    display: none;
+}
+.rating-10stars > label {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 45px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 2px;
+    color: rgba(255,255,255,0.6);
+}
+.rating-sm .rating-10stars > label {
+    font-size: 14px;
+    width: 30px;
+    line-height: 10px;
+    text-align: center;
+    padding: 10px 0;
+}
+.rating-lg .rating-10stars > label {
+    font-size: 25px;
+    width: 60px;
+    line-height:40px;
+}
+.rating-10stars label.stars-0 {
+    background-color: #CCC;
+}
+.rating-10stars label.stars-5{background-color: #CCC;}
+.rating-10stars label.stars-4-5{background-color: #CCC;}
+.rating-10stars label.stars-4{background-color: #CCC;}
+.rating-10stars label.stars-3-5{background-color: #CCC;}
+.rating-10stars label.stars-3{background-color:#CCC;}
+.rating-10stars label.stars-2-5{background-color: #CCC;}
+.rating-10stars label.stars-2{background-color:#CCC;}
+.rating-10stars label.stars-1-5{background-color:#CCC;}
+.rating-10stars label.stars-1{background-color:#CCC;}
+.rating-10stars label.stars-0-5{background-color:#CCC;}
+.rating-10stars label.stars-0{background-color:#CCC;}
+
+.rating-10stars label.stars-5:hover,.rating-10stars .rating10-10:checked ~ .stars-5{background-color:#70f609;color:#fff}
+.rating-10stars label.stars-4-5:hover,.rating-10stars .rating10-9:checked ~ .stars-4-5{background-color:#75b847;color:#fff}
+.rating-10stars label.stars-4:hover,.rating-10stars .rating10-8:checked ~ .stars-4{background-color:#7b8a73;color:#fff}
+.rating-10stars label.stars-3-5:hover,.rating-10stars .rating10-7:checked ~ .stars-3-5{background-color:#7e727c;color:#fff}
+.rating-10stars label.stars-3:hover,.rating-10stars .rating10-6:checked ~ .stars-3{background-color:#7c7c7e;color:#fff}
+.rating-10stars label.stars-2-5:hover,.rating-10stars .rating10-5:checked ~ .stars-2-5{background-color:#7e5f5d;color:#fff}
+.rating-10stars label.stars-2:hover,.rating-10stars .rating10-4:checked ~ .stars-2{background-color:#934d4d;color:#fff}
+.rating-10stars label.stars-1-5:hover,.rating-10stars .rating10-3:checked ~ .stars-1-5{background-color:#af3939;color:#fff}
+.rating-10stars label.stars-1:hover,.rating-10stars .rating10-2:checked ~ .stars-1{background-color:#ea1011;color:#fff}
+.rating-10stars label.stars-0-5:hover,.rating-10stars .rating10-1:checked ~ .stars-0-5{background-color:#fe0201;color:#fff}
+.rating-10stars label.stars-0:hover,.rating-10stars .rating10-0:checked ~ .stars-0{background-color:#000;color:#fff}
+/* rating 5 star */

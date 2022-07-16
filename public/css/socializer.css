@@ -1,0 +1,193 @@
+#Global_Socializer ul.sharedWithPeople{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#Global_Socializer ul.sharedWithPeople > li{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    background: #f4fbeb;
+    border-radius: 4px;
+    border: 1px solid #abbb96;
+    position: relative;
+    z-index: 2;
+}
+#Global_Socializer ul.sharedWithPeople > li img.userAvatar{
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+}
+#Global_Socializer ul.sharedWithPeople > li .socialActionContainer{
+    margin: 0 0 0 auto;
+}
+#Global_Socializer ul.sharedWithPeople > li .socialActionContainer .socialContactVia{
+    text-align: right;
+}
+#Global_Socializer ul.sharedWithPeople > li .socialActionContainer .socialContactVia a{
+    margin-left: 5px;
+    visibility: hidden;
+    color: #4e6234;
+}
+#Global_Socializer ul.sharedWithPeople > li:hover .socialActionContainer .socialContactVia a{
+    visibility: visible;
+}
+#Global_Socializer ul.sharedWithPeople > li .userInfo .userRealName{
+    color: var(--bs-body-color);
+    text-decoration: none;
+    display: block;
+}
+#Global_Socializer ul.sharedWithPeople > li .userInfo .userRealName a{
+    color: var(--bs-body-color);
+    text-decoration: none;
+}
+#Global_Socializer ul.sharedWithPeople > li .userInfo .userStarToggle{
+    color: var(--bs-body-color);
+    text-decoration: none;
+}
+#Global_Socializer ul.sharedWithPeople > li .userInfo .userStarToggle input[type=checkbox] { display:none; }
+#Global_Socializer ul.sharedWithPeople > li .userInfo .userStarToggle input[type=checkbox] + label:before{
+    font-family: "Font Awesome 6 Free";
+    display: inline-block;
+}
+#Global_Socializer ul.sharedWithPeople > li .userInfo .userStarToggle input[type=checkbox] + label{
+    display: none;
+}
+#Global_Socializer ul.sharedWithPeople > li .userInfo .userStarToggle input[type=checkbox]:checked + label,
+#Global_Socializer ul.sharedWithPeople > li:hover .userInfo .userStarToggle input[type=checkbox] + label{
+    display: inline-block;
+}
+#Global_Socializer ul.sharedWithPeople > li .userInfo .userStarToggle input[type=checkbox] + label:before { content: "\f005"; font-weight: 400; } /* unchecked icon */
+#Global_Socializer ul.sharedWithPeople > li .userInfo .userStarToggle input[type=checkbox]:checked + label:before { content: "\f005"; font-weight: 900; color: var(--bs-body-color) !important } /* checked icon */
+#Global_Socializer ul.sharedWithPeople > li .userInfo .showOnHover > *{
+    display: none;
+}
+#Global_Socializer ul.sharedWithPeople > li:hover .userInfo .showOnHover > *{
+    display: inline-block;
+}
+
+#Global_Socializer ul.sharedWithPeople > li .socialActionShareWith .btn-secondary{
+    background: transparent;
+    border-color: transparent;
+    border-bottom: 1px dashed #4e6234;
+    color: #4e6234;
+    padding: 0;
+}
+#Global_Socializer ul.sharedWithPeople > li .socialActionShareWith .btn-secondary:hover{
+    background: #FFF;
+    border-color: #4e6234;
+    border-bottom: 1px solid #4e6234;
+}
+#Global_Socializer .bootstrap-select.socialPermission{
+    z-index: 1;
+}
+#Global_Socializer .socialPermission .btn-secondary{
+    background: var(--bs-default);
+    border-color: var(--bs-default);
+    color: #413c3c
+}
+#Global_Socializer .socialPermission .btn-secondary:after{
+    display: none;
+}
+#Global_Socializer .socialPermission .btn-secondary .filter-option .filter-option-inner i.fa{
+    font-size: 18px;
+    width: 25px;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px
+}
+/*#Global_Socializer .addNewSocialUserRow{
+    background: #f4fbeb;
+    border-radius: 4px;
+    border: 1px solid #abbb96;
+    position: relative;
+    padding: 10px;
+}*/
+#Global_Socializer .addNewSocialUserRow button.btnRemovePeopleFromSocial {
+    background: red;
+    color: #FFF;
+    border: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    display: none;
+}
+#Global_Socializer .addNewSocialUserRow:hover button.btnRemovePeopleFromSocial {
+    display: block;
+}
+#Global_Socializer .addNewSocialUserRow .bootstrap-select.socialActionShareWith {
+    width: 100%;
+}
+#Global_Socializer .addNewSocialUserRow .bootstrap-select.socialActionShareWith .btn-secondary {
+    padding: .375rem .75rem .375rem .75rem;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+#Global_Socializer .btnCopySocialLink {
+    font-size: 16px;
+}
+#Global_Socializer #btnCopySocialLinkInput {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.btnSocialShare{
+    font-size: 16px;   
+}
+.btnSocializer{
+    background: #FFF;
+    color: #218838 !important;
+    border: 1px dashed #218838;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 22px;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+}
+.btnSocializer:hover{
+    background: #218838;
+    color: #FFF !important;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 22px;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media(max-width: 767px){
+    #Global_Socializer ul.sharedWithPeople > li{
+        padding: 8px 30px 40px 8px;
+    }
+    #Global_Socializer ul.sharedWithPeople > li .socialActionContainer{
+        top: auto;
+        bottom: 10px;
+        left: 10px;
+        transform: initial;
+    }
+    #Global_Socializer ul.sharedWithPeople > li .socialActionContainer .socialContactVia {
+        text-align: right;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    #Global_Socializer ul.sharedWithPeople > li .socialActionContainer .socialContactVia a{
+        visibility: visible
+    }
+    #Global_Socializer .addNewSocialUserRow button.btnRemovePeopleFromSocial {
+        display: block;
+    }
+}

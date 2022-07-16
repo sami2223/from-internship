@@ -1,0 +1,18 @@
+#Global_Uploader #GU_Tabs li button.nav-link{
+    background: var(--bs-nav-bg);
+    border-width: 1px 1px 0 1px;
+    border-color: var(--bs-body-bg);
+    color: var(--bs-nav-color);
+    width: 100px;
+    padding: .5rem;
+    margin-top: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+#Global_Uploader #GU_Tabs li button.nav-link.active,
+#Global_Uploader #GU_Tabs li button.nav-link:hover{
+    background: var(--bs-nav-bg-hover);
+    color: var(--bs-nav-color-hover);
+    padding: .65rem .5rem;
+    margin-top: 0px;
+}

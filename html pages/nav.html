@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SwiftCloud - Nav</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/swiftcloud_global.css" rel="stylesheet">
+        <link href="css/font.awesome.css" rel="stylesheet">
+        <link href="css/menu.css" rel="stylesheet">
+    </head>
+    <body class="">
+        <div id="left-section">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="user_status" title="{username}">
+                            <img src="images/avatar.gif" class="rounded-circle" />
+                            <span class="user-online"></span>
+                        </a>
+                        <ul>
+                            <li class="menu_working_as">Working as {username}</li>
+                            <li><a href="javascript:;" id="status_online"><span class="user-status user-online"></span> Online</a></li>
+                            <li><a href="javascript:;" id="status_dnd"><span class="user-status user-offline"></span> Do Not Disturb</a></li>
+                            <li><a href="javascript:;" id="status_away"><span class="user-status user-dnd"></span> Show as Away</a></li>
+                            <li><a href="javascript:;" id="status_on_call"><span class="user-status user-on-call"></span> On a Call</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav_active" title="Home"><i class="fa fa-home"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-home"></i> My Feed</a></li>
+                            <li><a href="#"><i class="fa fa-inbox"></i> Inbox</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="leftNavFilterContainer">
+                        <a href="javascript:;" title="Filter"><i class="fa fa-bullseye"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-home"></i> Filter 1</a></li>
+                            <li><a href="#"><i class="fa fa-home"></i> Filter 2</a></li>
+                            <li><a href="#"><i class="fa fa-home"></i> Filter 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="fa fa-search"></i></a>
+                        <ul style="top: 184px; left: 79px;">
+                            <li>
+                                <form class="navbar-form" role="search" action="#" method="GET">
+                                    <div class="input-group searchBox">
+                                        <input type="text" name="v" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="button-addon2">
+                                        <button class="btn btnSearch" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contacts.html" title="Contacts"><i class="fa fa-user"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-users"></i> All Contacts</a></li>
+                            <li><a href="#"><i class="fa fa-user-plus"></i> Add New Contact</a></li>
+                            <li>
+                                <a href="contact_group.html"><i class="fa fa-users"></i> Audiences &amp; Groups</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-edit"></i> Waivers / Petition Signers</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="#"><i class="fa fa-table"></i> Import Spreadsheet</a></li>
+                            <li><a href="#"><i class="fa-brands fa-wpforms"></i> Web Form &amp; Chat Sessions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="drive.html" title="Drive / Storage"><i class="fa fa-database"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-database"></i> Drive</a></li>
+                            <li><a href="#"><i class="fa fa-cloud-upload"></i> Upload</a></li>
+                            <li><a href="#"><i class="fa-regular fa-file"></i> New Doc</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="Tasks &amp; Projects"><i class="fa-solid fa-check"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-check-square"></i> All Tasks</a></li>
+                            <li><a href="#"><i class="fa fa-check-square"></i> New Task / Job / Sales Opportunity</a></li>
+                            <li>
+                                <a href="#"><i class="fa fa-life-ring"></i> Support</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-ticket"></i> Open Tickets</a></li>
+                                    <li><a href="#"><i class="fa-regular fa-star"></i> Customer Feedback</a></li>
+                                    <li><a href="#"><i class="fa fa-question-circle"></i> Knowledgebase</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="fa fa-rocket"></i> Templates &amp; Playbooks</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Marketing"><i class="fa fa-bullhorn"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-bullhorn"></i> Campaigns &amp; Experiments</a></li>
+                            <li>
+                                <a href="contact_group.html"><i class="fa fa-users"></i> Audiences &amp; Groups</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-edit"></i> Waivers / Petition Signers</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="fa fa-align-justify"></i> Messages / Ads / Creative</a></li>
+                            <li><a href="#"><i class="fa fa-plus"></i> New Message / Ad / Creative</a></li>
+                            <li><a href="#"><i class="fa fa-th-list"></i> Sequences</a></li>
+                            <li>
+                                <a href="#"><i class="fa-regular fa-star"></i> Reviews &amp; Referrals</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa-regular fa-star"></i> Review Intake Forms</a></li>
+                                    <li><a href="#"><i class="fa fa-user-plus"></i> Refer a Friend</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="fa fa-sign-in"></i> Lead Intake</a></li>
+                            <li><a href="#"><i class="fa fa-sign-in"></i> Landing Pages</a></li>
+                            <li>
+                                <a href="#menu2"><i class="fa fa-book"></i> Web Forms</a>
+                                <ul>
+                                    <li><a href="https://swiftcloud.io/form/my-forms" target="_blank"><i class="fa fa-list-alt"></i> My Forms</a></li>
+                                    <li><a href="https://swiftcloud.io/form/create-form" target="_blank"><i class="fa fa-plus-square"></i> Create New Web Form</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="Calendar"><i class="fa-regular fa-calendar-days"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa-regular fa-calendar-days"></i> Calendar</a></li>
+                            <li><a href="#"><i class="fa fa-history fa-flip-horizontal"></i> Agenda</a></li>
+                            <li><a href="#"><i class="fa-regular fa-clock"></i> Timeclock</a></li>
+                            <li><a href="#"><i class="fa-regular fa-calendar-days"></i> Upcoming Appointments</a></li>
+                            <li><a href="#"><i class="fa-regular fa-calendar-plus"></i> Add Event</a></li>
+                            <li><a href="#"><i class="fa-regular fa-calendar"></i> Schedulers</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="Accounting"><i class="fa fa-dollar"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-exchange"></i> Accounting</a></li>
+                            <li>
+                                <a href="#"><i class="fa fa-sign-in"></i> Incoming</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i> SKUs / Items you sell</a></li>
+                                    <li><a href="#"><i class="fa fa-file-text"></i> Create New Invoice</a></li>
+                                    <li><a href="#"><i class="fa-regular fa-clock"></i> Invoices (Receivable)</a></li>
+                                    <li><a href="#"><i class="fa-regular fa-handshake"></i> Billing Agreements</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-sign-out"></i> Outgoing</a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-share"></i> Purchase History</a></li>
+                                    <li><a href="#"><i class="fa-regular fa-handshake"></i> Billing Agreements</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Settings"><i class="fa fa-gear"></i></a>
+                        <ul>
+                            <li><a href="javascript:;" class="btnThemeMode"><i class="fa-regular fa-moon"></i> Change to Dark Mode</a></li>
+                            <li><a href="settings.html"><i class="fa fa-gear"></i> General Settings</a></li>
+                            <li><a href="urls.html"><i class="fa fa-chain"></i> URLs</a></li>
+                            <li><a href="#"><i class="fa fa-dollar"></i> Financial Settings</a></li>
+                            <li><a href="javascript:;" id="change_password"><i class="fa fa-key"></i> Change Password</a></li>
+                            <li><a href="#audioSettingModal" data-toggle="modal"><i class="fa fa-volume-up"></i> Audio Settings</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Support"><i class="fa fa-question-circle"></i></a>
+                        <ul>
+                            <li><a href="https://swiftcloud.ai/support/" target="_blank"><i class="fa fa-question-circle"></i>  This Page Help</a></li>
+                            <li><a href="https://swiftcloud.ai/support/" target="_blank"><i class="fa fa-laptop"></i> Support Center</a></li>
+                            <li><a href="https://swiftcloud.ai/support/resources" target="_blank"><i class="fa-regular fa-folder-open"></i>  Resource Library</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="nav_logout"><i class="fa fa-power-off"></i></a>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobileMenuContainer d-md-none">
+            <div class="row no-gutters">
+                <div class="col-lg-12 mobileHeader">
+                    <a href="javascript:;" class="mobileToggleLeft"><i class="fa fa-navicon fa-lg"></i></a>
+                    <a href="#" class="logo_block m_change_site"><img src="images/SwiftCloud-logo.png"></a>
+                    <a href="javascript:;" class="mobileToggleRight"><i class="fa fa-navicon fa-lg"></i></a>
+                </div>
+                <div id="mobileNavLeft" class="mobileNav">
+                    <div class="overlay hidden"></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <div class="profile_block">
+                                <a href="#mobile_menu_profile" class="list-group-item collapsed p-lr-10" data-bs-toggle="collapse" data-parent="#profile_block" aria-expanded="false">
+                                    <img class="rounded-circle" width="40" height="40"  src="images/avatar.gif" />
+                                    <span class="user-logged-in-as">
+                                        Logged in as {Username}
+                                        <div class="user_status"><span></span> Online</div>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="collapse" id="mobile_menu_profile">
+                                <a href="javascript:void(0);" class="list-group-item" id="status_online" data-parent="#menu_profile">
+                                    <div class="user_status user-online"><span class="user-status user-online"></span> Online</div>
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item" id="status_dnd" data-parent="#menu_profile">
+                                    <div class="user_status user-offline"><span class="user-status user-offline"></span> Do Not Disturb</div>
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item" id="status_away" data-parent="#menu_profile">
+                                    <div class="user_status user-dnd"><span class="user-status user-dnd"></span> Show as Away</div>
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item" id="status_on_call" data-parent="#menu_profile">
+                                    <div class="user_status user-dnd"><span class="user-status user-on-call"></span> On a Call</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu_icons list-group-item" >
+                                <a href="#mobile_top_menu_icon_1" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i class="fa fa-user"></i></a>
+                                <a href="#mobile_top_menu_icon_2" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i class="fa fa-database"></i></a>
+                                <a href="#mobile_top_menu_icon_5" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i class="fa fa-check"></i></a>
+                                <a href="#mobile_top_menu_icon_7" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i class="fa fa-bullhorn"></i></a>
+                                <a href="#mobile_top_menu_icon_4" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i class="fa fa-calendar"></i></a>
+                                <a href="#mobile_top_menu_icon_6" class="collapsed" data-bs-toggle="collapse" data-parent="#mobile_menu_icons" aria-expanded="false"><i id="currencyIcon" class="fa fa-dollar"></i></a>
+                            </div>
+                            <div class="menu_icons_container">
+                                <div class="collapse" id="mobile_top_menu_icon_1">
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_1"><i class="fa fa-users"></i> All Contacts</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_1"><i class="fa fa-user-plus"></i> Add New Contact</a>
+                                    <a href="#mobile_menu11" class="list-group-item collapsed" data-bs-toggle="collapse" data-parent="#mobile_top_menu_icon_1" aria-expanded="false"><i class="fa fa-users"></i> Audiences &amp; Groups</a>
+                                    <div class="collapse menu_thirdLevel" id="mobile_menu11">
+                                        <a href="#" class="list-group-item" data-parent="#mobile_menu11"><i class="fa fa-edit"></i> Waivers / Petition Signers</a>
+                                    </div>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_1"><i class="fa fa-table"></i> Import Spreadsheet</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_1"><i class="fa-brands fa-wpforms"></i> Web Form &amp; Chat Sessions</a>
+                                </div>
+
+                                <div class="collapse" id="mobile_top_menu_icon_2">
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_2"><i class="fa fa-database" aria-hidden="true"></i> Drive</a>
+                                    <a href="#" data-toggle="modal" data-target="#global_image_tool_container" class="list-group-item" data-parent="#mobile_top_menu_icon_2"><i class="fa fa-cloud-upload"></i> Upload</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_2"><i class="fa-regular fa-file"></i> New Doc</a>
+                                </div>
+
+                                <div class="collapse" id="mobile_top_menu_icon_5">
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_5"><i class="fa fa-check-square"></i> All Tasks</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_5"><i class="fa fa-check-square"></i> New Task / Job / Sales Opportunity</a>
+
+                                    <a href="#mobile_menu51" class="list-group-item collapsed" data-bs-toggle="collapse" data-parent="#mobile_top_menu_icon_5" aria-expanded="false"><i class="fa fa-life-ring"></i> Support</a>
+                                    <div class="collapse menu_thirdLevel" id="mobile_menu51">
+                                        <a href="#" class="list-group-item" data-parent="#mobile_menu51"><i class="fa fa-ticket"></i> Open Tickets</a>
+                                        <a href="#" class="list-group-item" data-parent="#mobile_menu51"><i class="fa fa-star-o"></i> Customer Feedback</a>
+                                        <a href="#" class="list-group-item" data-parent="#mobile_menu51"><i class="fa fa-question-circle"></i> Knowledgebase</a>
+                                    </div>
+                                    <a href="#" class="list-group-item" data-parent="#top_menu_icon_5"><i class="fa fa-rocket"></i> Templates &amp; Playbooks</a>
+                                </div>
+
+                                <div class="collapse" id="mobile_top_menu_icon_7">
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-th-list"></i> Campaigns &amp; Experiments</a>
+                                    <a href="#mobile_menu71" class="list-group-item collapsed" data-bs-toggle="collapse" data-parent="#mobile_top_menu_icon_7" aria-expanded="false"><i class="fa fa-users"></i> Audiences &amp; Groups</a>
+                                    <div class="collapse menu_thirdLevel" id="mobile_menu71">
+                                        <a href="#" class="list-group-item" data-parent="#mobile_menu11"><i class="fa fa-edit"></i> Waivers / Petition Signers</a>
+                                    </div>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-align-justify"></i> Messages / Ads / Creative</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-plus"></i> New Message / Ad / Creative</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-th-list"></i> Sequences</a>
+
+                                    <a href="#mobile_top_menu_icon_71" class="list-group-item collapsed" data-bs-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-star"></i> Reviews &amp; Referrals</a>
+                                    <div class="collapse menu_thirdLevel" id="mobile_top_menu_icon_71">
+                                        <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_71"><i class="fa fa-star"></i> Review Intake Forms</a>
+                                        <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_71"><i class="fa fa-user-plus"></i> Refer a Friend</a>
+                                    </div>
+
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-sign-in"></i> Lead Intake</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_7"><i class="fa fa-sign-in"></i> Landing Pages</a>
+
+                                    <a href="#mobile_top_menu_icon_72" class="list-group-item collapsed" data-bs-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> Web Forms</a>
+                                    <div class="collapse menu_thirdLevel" id="mobile_top_menu_icon_72">
+                                        <a href="https://swiftcloud.io/form/my-forms" class="list-group-item" data-parent="#mobile_top_menu_icon_72"><i class="fa fa-list-alt"></i> My Forms</a>
+                                        <a href="https://swiftcloud.io/form/create-form" class="list-group-item" data-parent="#mobile_top_menu_icon_72"><i class="fa fa-plus-square"></i> Create New Web Form</a>
+                                    </div>
+                                </div>
+
+                                <div class="collapse" id="mobile_top_menu_icon_4">
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa-regular fa-calendar-days"></i> Calendar</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa fa-history fa-flip-horizontal"></i> Agenda</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa-regular fa-clock"></i> Timeclock</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa-regular fa-calendar-days"></i> Upcoming Appointments</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa-regular fa-calendar-plus"></i> Add Event</a>
+                                    <a href="#" class="list-group-item" data-parent="#mobile_top_menu_icon_4"><i class="fa-regular fa-calendar"></i> Schedulers</a>
+                                </div>
+
+                                <div class="collapse" id="mobile_top_menu_icon_6">
+                                    <a href="#" class="list-group-item" data-parent="#top_menu_icon_1"><i class="fa fa-exchange"></i> Accounting</a>
+                                    <a href="#incoming_submenu_mobile" class="list-group-item collapsed" data-bs-toggle="collapse" aria-expanded="false" data-parent="#mobile_top_menu_icon_6"><i class="fa fa-sign-in"></i> Incoming</a>
+                                    <div class="collapse menu_thirdLevel" id="incoming_submenu_mobile">
+                                        <a href="#" class="list-group-item" data-parent="#incoming_submenu_mobile"><i class="fa fa-shopping-cart"></i> SKUs / Items you sell</a>
+                                        <a href="#" class="list-group-item" data-parent="#incoming_submenu_mobile"><i class="fa fa-file-text"></i> Create New Invoice</a>
+                                        <a href="#" class="list-group-item" data-parent="#incoming_submenu_mobile"><i class="fa-regular fa-clock"></i> Invoices (Receivable)</a>
+                                        <a href="#" class="list-group-item" data-parent="#incoming_submenu_mobile"><i class="fa-regular fa-handshake"></i> Billing Agreements</a>
+                                    </div>
+                                    <a href="#outgoing_submenu_mobile" class="list-group-item collapsed" data-bs-toggle="collapse" aria-expanded="false" data-parent="#mobile_top_menu_icon_6"><i class="fa fa-sign-out"></i> Outgoing</a>
+                                    <div class="collapse menu_thirdLevel" id="outgoing_submenu_mobile">
+                                        <a href="#" class="list-group-item" data-parent="#outgoing_submenu_mobile"><i class="fa fa-share"></i> Purchase History</a>
+                                        <a href="#" class="list-group-item" data-parent="#outgoing_submenu_mobile"><i class="fa-regular fa-handshake"></i> Billing Agreements</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="search_block list-group-item">
+                                <form class="navbar-form" role="search">
+                                    <div class="input-group searchBox">
+                                        <input type="text" name="v" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="button-addon2">
+                                        <button class="btn btnSearch" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="mobileNavRight" class="mobileNav">
+                    <div class="overlay hidden"></div>
+                    <ul class="navbar-nav">
+                        <li>
+                            <div class="menu_icons list-group-item">
+                                <a href="#menu_right_icon_1" class="collapsed" data-bs-toggle="collapse" data-parent="#menu_icons" aria-expanded="false"><i class="fa fa-question-circle"></i></a>
+                                <a href="#menu_right_icon_2" class="collapsed" data-bs-toggle="collapse" data-parent="#menu_icons" aria-expanded="false"><i class="fa fa-gear"></i></a>
+                                <a href="#"><i class="fa fa-power-off"></i></a>
+                            </div>
+                            <div class="menu_icons_container">
+                                <div class="collapse menu_secondLevel" id="menu_right_icon_1">
+                                    <a href="https://swiftcloud.ai/support/" class="list-group-item" data-parent="#menu_icon_3"><i class="fa fa-question-circle"></i> This Page Help</a>
+                                    <a href="https://swiftcloud.ai/support/" class="list-group-item" data-parent="#menu_icon_3"><i class="fa fa-laptop"></i> Support Center</a>
+                                    <a href="https://swiftcloud.ai/support/resources" class="list-group-item" data-parent="#menu_icon_3"><i class="fa-regular fa-folder-open"></i>  Resource Library</a></a>
+                                </div>
+                                <div class="collapse menu_secondLevel" id="menu_right_icon_2">
+                                    <a href="javascript:;" class="list-group-item btnThemeMode" data-parent="#menu_icon_5"><i class="fa-regular fa-moon"></i> Change to Dark Mode</a>
+                                    <a href="#" class="list-group-item" data-parent="#menu_icon_5"><i class="fa fa-gear"></i> General Settings</a>
+                                    <a href="#" class="list-group-item" data-parent="#menu_icon_5"><i class="fa fa-chain"></i> URLs</a>
+                                    <a href="#" class="list-group-item" data-parent="#menu_icon_5"><i class="fa fa-dollar"></i> Financial Settings</a>
+                                    <a href="#" class="list-group-item" data-parent="#menu_icon_5"><i class="fa fa-key"></i> Change Password</a>
+                                    <a href="#audioSettingModal" class="list-group-item" data-parent="#menu_icon_5" data-toggle="modal"><i class="fa fa-volume-up"></i> Audio Settings</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--Container Main start-->
+        <div id="right-section" class="height-100 ">
+            <h4>Main Components</h4>
+        </div>
+        <!--Container Main end-->
+
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="js/swiftcloud_functions.js"></script>
+    </body>
+</html>

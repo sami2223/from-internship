@@ -1,0 +1,336 @@
+/* Global_URLInjector */
+#Global_URLInjector .panel {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 0;
+    border: 1px solid #DDD;
+}
+#Global_URLInjector .panel-default {
+    margin-bottom: 15px;
+}
+#Global_URLInjector .panel-heading {
+    color: #413c3c;
+    padding: 0;
+    border-radius: 4px;
+    position: relative;
+}
+#Global_URLInjector .panel-heading h3 {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+#Global_URLInjector .panel-heading a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+#Global_URLInjector .panel-heading a > i {
+    margin: 0 5px;
+}
+#Global_URLInjector .panel-heading.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#Global_URLInjector .panel-body {
+    padding: 0 15px;
+}
+
+#Global_URLInjector #URLInj_whiteBoxContainer .panel-heading {
+    background-color: #fff;
+}
+#Global_URLInjector #URLInj_whiteBoxContainer .panel-heading a{
+    color: #000;
+}
+#Global_URLInjector #URLInj_pinkBoxContainer .panel-heading {
+    background-color: #fef4f6;
+}
+#Global_URLInjector #URLInj_pinkBoxContainer .panel-heading a{
+    color: #6a2532;
+}
+#Global_URLInjector #URLInj_beigeContainer .panel-heading {
+    background-color: #fff6e2;
+}
+#Global_URLInjector #URLInj_beigeContainer .panel-heading a{
+    color: #5f3c00;
+}
+#Global_URLInjector #URLInj_greenContainer .panel-heading {
+    background-color: #f4fbeb;
+}
+#Global_URLInjector #URLInj_greenContainer .panel-heading a{
+    color: #4e6234;
+}
+#Global_URLInjector #URLInj_blueContainer .panel-heading {
+    background-color: #f3f9ff;
+}
+#Global_URLInjector #URLInj_blueContainer .panel-heading a{
+    color: #2d465f;
+}
+#Global_URLInjector #URLInj_grayContainer .panel-heading {
+    background-color: #eae8e8;
+}
+#Global_URLInjector #URLInj_grayContainer .panel-heading a{
+    color: #413c3c;
+}
+#Global_URLInjector #URLInj_shareContainer .panel-heading {
+    background-color: #5f3c00;
+}
+#Global_URLInjector #URLInj_shareContainer .panel-heading a{
+    color: #FFF;
+}
+#Global_URLInjector .panel-heading a:hover{
+    text-decoration: none;
+}
+#Global_URLInjector #URLInj_shareContainer #URLInj_shareBox .colHeading{
+    background-color: #5f3c00;
+    color: #FFF;
+}
+
+#Global_URLInjector input[type=checkbox].css-checkbox{
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+#Global_URLInjector input[type=checkbox].css-checkbox + label.css-checkbox-label{
+    padding-left: 30px;
+    /*height: 28px !important;*/
+    display: inline-block;
+    line-height: 28px;
+    background-repeat: no-repeat;
+    background-position: 0 4px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+#Global_URLInjector .addAdditionalVarsContainer input[type=checkbox].css-checkbox + label.css-checkbox-label{
+    height: 28px !important;
+}
+#Global_URLInjector input[type=checkbox].css-checkbox:checked + label.css-checkbox-label{
+    /*background-position: 0 -20px;*/
+    background-image: url(../images/check-box-check.png);
+}
+#Global_URLInjector label.css-checkbox-label {
+    background-image:url(../images/check-box.png);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#Global_URLInjector .publicBaseURLSelection,
+#Global_URLInjector .GlobalURLHashInput{
+    max-width: 250px;
+}
+#Global_URLInjector #btnGlobalURLCompressedURLCopyLink, 
+#Global_URLInjector #btnGlobalURLCompressedURLPreview,
+#Global_URLInjector #btnGlobalURLSuperLongURLCopyLink,
+#Global_URLInjector #btnGlobalURLSuperLongURLPreview{
+    margin: 0 0 0 5px;
+    background: transparent;
+    color: #125fad !important;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    line-height: 24px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+#Global_URLInjector #GlobalURLCompressedURLCopyLink,
+#Global_URLInjector #GlobalURLSuperLongURLCopyLink{
+    position: absolute;
+    left: -50000px;
+}
+#Global_URLInjector #URLInj_blue .dataInner .initialData {
+    border: 1px solid #125fad;
+    padding: 15px;
+    border-radius: 3px;
+    position: relative;
+}
+#Global_URLInjector .adjustTagScoreContainer .bootstrap-tagsinput {
+    max-width: 250px;
+}
+#Global_URLInjector .used_variables_container .form-inline p {
+    margin-bottom: 1rem
+}
+#Global_URLInjector .used_variables_container .form-inline:hover a {
+    display: inline-block;
+}
+#Global_URLInjector #URLInj_beige .dataInner .initialData {
+    border: 1px solid #6a2532;
+    padding: 15px;
+    border-radius: 3px;
+    position: relative;
+}
+#Global_URLInjector .campaignContentImg a {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    display: block;
+    border: 3px dashed #125fad;
+    background: #FFF;
+}
+#Global_URLInjector .campaignContentImg a > i {
+    background-color: #428bca;
+    background-image: linear-gradient(to bottom,#428bcc,#428bca);
+    background-repeat: repeat-x;
+    border-color: #428bca;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 10px 15px;
+}
+#Global_URLInjector .post_to_social {
+    display: inline-block;
+    padding: 0px 5px;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 60px;
+}
+#Global_URLInjector .Post_to_Facebook{
+    background: #4267B2;
+    color: #fff;
+}
+#Global_URLInjector .Post_to_Instagram{
+    background: #bc2a8d;
+    color: #fff;
+}
+#Global_URLInjector .Post_to_LinkedIn{
+    background: #0e76a8;
+    color: #fff;
+}
+#Global_URLInjector .Post_to_Twitter{
+    background: #00acee;
+    color: #fff;
+}
+#Global_URLInjector .Post_to_Google{
+    background: #4285F4;
+    color: #fff;
+}
+#Global_URLInjector .Post_to_Pinterest{
+    background: #E60023;
+    color: #fff;
+}
+#Global_URLInjector .Post_to_YouTube{
+    background: #FF0000;
+    color: #fff;
+}
+#Global_URLInjector .folderIcon{
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+#Global_URLInjector .folderIcon img {
+    max-height: 100px;
+}
+#Global_URLInjector .btnDocFormIconEdit{
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 24px;
+    height: 24px;
+    border: none;
+}
+#Global_URLInjector .shareAction ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#Global_URLInjector .shareAction ul li{
+    background: #666666;
+    border-radius: 50%;
+    display: inline-block;
+    height: 30px;
+    margin: 5px 2px;
+    width: 30px;
+    line-height: 30px;
+}
+#Global_URLInjector .shareAction button {
+    background-color: #666666;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    outline: medium none;
+    text-decoration: none;
+}
+#Global_URLInjector .shareAction > ul li.paper-plane-bg {
+    background-color: #666666 !important;
+}
+#Global_URLInjector .shareAction > ul li.paper-plane-bg {
+    background-color: #666666 !important;
+}
+#Global_URLInjector .shareAction > ul li.fb-bg {
+    background-color: #3B5998 !important;
+}
+#Global_URLInjector .shareAction > ul li.twitter-bg {
+    background-color: #55ACEE !important;
+}
+#Global_URLInjector .shareAction > ul li.paper-plane-bg {
+    background-color: #666666 !important;
+}
+#Global_URLInjector .shareAction > ul li.linkedin-bg {
+    background-color: #2274B9 !important;
+}
+#Global_URLInjector .shareAction > ul li.google-bg {
+    background-color: #E02F2F !important;
+}
+#Global_URLInjector .shareAction > ul li.google-bg a {
+    font-size: 14px;
+}
+#Global_URLInjector .shareAction ul li.pinterest-bg {
+    background-color: #CA2028 !important;
+}
+#Global_URLInjector .shareAction ul li a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+#Global_URLInjector #URLInj_pinkBox .pinkBoxBorder{
+    border: 1px solid #6a2532;
+    padding: 10px;
+    border-radius: 0.25rem;
+    position: relative;
+}
+#Global_URLInjector #URLInj_pinkBox .pinkBoxBorder .btnDeletePinkBox{
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    visibility: hidden;
+}
+#Global_URLInjector #URLInj_pinkBox .pinkBoxBorder:hover .btnDeletePinkBox{
+    visibility: visible;
+}
+#Global_URLInjector #URLInj_pinkBox .urlTypeList{
+    max-width: 200px;
+}
+#Global_URLInjector #URLInj_pinkBox .agendaList{
+    max-width: 140px;
+}
+#Global_URLInjector #URLInj_pinkBox .userWillGoOpts small{
+    color: #8f8f8f
+}
+#Global_URLInjector #URLInj_pinkBox .tagScoreNo{
+    text-align: left !important;
+    max-width: 150px;
+}

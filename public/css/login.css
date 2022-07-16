@@ -1,0 +1,207 @@
+.loginSection{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginContainer{
+    max-width: 330px;
+    margin: 0 15px;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 5px 3px 15px 0px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+.loginContainer .signup-or-separator{
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    height: 34px;
+    position: relative;
+}
+.loginContainer .signup-or-separator h1{
+    line-height: 16px;
+    padding: 0;
+    margin: 0;
+}
+.loginContainer .signup-or-separator .signup-or-separator--text{
+    color: #82888a;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #fff;
+    display: inline-block;
+    padding: 8px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+hr{
+    background: rgba(0, 0, 0, 0.5);
+}
+.loginContainer .signup-or-separator hr{
+    margin: -16px auto 10px;
+    width: 100%;    
+}
+.loginContainer a.btn-social{
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    height: 50px;
+    line-height: 46px;
+    padding: 0;
+    width: 50px;
+    margin: 0 3px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.loginContainer a.btn-social i{
+    font-size: 22px;
+    margin: 0;
+    vertical-align: middle;
+    line-height: 48px;
+}
+.loginContainer a.btn-facebook {
+    background: #3b5998;
+    border-color: #3b5998;
+}
+.loginContainer a.btn-google {
+    background: #a54f52;
+    border-color: #a54f52;
+}
+.loginContainer a.btnComingSoon {
+    background: #b3b3b3 !important;
+    border-color: #b3b3b3 !important;
+}
+.forgotLink {
+    color: #0275d8 !important;
+    text-decoration: none;
+}
+.forgotLink:hover {
+    text-decoration: underline;
+}
+.remember-me{
+    font-size: 12px;
+}
+#loginModalButton{
+    background-color: #fe7201;
+    border-color: #fe7201;
+}
+.termsCondition {
+    color: #999999;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.top-footer {
+    background: rgba(69, 69, 69, 0.65);
+    color: #FFF;
+    font-size: 12px;
+    padding: 10px 0 8px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.top-footer .col-lg-4 > a {
+    color: #e1e1e1;
+    text-decoration: none;
+}
+.top-footer .col-lg-4 > a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+.top-footer .poweredby {
+    vertical-align: middle;
+    line-height: 30px;
+}
+.top-footer .poweredby img {
+    margin-left: 4px;
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
+}
+.glyphicon {
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    position: relative;
+    top: 1px;
+}
+.language-switcher-container .dropdown-toggle {
+    background: rgb(140, 140, 140) !important;
+    border-color: rgb(140, 140, 140) !important;
+    color: #FFF !important;
+}
+.selectLanuage{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 200px;
+}
+/* custom checkbox */
+input[type=checkbox].css-checkbox{
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+input[type=checkbox].css-checkbox + label.css-checkbox-label{
+    padding-left: 30px;
+    /*height: 20px;*/
+    display: inline-block;
+    line-height: 28px;
+    background-repeat: no-repeat;
+    background-position: 0 4px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+input[type=checkbox].css-checkbox:checked + label.css-checkbox-label{
+    /*background-position: 0 -20px;*/
+    background-image: url(../images/check-box-check.png);
+}
+label.css-checkbox-label {
+    background-image:url(../images/check-box.png);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+label.css-checkbox-label.disabled {
+    background-image:url(../images/check-box-disabled.png);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (max-width: 767px){
+    .loginSection {
+        align-items: flex-start!important;
+        padding-top: 25px;
+    }
+    .loginContainer a.btn-social {
+        height: 30px;
+        width: 30px;
+        line-height: 26px;
+    }
+    .loginContainer a.btn-social i {
+        line-height: 30px;
+        font-size: 16px;
+    }
+    footer {
+        position: relative !important;
+    }
+}

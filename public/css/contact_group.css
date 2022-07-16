@@ -1,0 +1,32 @@
+#tblContacts_wrapper .dataTables_filter{
+    top: -37px;
+}
+#tblContacts .contactListCompany{
+    margin: 0 8px;
+    background: #e7e7e7;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+#tblContacts .contactListQuickTools {
+    display: none;
+}
+#tblContacts tbody tr:hover .contactListQuickTools {
+    display: inline-block;
+    margin-right: 8px;
+}
+#tblContacts .contactListQuickTools a{
+    color: #186abc;
+    margin: 0 3px;
+}
+.btnTHSoryByTags {
+    background: none !important;
+    color: #fff;
+}
+.btn-helpDeskTask{
+    margin-top: 2px;
+}
+.tableColChkSpan{
+    background: #a8c87e;
+    color: #FFF;
+}

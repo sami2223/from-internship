@@ -1,0 +1,125 @@
+.table#tblAgreements {
+    margin-top: 0 !important;
+    border-top: 0;
+    background: #FFF;
+}
+.table#tblAgreements .colAction {
+    height: 32px;
+}
+.table#tblAgreements .colAction a.btn-colAction {
+    display: none;
+}
+.table#tblAgreements .colAction:hover a, .table#tblAgreements tr:hover .colAction a {
+    display: inline-block;
+    opacity: 1;
+}
+.table#tblAgreements .colAction a {
+    position: relative;
+    opacity: 0.5;
+}
+.table#tblAgreements .colAction a:hover {
+    opacity: 1;
+}
+.table#tblAgreements .batch-action-container {
+    padding: 10px;
+    background: #FFF;
+    border-radius: 4px;
+}
+.btn-helpDeskTask, .btn-DriveFilterView {
+    margin-top: 2px;
+}
+.dataTables_filter{
+    position: absolute;
+    top: -38px;
+    left: 75px;
+}
+.btnTHTypeFilter{
+    color: #FFF;
+}
+#filterByType{
+    position: absolute;
+    left: -50000px;
+}
+.filterByStatusContainer .bootstrap-select {
+    z-index: 1 !important;
+}
+.filterByStatusContainer .bootstrap-select .dropdown-toggle{
+    background-color: transparent;
+    border-color: transparent;
+    color: #FFF !important;
+}
+.filterByStatusContainer .bootstrap-select > .dropdown-toggle:after{
+    display: none;
+}
+.filterByStatusContainer .bootstrap-select .dropdown-toggle .filter-option-inner-inner i{
+    width: 30px;
+    text-align: center;
+    color: #FFF !important;
+    font-size: .875rem;
+}
+.filterByStatusContainer .bootstrap-select .dropdown-toggle:hover .filter-option-inner-inner i{
+    color: #212529 !important;
+}
+.filterByStatusContainer .bootstrap-select .dropdown-menu li a.active.selected.agreementFilterNull, 
+.filterByStatusContainer .bootstrap-select .dropdown-menu li a.agreementFilterNull:hover, 
+.filterByStatusContainer bootstrap-select .dropdown-menu li a.agreementFilterNull:focus  {
+    background: #f7f7f7 !important;    
+    color: #333 !important;
+}
+.agreementFilterActive {
+    background-color: #5cb85c !important;
+    color: #FFF !important;
+}
+.agreementFilterLate1 {
+    background-color: #f0ff00 !important;
+    color: #000 !important;
+}
+.agreementFilterLate2{
+    background-color: #fe7201 !important;
+    color: #FFF !important;
+}
+.agreementFilterCancelled, .agreementFilterBanned, .agreementFilterBlocked, .agreementFilterChargeback {
+    background-color: #d9534f !important;
+    color: #FFF !important;
+}
+.failureAgreement {
+    color: #d9534f;
+}
+.green_bg {
+    background-color: #5cb85c !important;
+}
+.red_bg{
+    background-color: var(--bs-trash) !important;
+}
+.accounting_total_col.totalBgGreen th {
+    background-color: #419641 !important;
+    color: #FFF;
+}
+
+.baseProductContainer{
+    border: 1px solid #eae8e8;
+    padding: 8px;
+    border-radius: 4px;
+}
+.baseProductQualify {
+    position: relative;
+}
+.baseProductQualify .btnRemoveQualifyingProduct{
+    background: red;
+    color: #FFF;
+    border: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    right: 2px;
+    top: -10px;
+    display: none;
+}
+.baseProductQualify:hover .btnRemoveQualifyingProduct{
+    display: block;
+}
+.initialPayment, .ledgerCredit{
+    width: 100px !important;
+}

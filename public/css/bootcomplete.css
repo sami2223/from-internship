@@ -1,0 +1,44 @@
+.bc-wrapper {
+    position: relative;
+}
+.bc-wrapper .bc-menu {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    display: none;
+}
+.input-group .bc-wrapper .bc-menu {
+    top: 38px;
+}
+.bc-menu a.list-group-item {
+    color: #333;
+}
+.bc-menu a.list-group-item:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+.bc-menu .bc-user-avatar {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+.userSelectedInput{
+    padding-left: 35px;
+}
+.selectedUserAvatar{
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
+}
+.bc-menu a[data-id="0"], .bc-menu a[data-id="0"]:hover{
+    background-color:#fe7201 !important;
+    color: #FFF !important;
+}
+.invisible_field {
+    border-color: transparent !important;
+    background: transparent !important;
+}
