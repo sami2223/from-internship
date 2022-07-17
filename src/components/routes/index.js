@@ -3,6 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import ContactsPage from "../../pages/ContactsPage";
 import SettingsPage from "../../pages/SettingsPage";
+import UrlPage from "../../pages/UrlPage";
 
 
 const AllRoutes = () => {
@@ -14,7 +15,7 @@ const AllRoutes = () => {
             <Routes>
                 <Route path="/settings" element={<SettingsPage />} />
                 <Route path="/contacts" element={<ContactsPage />} />
-
+                <Route path="/urls" element={<UrlPage/>}/>
             </Routes>
         </>
     );

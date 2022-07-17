@@ -1,13 +1,13 @@
 import './App.css';
-import { BrowserRouter } from "react-router-dom";
+
 import AllRoutes from "./components/routes/index";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
+      
         <AllRoutes />
-      </BrowserRouter>
+      
     </>
   );
 }
