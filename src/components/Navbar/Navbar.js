@@ -68,9 +68,9 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="drive.html" title="Drive / Storage"><i className="fa fa-database"></i></Link>
+                            <Link to="#" title="Drive / Storage"><i className="fa fa-database"></i></Link>
                             <ul style={{ top: "262px", left: "79px" }}>
-                                <li><Link to="#"><i className="fa fa-database"></i> Drive</Link> </li>
+                                <li><Link to="/drive"><i className="fa fa-database"></i> Drive</Link> </li>
                                 <li><Link to="#"><i className="fa fa-cloud-upload"></i> Upload</Link> </li>
                                 <li><Link to="#"><i className="fa-regular fa-file"></i> New Doc</Link> </li>
                             </ul>
