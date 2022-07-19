@@ -1,11 +1,18 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Modal } from "bootstrap";
 import "./Drive.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as Icons from '@fortawesome/free-solid-svg-icons';
-import {faClone,faFileZipper,faFileVideo,faFileAudio, faFilePdf} from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as Icons from "@fortawesome/free-solid-svg-icons";
+import {
+  faClone,
+  faFileZipper,
+  faFileVideo,
+  faFileAudio,
+  faFilePdf,
+} from "@fortawesome/free-regular-svg-icons";
 
 const Drive = () => {
+  const [addSearchInput, setAddSearchInput] = useState(false);
 
   const newDocModalRef = useRef();
   const contactsSortByTagModalRef = useRef();
@@ -44,7 +51,6 @@ const Drive = () => {
   //   };
   return (
     <>
-    
       <div className="row g-0">
         <div className="col" id="page-urls">
           <div className="row">
@@ -87,9 +93,7 @@ const Drive = () => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        
-                        <FontAwesomeIcon icon={Icons.faPlus} />
-                        {" "}
+                        <FontAwesomeIcon icon={Icons.faPlus} />{" "}
                         <span className="d-none d-md-inline">Add New</span>
                       </button>
                       <ul
@@ -106,9 +110,7 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            
-                            <FontAwesomeIcon icon={Icons.faFile} />{" "}
-                             Doc
+                            <FontAwesomeIcon icon={Icons.faFile} /> Doc
                           </a>
                         </li>
                         <li>
@@ -121,13 +123,11 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                             
-                            <FontAwesomeIcon icon={Icons.faTable} />{" "}
-                            Spreadsheet
+                            <FontAwesomeIcon icon={Icons.faTable} /> Spreadsheet
                           </a>
                         </li>
                         <li>
-                        <a
+                          <a
                             href
                             onClick={(e) => {
                               e.preventDefault();
@@ -136,14 +136,12 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            
-                            <FontAwesomeIcon icon={Icons.faTable} /> {" "}
-                            Estimate / Invoice /
-                            Etc.
+                            <FontAwesomeIcon icon={Icons.faTable} /> Estimate /
+                            Invoice / Etc.
                           </a>
                         </li>
                         <li>
-                        <a
+                          <a
                             href
                             onClick={(e) => {
                               e.preventDefault();
@@ -152,13 +150,11 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            
-                            <FontAwesomeIcon icon={Icons.faThList} />{" "}
-                             Web Form
+                            <FontAwesomeIcon icon={Icons.faThList} /> Web Form
                           </a>
                         </li>
                         <li>
-                        <a
+                          <a
                             href
                             onClick={(e) => {
                               e.preventDefault();
@@ -167,15 +163,12 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                             
-                            <FontAwesomeIcon icon={Icons.faFolder} />{" "}
-                            
-                            Folder /{" "}
-                            <FontAwesomeIcon icon={Icons.faUsers}/> Workroom
+                            <FontAwesomeIcon icon={Icons.faFolder} /> Folder /{" "}
+                            <FontAwesomeIcon icon={Icons.faUsers} /> Workroom
                           </a>
                         </li>
                         <li>
-                        <a
+                          <a
                             href
                             onClick={(e) => {
                               e.preventDefault();
@@ -184,11 +177,11 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <FontAwesomeIcon icon={Icons.faEnvelope}/> Envelope
+                            <FontAwesomeIcon icon={Icons.faEnvelope} /> Envelope
                           </a>
                         </li>
                         <li>
-                        <a
+                          <a
                             href
                             onClick={(e) => {
                               e.preventDefault();
@@ -197,12 +190,12 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <FontAwesomeIcon icon={Icons.faShoppingCart}/> SKU / Item
-                            You Sell
+                            <FontAwesomeIcon icon={Icons.faShoppingCart} /> SKU
+                            / Item You Sell
                           </a>
                         </li>
                         <li>
-                        <a
+                          <a
                             href
                             onClick={(e) => {
                               e.preventDefault();
@@ -211,12 +204,12 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <FontAwesomeIcon icon={Icons.faEllipsisH}/> Sequence of
-                            Events
+                            <FontAwesomeIcon icon={Icons.faEllipsisH} />{" "}
+                            Sequence of Events
                           </a>
                         </li>
                         <li>
-                        <a
+                          <a
                             href
                             onClick={(e) => {
                               e.preventDefault();
@@ -225,12 +218,13 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <FontAwesomeIcon icon={Icons.faCalendar}/> Scheduler
+                            <FontAwesomeIcon icon={Icons.faCalendar} />{" "}
+                            Scheduler
                           </a>
                         </li>
                         <li>
                           <a className="dropdown-item" href="#">
-                            <FontAwesomeIcon icon={Icons.faClone}/> Template
+                            <FontAwesomeIcon icon={Icons.faClone} /> Template
                           </a>
                         </li>
                         <li className="dropdown-submenu">
@@ -242,7 +236,7 @@ const Drive = () => {
                             aria-expanded="false"
                           >
                             <FontAwesomeIcon icon={Icons.faFilter} />
-                             1-Click Funnels
+                            1-Click Funnels
                           </a>
                           <ul
                             className="dropdown-menu"
@@ -252,96 +246,96 @@ const Drive = () => {
                               <a
                                 tabindex="-1"
                                 href
-                            onClick={(e) => {
-                              e.preventDefault();
-                              showModal(freeBaitLeadGenRef);
-                            }}
-                            className="dropdown-item"
-                            style={{ cursor: "pointer" }}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  showModal(freeBaitLeadGenRef);
+                                }}
+                                className="dropdown-item"
+                                style={{ cursor: "pointer" }}
                               >
                                 Free Bait + LeadGen
                               </a>
                             </li>
                             <li className="dropdown-item">
-                            <a
+                              <a
                                 tabindex="-1"
                                 href
-                            onClick={(e) => {
-                              e.preventDefault();
-                              showModal(directSellUpsellRef);
-                            }}
-                            className="dropdown-item"
-                            style={{ cursor: "pointer" }}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  showModal(directSellUpsellRef);
+                                }}
+                                className="dropdown-item"
+                                style={{ cursor: "pointer" }}
                               >
                                 Direct Sell + Upsell
                               </a>
                             </li>
                             <li className="dropdown-item">
-                            <a
+                              <a
                                 tabindex="-1"
                                 href
-                            onClick={(e) => {
-                              e.preventDefault();
-                              showModal(qualifierAppointmentSchedulerRef);
-                            }}
-                            className="dropdown-item"
-                            style={{ cursor: "pointer" }}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  showModal(qualifierAppointmentSchedulerRef);
+                                }}
+                                className="dropdown-item"
+                                style={{ cursor: "pointer" }}
                               >
                                 Qualifier + Appointment Scheduler
                               </a>
                             </li>
                             <li className="dropdown-item">
-                            <a
+                              <a
                                 tabindex="-1"
                                 href
-                            onClick={(e) => {
-                              e.preventDefault();
-                              showModal(newtoMarketValidatorRef);
-                            }}
-                            className="dropdown-item"
-                            style={{ cursor: "pointer" }}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  showModal(newtoMarketValidatorRef);
+                                }}
+                                className="dropdown-item"
+                                style={{ cursor: "pointer" }}
                               >
                                 New-to-Market Validator
                               </a>
                             </li>
                             <li className="dropdown-item">
-                            <a
+                              <a
                                 tabindex="-1"
                                 href
-                            onClick={(e) => {
-                              e.preventDefault();
-                              showModal(freeShippingUpsellsRef);
-                            }}
-                            className="dropdown-item"
-                            style={{ cursor: "pointer" }}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  showModal(freeShippingUpsellsRef);
+                                }}
+                                className="dropdown-item"
+                                style={{ cursor: "pointer" }}
                               >
                                 Free w/ Shipping + Upsells
                               </a>
                             </li>
                             <li className="dropdown-item">
-                            <a
+                              <a
                                 tabindex="-1"
                                 href
-                            onClick={(e) => {
-                              e.preventDefault();
-                              showModal(freeTripwireSaleRef);
-                            }}
-                            className="dropdown-item"
-                            style={{ cursor: "pointer" }}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  showModal(freeTripwireSaleRef);
+                                }}
+                                className="dropdown-item"
+                                style={{ cursor: "pointer" }}
                               >
                                 Free &gt; Tripwire &gt; Sale
                               </a>
                             </li>
                             <li className="dropdown-item">
-                            <a
+                              <a
                                 tabindex="-1"
                                 href
-                            onClick={(e) => {
-                              e.preventDefault();
-                              showModal(freeBaitWebinarVideoRef);
-                            }}
-                            className="dropdown-item"
-                            style={{ cursor: "pointer" }}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  showModal(freeBaitWebinarVideoRef);
+                                }}
+                                className="dropdown-item"
+                                style={{ cursor: "pointer" }}
                               >
                                 Free Bait &gt; Webinar / Video
                               </a>
@@ -349,7 +343,7 @@ const Drive = () => {
                           </ul>
                         </li>
                         <li>
-                        <a
+                          <a
                             href
                             onClick={(e) => {
                               e.preventDefault();
@@ -358,11 +352,12 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <FontAwesomeIcon icon={Icons.faPhone}/> Phone Number
+                            <FontAwesomeIcon icon={Icons.faPhone} /> Phone
+                            Number
                           </a>
                         </li>
                         <li>
-                        <a
+                          <a
                             href
                             onClick={(e) => {
                               e.preventDefault();
@@ -371,20 +366,20 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <FontAwesomeIcon icon={Icons.faSignIn}/> Paywall
+                            <FontAwesomeIcon icon={Icons.faSignIn} /> Paywall
                           </a>
                         </li>
                         <li>
-                        <a
+                          <a
                             href
                             onClick={(e) => {
                               e.preventDefault();
-                            //   showModal();
+                              //   showModal();
                             }}
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                           <FontAwesomeIcon icon={Icons.faExchange} /> Ledger
+                            <FontAwesomeIcon icon={Icons.faExchange} /> Ledger
                           </a>
                         </li>
                         <li>
@@ -402,7 +397,8 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newSignalMonitorModal"
                           >
-                            <FontAwesomeIcon icon={Icons.faBullseye} /> Signal Monitor
+                            <FontAwesomeIcon icon={Icons.faBullseye} /> Signal
+                            Monitor
                           </a>
                         </li>
                       </ul>
@@ -413,8 +409,7 @@ const Drive = () => {
                       type="button"
                       className="btn btn-secondary btnUpload"
                     >
-                      
-                      <FontAwesomeIcon icon={Icons.faCloudArrowUp}/>{" "}
+                      <FontAwesomeIcon icon={Icons.faCloudArrowUp} />{" "}
                       <span className="d-none d-md-inline">Upload</span>
                     </button>
                   </li>
@@ -431,8 +426,7 @@ const Drive = () => {
                       data-placement="top"
                       title="Drive"
                     >
-                      
-                      <FontAwesomeIcon icon={Icons.faDatabase}/>
+                      <FontAwesomeIcon icon={Icons.faDatabase} />
                     </a>
                   </li>
                   <li className="nav-item" role="presentation">
@@ -448,7 +442,6 @@ const Drive = () => {
                       data-placement="top"
                       title="Small Icons"
                     >
-                      
                       <FontAwesomeIcon icon={Icons.faTableCellsLarge} />
                     </a>
                   </li>
@@ -465,7 +458,7 @@ const Drive = () => {
                       data-placement="top"
                       title="Large Icons"
                     >
-                      <FontAwesomeIcon icon={Icons.faStop}/>
+                      <FontAwesomeIcon icon={Icons.faStop} />
                     </a>
                   </li>
                   <li className="nav-item nav-item-trash" role="presentation">
@@ -476,7 +469,7 @@ const Drive = () => {
                       data-placement="top"
                       title="View Templates"
                     >
-                      <FontAwesomeIcon icon={faClone}/>
+                      <FontAwesomeIcon icon={faClone} />
                     </a>
                   </li>
                   <li className="nav-item nav-item-trash" role="presentation">
@@ -502,7 +495,7 @@ const Drive = () => {
                       type="button"
                       className="btn btn-secondary btnUpload me-1"
                     >
-                      <FontAwesomeIcon icon={Icons.faCloudArrowUp}/>
+                      <FontAwesomeIcon icon={Icons.faCloudArrowUp} />
                     </button>
                   </li>
                   <li className="nav-item">
@@ -514,8 +507,7 @@ const Drive = () => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        
-                        <FontAwesomeIcon icon={Icons.faPlus}/>
+                        <FontAwesomeIcon icon={Icons.faPlus} />
                       </button>
                       <ul
                         className="dropdown-menu"
@@ -527,7 +519,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newDocModal"
                           >
-                            <FontAwesomeIcon icon={Icons.faFile}/> Doc
+                            <FontAwesomeIcon icon={Icons.faFile} /> Doc
                           </a>
                         </li>
                         <li>
@@ -536,7 +528,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newSheetModal"
                           >
-                            <FontAwesomeIcon icon={Icons.faTable}/> Spreadsheet
+                            <FontAwesomeIcon icon={Icons.faTable} /> Spreadsheet
                           </a>
                         </li>
                         <li>
@@ -545,8 +537,8 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newInvoiceModal"
                           >
-                            <FontAwesomeIcon icon={Icons.faTable}/> Estimate / Invoice /
-                            Etc.
+                            <FontAwesomeIcon icon={Icons.faTable} /> Estimate /
+                            Invoice / Etc.
                           </a>
                         </li>
                         <li>
@@ -555,7 +547,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newWebFormModal"
                           >
-                            <FontAwesomeIcon icon={Icons.faThList}/> Web Form
+                            <FontAwesomeIcon icon={Icons.faThList} /> Web Form
                           </a>
                         </li>
                         <li>
@@ -565,7 +557,7 @@ const Drive = () => {
                             href="#newFolderWorkroomModal"
                           >
                             <FontAwesomeIcon icon={Icons.faFolder} /> Folder /{" "}
-                            <FontAwesomeIcon icon={Icons.faUsers}/> Workroom
+                            <FontAwesomeIcon icon={Icons.faUsers} /> Workroom
                           </a>
                         </li>
                         <li>
@@ -574,7 +566,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newEnvelopeModal"
                           >
-                            <FontAwesomeIcon icon={Icons.faEnvelope}/> Envelope
+                            <FontAwesomeIcon icon={Icons.faEnvelope} /> Envelope
                           </a>
                         </li>
                         <li>
@@ -583,8 +575,8 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newItemModal"
                           >
-                            <FontAwesomeIcon icon={Icons.faShoppingCart}/> SKU / Item
-                            You Sell
+                            <FontAwesomeIcon icon={Icons.faShoppingCart} /> SKU
+                            / Item You Sell
                           </a>
                         </li>
                         <li>
@@ -593,8 +585,8 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newSequenceModal"
                           >
-                            <FontAwesomeIcon icon={Icons.faEllipsisH}/> Sequence of
-                            Events
+                            <FontAwesomeIcon icon={Icons.faEllipsisH} />{" "}
+                            Sequence of Events
                           </a>
                         </li>
                         <li>
@@ -603,12 +595,13 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newSchedulerModal"
                           >
-                            <FontAwesomeIcon icon={Icons.faCalendar}/> Scheduler
+                            <FontAwesomeIcon icon={Icons.faCalendar} />{" "}
+                            Scheduler
                           </a>
                         </li>
                         <li>
                           <a className="dropdown-item" href="#">
-                            <FontAwesomeIcon icon={Icons.faClone}/> Template
+                            <FontAwesomeIcon icon={Icons.faClone} /> Template
                           </a>
                         </li>
                         <li className="dropdown-submenu">
@@ -619,7 +612,8 @@ const Drive = () => {
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                           >
-                            <FontAwesomeIcon icon={Icons.faFilter} /> 1-Click Funnels
+                            <FontAwesomeIcon icon={Icons.faFilter} /> 1-Click
+                            Funnels
                           </a>
                           <ul
                             className="dropdown-menu"
@@ -721,7 +715,8 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newSignalMonitorModal"
                           >
-                            <FontAwesomeIcon icon={Icons.faBullseye}/> Signal Monitor
+                            <FontAwesomeIcon icon={Icons.faBullseye} /> Signal
+                            Monitor
                           </a>
                         </li>
                       </ul>
@@ -752,7 +747,7 @@ const Drive = () => {
                             aria-selected="false"
                           >
                             {/* <FontAwesomeIcon icon={faDatabase}/> */}
-                             Drive
+                            Drive
                           </a>
                         </li>
                         <li>
@@ -779,12 +774,12 @@ const Drive = () => {
                             aria-controls="large-icon"
                             aria-selected="false"
                           >
-                            <FontAwesomeIcon icon={Icons.faStop}/> Large Icons
+                            <FontAwesomeIcon icon={Icons.faStop} /> Large Icons
                           </a>
                         </li>
                         <li>
                           <a className="dropdown-item" href="#">
-                          <FontAwesomeIcon icon={faClone}/> Templates
+                            <FontAwesomeIcon icon={faClone} /> Templates
                           </a>
                         </li>
                         <li>
@@ -819,17 +814,20 @@ const Drive = () => {
                           Name/Label{" "}
                           <button
                             type="button"
-                            className="btn btn-sm btnTHSoryByTags float-end me-3"
-                            onclick="event.stopPropagation();"
-                            data-bs-toggle="modal"
-                            data-bs-target="#ContactsSortByTagModal"
+                            className="btn btn-sm float-end me-3"
+                            onClick={(event) => {
+                              event.stopPropagation();
+                              showModal(contactsSortByTagModalRef);
+                            }}
+                            // data-bs-toggle="modal"
+                            // data-bs-target="#ContactsSortByTagModal"
                             title="Advanced Tag Search"
                           >
                             <span
                               data-toggle="tooltip"
                               title="Advanced Tag Search"
                             >
-                              <FontAwesomeIcon icon={Icons.faTag}/>
+                              <FontAwesomeIcon icon={Icons.faTag} />
                             </span>
                           </button>
                         </th>
@@ -845,7 +843,8 @@ const Drive = () => {
                         <td colspan="4" className="text-left">
                           <div className="batch-action-container">
                             <button className="btn btn-trash">
-                              <FontAwesomeIcon icon={Icons.faTrashAlt} /> Move to Trash
+                              <FontAwesomeIcon icon={Icons.faTrashAlt} /> Move
+                              to Trash
                             </button>
                             <button
                               className="btn btn-default"
@@ -853,20 +852,23 @@ const Drive = () => {
                               data-placement="top"
                               title="Archive (Searchable but Hidden)"
                             >
-                              <FontAwesomeIcon icon={Icons.faArchive}/> Archive
+                              <FontAwesomeIcon icon={Icons.faArchive} /> Archive
                             </button>
                             <button className="btn btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faTags}/> Apply Tag(s)
+                              <FontAwesomeIcon icon={Icons.faTags} /> Apply
+                              Tag(s)
                             </button>
                             <button className="btn btn-success">
-                              <FontAwesomeIcon icon={Icons.faUserPlus}/> Manage Sharing
+                              <FontAwesomeIcon icon={Icons.faUserPlus} /> Manage
+                              Sharing
                             </button>
                             <button className="btn btn-primary">
-                            <FontAwesomeIcon icon={Icons.faUnlock}/> Manage
+                              <FontAwesomeIcon icon={Icons.faUnlock} /> Manage
                               Permissions
                             </button>
                             <button className="btn btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faArrows}/> Move To...
+                              <FontAwesomeIcon icon={Icons.faArrows} /> Move
+                              To...
                             </button>
                           </div>
                         </td>
@@ -1032,7 +1034,13 @@ const Drive = () => {
                                                     </select>
                                                   </div>
                                                 </div>
-                                                <div className="col-lg-12 mb-3 FV_sortbytag_search_within_row display-none">
+                                                <div
+                                                  className={`col-lg-12 mb-3 FV_sortbytag_search_within_row ${
+                                                    !addSearchInput
+                                                      ? "display-none"
+                                                      : ""
+                                                  }`}
+                                                >
                                                   <input
                                                     type="text"
                                                     name="FV_sortbytag_search_within"
@@ -1041,15 +1049,18 @@ const Drive = () => {
                                                     className="form-control"
                                                   />
                                                   <a
-                                                    href=""
-                                                    onClick={(e) =>
-                                                      e.preventDefault()
-                                                    }
+                                                    href
+                                                    onClick={(e) => {
+                                                      e.preventDefault();
+                                                      setAddSearchInput(false);
+                                                    }}
                                                     className="btnRemoveSearchWithinTag"
                                                     data-toggle="tooltip"
                                                     title="Remove search"
                                                   >
-                                                    <FontAwesomeIcon icon={Icons.faClose}/>
+                                                    <FontAwesomeIcon
+                                                      icon={Icons.faClose}
+                                                    />
                                                   </a>
                                                 </div>
                                                 <div className="col-lg-12 FV_addsortbytag_search_within_row">
@@ -1059,16 +1070,24 @@ const Drive = () => {
                                                     data-toggle="tooltip"
                                                     title="Add filter condition"
                                                   >
-                                                    <FontAwesomeIcon icon={Icons.faPlus}/>
+                                                    <FontAwesomeIcon
+                                                      icon={Icons.faPlus}
+                                                    />
                                                   </button>
                                                   <button
                                                     type="button"
                                                     className="btnAddNewGreenDashed btnAddSortbyTagSearchCondition"
                                                     data-toggle="tooltip"
                                                     title="Search"
+                                                    onClick={(e)=>{
+                                                      e.preventDefault();
+                                                      setAddSearchInput(true);
+                                                    }
+                                                  }
                                                   >
-                                                    
-                                                    <FontAwesomeIcon icon={Icons.faSearch}/>
+                                                    <FontAwesomeIcon
+                                                      icon={Icons.faSearch}
+                                                    />
                                                   </button>
                                                   <div className="hidden_FV_sortbytag_filter_condition_row display-none">
                                                     <div className="input-group mb-3">
@@ -1100,7 +1119,9 @@ const Drive = () => {
                                                       data-toggle="tooltip"
                                                       title="Remove filter"
                                                     >
-                                                      <FontAwesomeIcon icon={Icons.faClose}/>
+                                                      <FontAwesomeIcon
+                                                        icon={Icons.faClose}
+                                                      />
                                                     </a>
                                                   </div>
                                                 </div>
@@ -1131,29 +1152,33 @@ const Drive = () => {
                                       type="button"
                                       className="btn btn-default btnCloseFilteredView"
                                     >
-                                      
-                                      <FontAwesomeIcon icon={Icons.faClose}/>
-                                       Cancel
+                                      <FontAwesomeIcon icon={Icons.faClose} />
+                                      Cancel
                                     </button>
                                     <button
                                       className="btn btn-secondary btnSaveFilteredView"
                                       data-toggle="modal"
                                       data-target="#newFilterModal"
                                     >
-                                      <FontAwesomeIcon icon={Icons.faSave}/> Save
-                                      Filtered View{" "}
-                                      <FontAwesomeIcon icon={Icons.faBullseye}/>
+                                      <FontAwesomeIcon icon={Icons.faSave} />{" "}
+                                      Save Filtered View{" "}
+                                      <FontAwesomeIcon
+                                        icon={Icons.faBullseye}
+                                      />
                                     </button>
                                     <button
                                       className="btn btn-primary"
                                       id="viewFilterResult"
                                     >
-                                      <FontAwesomeIcon icon={Icons.faCheck}/> View
-                                      Results <FontAwesomeIcon icon={Icons.faBullseye}/>
+                                      <FontAwesomeIcon icon={Icons.faCheck} />{" "}
+                                      View Results{" "}
+                                      <FontAwesomeIcon
+                                        icon={Icons.faBullseye}
+                                      />
                                     </button>
                                     <button className="btn btnDeleteFilterView display-none">
-                                      <FontAwesomeIcon icon={Icons.faTrash}/> Delete
-                                      Filtered View
+                                      <FontAwesomeIcon icon={Icons.faTrash} />{" "}
+                                      Delete Filtered View
                                     </button>
                                   </div>
                                 </form>
@@ -1163,8 +1188,8 @@ const Drive = () => {
                                 <ul id="savedFilteredList">
                                   <li>
                                     <a href="#" className="btn btn-default">
-                                    <FontAwesomeIcon icon={Icons.faFolder}/> Real
-                                      estate listing
+                                      <FontAwesomeIcon icon={Icons.faFolder} />{" "}
+                                      Real estate listing
                                     </a>
                                     <a
                                       href
@@ -1173,7 +1198,7 @@ const Drive = () => {
                                       title="Edit"
                                       className="editFiltered"
                                     >
-                                      <FontAwesomeIcon icon={Icons.faEdit}/>
+                                      <FontAwesomeIcon icon={Icons.faEdit} />
                                     </a>
                                     <a
                                       href
@@ -1182,13 +1207,13 @@ const Drive = () => {
                                       title="Delete"
                                       className="deleteFilter"
                                     >
-                                      <FontAwesomeIcon icon={Icons.faTrash}/>
+                                      <FontAwesomeIcon icon={Icons.faTrash} />
                                     </a>
                                   </li>
                                   <li>
                                     <a href="#" className="btn btn-default">
-                                      <FontAwesomeIcon icon={Icons.faCheck}/> Plumber
-                                      Transaction
+                                      <FontAwesomeIcon icon={Icons.faCheck} />{" "}
+                                      Plumber Transaction
                                     </a>
                                     <a
                                       href
@@ -1197,7 +1222,7 @@ const Drive = () => {
                                       title="Edit"
                                       className="editFiltered"
                                     >
-                                      <FontAwesomeIcon icon={Icons.faEdit}/>
+                                      <FontAwesomeIcon icon={Icons.faEdit} />
                                     </a>
                                     <a
                                       href
@@ -1206,13 +1231,13 @@ const Drive = () => {
                                       title="Delete"
                                       className="deleteFilter"
                                     >
-                                      <FontAwesomeIcon icon={Icons.faTrash}/>
+                                      <FontAwesomeIcon icon={Icons.faTrash} />
                                     </a>
                                   </li>
                                   <li>
                                     <a href="#" className="btn btn-default">
-                                      <FontAwesomeIcon icon={Icons.faUser}/> Doctors
-                                      Appointment
+                                      <FontAwesomeIcon icon={Icons.faUser} />{" "}
+                                      Doctors Appointment
                                     </a>
                                     <a
                                       href
@@ -1221,7 +1246,7 @@ const Drive = () => {
                                       title="Edit"
                                       className="editFiltered"
                                     >
-                                      <FontAwesomeIcon icon={Icons.faEdit}/>
+                                      <FontAwesomeIcon icon={Icons.faEdit} />
                                     </a>
                                     <a
                                       href
@@ -1230,7 +1255,7 @@ const Drive = () => {
                                       title="Delete"
                                       className="deleteFilter"
                                     >
-                                      <FontAwesomeIcon icon={Icons.faTrash}/>
+                                      <FontAwesomeIcon icon={Icons.faTrash} />
                                     </a>
                                   </li>
                                 </ul>
@@ -1278,8 +1303,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1324,7 +1348,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1358,7 +1382,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan archiveIconBg">
-                          <FontAwesomeIcon icon={faFileZipper}/>
+                            <FontAwesomeIcon icon={faFileZipper} />
                           </span>
                         </td>
                         <td>
@@ -1422,7 +1446,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1439,8 +1463,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Download"
                           >
-                            
-                            <FontAwesomeIcon icon={Icons.faCloudArrowDown}/>
+                            <FontAwesomeIcon icon={Icons.faCloudArrowDown} />
                           </a>
                           <a
                             href
@@ -1466,7 +1489,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan videoIconBg">
-                          <FontAwesomeIcon icon={faFileVideo}/>
+                            <FontAwesomeIcon icon={faFileVideo} />
                           </span>
                         </td>
                         <td>
@@ -1503,7 +1526,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1520,7 +1543,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Download"
                           >
-                            <FontAwesomeIcon icon={Icons.faCloudArrowDown}/>
+                            <FontAwesomeIcon icon={Icons.faCloudArrowDown} />
                           </a>
                           <a
                             href
@@ -1546,7 +1569,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan audioIconBg">
-                          <FontAwesomeIcon icon={faFileAudio}/>
+                            <FontAwesomeIcon icon={faFileAudio} />
                           </span>
                         </td>
                         <td>
@@ -1583,7 +1606,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1600,7 +1623,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Download"
                           >
-                            <FontAwesomeIcon icon={Icons.faCloudArrowDown}/>
+                            <FontAwesomeIcon icon={Icons.faCloudArrowDown} />
                           </a>
                           <a
                             href
@@ -1626,7 +1649,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan pdfIconBg">
-                          <FontAwesomeIcon icon={faFilePdf}/>
+                            <FontAwesomeIcon icon={faFilePdf} />
                           </span>
                         </td>
                         <td>
@@ -1668,7 +1691,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1685,7 +1708,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Download"
                           >
-                            <FontAwesomeIcon icon={Icons.faCloudArrowDown}/>
+                            <FontAwesomeIcon icon={Icons.faCloudArrowDown} />
                           </a>
                           <a
                             href
@@ -1722,7 +1745,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1739,7 +1762,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Download"
                           >
-                            <FontAwesomeIcon icon={Icons.faCloudArrowDown}/>
+                            <FontAwesomeIcon icon={Icons.faCloudArrowDown} />
                           </a>
                           <a
                             href
@@ -1765,7 +1788,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                          <FontAwesomeIcon icon={Icons.faFile}/>
+                            <FontAwesomeIcon icon={Icons.faFile} />
                           </span>
                         </td>
                         <td>
@@ -1798,7 +1821,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1832,7 +1855,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faTable}/>
+                            <FontAwesomeIcon icon={Icons.faTable} />
                           </span>
                         </td>
                         <td>
@@ -1843,7 +1866,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1877,7 +1900,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faTable}/>
+                            <FontAwesomeIcon icon={Icons.faTable} />
                           </span>
                         </td>
                         <td>
@@ -1888,7 +1911,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1922,7 +1945,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faThList}/>
+                            <FontAwesomeIcon icon={Icons.faThList} />
                           </span>
                         </td>
                         <td>
@@ -1933,7 +1956,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1967,7 +1990,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faEnvelope}/>
+                            <FontAwesomeIcon icon={Icons.faEnvelope} />
                           </span>
                         </td>
                         <td>
@@ -1978,7 +2001,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2012,7 +2035,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faUsers}/>
+                            <FontAwesomeIcon icon={Icons.faUsers} />
                           </span>
                         </td>
                         <td>
@@ -2023,7 +2046,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2057,7 +2080,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faShoppingCart}/>
+                            <FontAwesomeIcon icon={Icons.faShoppingCart} />
                           </span>
                         </td>
                         <td>
@@ -2068,7 +2091,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2102,7 +2125,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faEllipsisH}/>
+                            <FontAwesomeIcon icon={Icons.faEllipsisH} />
                           </span>
                         </td>
                         <td>
@@ -2113,7 +2136,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2147,7 +2170,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faCalendar}/>
+                            <FontAwesomeIcon icon={Icons.faCalendar} />
                           </span>
                         </td>
                         <td>
@@ -2158,7 +2181,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2192,7 +2215,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faClone}/>
+                            <FontAwesomeIcon icon={Icons.faClone} />
                           </span>
                         </td>
                         <td>
@@ -2203,7 +2226,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2237,7 +2260,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faPhone}/>
+                            <FontAwesomeIcon icon={Icons.faPhone} />
                           </span>
                         </td>
                         <td>
@@ -2248,7 +2271,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2282,7 +2305,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <FontAwesomeIcon icon={Icons.faSignIn}/>
+                            <FontAwesomeIcon icon={Icons.faSignIn} />
                           </span>
                         </td>
                         <td>
@@ -2293,7 +2316,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
+                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2343,7 +2366,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faFile}/>
+                          <FontAwesomeIcon icon={Icons.faFile} />
                         </span>
                         <span className="fileName">eDoc</span>
                       </a>
@@ -2351,7 +2374,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faTable}/>
+                          <FontAwesomeIcon icon={Icons.faTable} />
                         </span>
                         <span className="fileName">Spreadsheet</span>
                       </a>
@@ -2359,7 +2382,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faTable}/>
+                          <FontAwesomeIcon icon={Icons.faTable} />
                         </span>
                         <span className="fileName">Invoice</span>
                       </a>
@@ -2367,7 +2390,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faThList}/>
+                          <FontAwesomeIcon icon={Icons.faThList} />
                         </span>
                         <span className="fileName">Web form</span>
                       </a>
@@ -2375,7 +2398,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faEnvelope}/>
+                          <FontAwesomeIcon icon={Icons.faEnvelope} />
                         </span>
                         <span className="fileName">Envelope</span>
                       </a>
@@ -2383,7 +2406,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faUsers}/>
+                          <FontAwesomeIcon icon={Icons.faUsers} />
                         </span>
                         <span className="fileName">Workroom</span>
                       </a>
@@ -2391,7 +2414,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faShoppingCart}/>
+                          <FontAwesomeIcon icon={Icons.faShoppingCart} />
                         </span>
                         <span className="fileName">Item you sell</span>
                       </a>
@@ -2399,7 +2422,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faEllipsisH}/>
+                          <FontAwesomeIcon icon={Icons.faEllipsisH} />
                         </span>
                         <span className="fileName">Sequence</span>
                       </a>
@@ -2407,7 +2430,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faCalendar}/>
+                          <FontAwesomeIcon icon={Icons.faCalendar} />
                         </span>
                         <span className="fileName">Scheduler</span>
                       </a>
@@ -2415,7 +2438,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faClone}/>
+                          <FontAwesomeIcon icon={Icons.faClone} />
                         </span>
                         <span className="fileName">Template</span>
                       </a>
@@ -2423,7 +2446,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faPhone}/>
+                          <FontAwesomeIcon icon={Icons.faPhone} />
                         </span>
                         <span className="fileName">Phone number</span>
                       </a>
@@ -2431,7 +2454,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faSignIn}/>
+                          <FontAwesomeIcon icon={Icons.faSignIn} />
                         </span>
                         <span className="fileName">Paywall</span>
                       </a>
@@ -2472,7 +2495,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faFile}/>
+                          <FontAwesomeIcon icon={Icons.faFile} />
                         </span>
                         <span className="fileName">eDoc</span>
                       </a>
@@ -2480,7 +2503,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faTable}/>
+                          <FontAwesomeIcon icon={Icons.faTable} />
                         </span>
                         <span className="fileName">Spreadsheet</span>
                       </a>
@@ -2488,7 +2511,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faTable}/>
+                          <FontAwesomeIcon icon={Icons.faTable} />
                         </span>
                         <span className="fileName">Invoice</span>
                       </a>
@@ -2496,7 +2519,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faThList}/>
+                          <FontAwesomeIcon icon={Icons.faThList} />
                         </span>
                         <span className="fileName">Web form</span>
                       </a>
@@ -2504,7 +2527,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faEnvelope}/>
+                          <FontAwesomeIcon icon={Icons.faEnvelope} />
                         </span>
                         <span className="fileName">Envelope</span>
                       </a>
@@ -2512,7 +2535,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faUsers}/>
+                          <FontAwesomeIcon icon={Icons.faUsers} />
                         </span>
                         <span className="fileName">Workroom</span>
                       </a>
@@ -2520,7 +2543,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faShoppingCart}/>
+                          <FontAwesomeIcon icon={Icons.faShoppingCart} />
                         </span>
                         <span className="fileName">Item you sell</span>
                       </a>
@@ -2528,7 +2551,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faEllipsisH}/>
+                          <FontAwesomeIcon icon={Icons.faEllipsisH} />
                         </span>
                         <span className="fileName">Sequence</span>
                       </a>
@@ -2536,7 +2559,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faCalendar}/>
+                          <FontAwesomeIcon icon={Icons.faCalendar} />
                         </span>
                         <span className="fileName">Scheduler</span>
                       </a>
@@ -2544,7 +2567,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faClone}/>
+                          <FontAwesomeIcon icon={Icons.faClone} />
                         </span>
                         <span className="fileName">Template</span>
                       </a>
@@ -2552,7 +2575,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faPhone}/>
+                          <FontAwesomeIcon icon={Icons.faPhone} />
                         </span>
                         <span className="fileName">Phone number</span>
                       </a>
@@ -2560,7 +2583,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <FontAwesomeIcon icon={Icons.faSignIn}/>
+                          <FontAwesomeIcon icon={Icons.faSignIn} />
                         </span>
                         <span className="fileName">Paywall</span>
                       </a>
@@ -2586,7 +2609,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newDocModalTitle">
-                <FontAwesomeIcon icon={Icons.faFile}/> Doc
+                <FontAwesomeIcon icon={Icons.faFile} /> Doc
               </h5>
               <button
                 type="button"
@@ -2658,10 +2681,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -2681,7 +2704,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="ContactsSortByTagModalTitle">
-              <FontAwesomeIcon icon={Icons.faSort}/> Advanced Tag Search
+                <FontAwesomeIcon icon={Icons.faSort} /> Advanced Tag Search
               </h5>
               <button
                 type="button"
@@ -2743,22 +2766,23 @@ const Drive = () => {
                     className="form-control"
                   />
                   <a
-                    href="javascript:;"
+                    href
+                    onClick={(e) => e.preventDefault()}
                     className="btnRemoveSearchWithinTag"
                     data-toggle="tooltip"
                     title="Remove search"
                   >
-                    <FontAwesomeIcon icon={Icons.faClose}/>
+                    <FontAwesomeIcon icon={Icons.faClose} />
                   </a>
                 </div>
                 <div className="col-lg-12 addsortbytag_search_within_row">
                   <button
                     type="button"
                     className="btnAddNewGreenDashed btnAddSortbyTagFilerCondition"
-                    data-toggle="tooltip"
+                    data-bs-toggle="tooltip"
                     title="Add filter condition"
                   >
-                    <FontAwesomeIcon icon={Icons.faPlus}/>
+                    <FontAwesomeIcon icon={Icons.faPlus} />
                   </button>
                   <button
                     type="button"
@@ -2766,7 +2790,7 @@ const Drive = () => {
                     data-toggle="tooltip"
                     title="Search"
                   >
-                    <FontAwesomeIcon icon={Icons.faSearch}/>
+                    <FontAwesomeIcon icon={Icons.faSearch} />
                   </button>
                 </div>
               </div>
@@ -2775,7 +2799,10 @@ const Drive = () => {
               <div className="hidden_sortbytag_filter_condition_row display-none">
                 <div className="col-lg-12 sortbytag_filter_condition_row">
                   <div className="input-group mb-3">
-                    <select name="sortbytagSearchCondition" className="form-select">
+                    <select
+                      name="sortbytagSearchCondition"
+                      className="form-select"
+                    >
                       <option value="OR">OR Tag...</option>
                       <option value="AND">AND Tag...</option>
                       <option value="NOT">NOT Tag...</option>
@@ -2786,24 +2813,25 @@ const Drive = () => {
                     />
                   </div>
                   <a
-                    href="javascript:;"
+                    href
+                    onClick={(e) => e.preventDefault()}
                     className="btnRemoveSortbyTagFilter"
                     data-toggle="tooltip"
                     title="Remove filter"
                   >
-                    <FontAwesomeIcon icon={Icons.faClose}/>
+                    <FontAwesomeIcon icon={Icons.faClose} />
                   </a>
                 </div>
               </div>
               <button type="button" className="btn btn-danger btnDropResult">
-                <FontAwesomeIcon icon={Icons.faTrashAlt}/> Drop Results
+                <FontAwesomeIcon icon={Icons.faTrashAlt} /> Drop Results
               </button>
               <button type="button" className="btn btn-secondary">
-                <FontAwesomeIcon icon={Icons.faSave}/> Save Filtered View{" "}
-                <FontAwesomeIcon icon={Icons.faBullseye}/>
+                <FontAwesomeIcon icon={Icons.faSave} /> Save Filtered View{" "}
+                <FontAwesomeIcon icon={Icons.faBullseye} />
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faSearch}/> Search
+                <FontAwesomeIcon icon={Icons.faSearch} /> Search
               </button>
             </div>
           </div>
@@ -2823,7 +2851,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="sortByTagDropResultModalTitle">
-                <FontAwesomeIcon icon={Icons.faTrashAlt}/> Drop Results
+                <FontAwesomeIcon icon={Icons.faTrashAlt} /> Drop Results
               </h5>
               <button
                 type="button"
@@ -2835,8 +2863,8 @@ const Drive = () => {
             <div className="modal-body">
               <div className="sortbytag_drop_result_container mx-auto w-100 text-center">
                 <div className="alert alert-warning" role="alert">
-                <FontAwesomeIcon icon={Icons.faTriangleExclamation}/> Ok to drop
-                  1234 matches? This cannot be undone.
+                  <FontAwesomeIcon icon={Icons.faTriangleExclamation} /> Ok to
+                  drop 1234 matches? This cannot be undone.
                 </div>
               </div>
             </div>
@@ -2846,11 +2874,11 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Abort Unchanged
+                <FontAwesomeIcon icon={Icons.faClose} /> Abort Unchanged
               </button>
               <button type="button" className="btn btn-danger btnDropResult">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Yes, Proceed & Drop{" "}
-                <FontAwesomeIcon icon={Icons.faTrashAlt}/>
+                <FontAwesomeIcon icon={Icons.faCheck} /> Yes, Proceed & Drop{" "}
+                <FontAwesomeIcon icon={Icons.faTrashAlt} />
               </button>
             </div>
           </div>
@@ -2870,7 +2898,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newSheetModalTitle">
-                <FontAwesomeIcon icon={Icons.faTable}/> SpreadSheet
+                <FontAwesomeIcon icon={Icons.faTable} /> SpreadSheet
               </h5>
               <button
                 type="button"
@@ -2901,10 +2929,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -2924,7 +2952,8 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newInvoiceModalTitle">
-                <FontAwesomeIcon icon={Icons.faTable}/> Estimate / Invoice / Receipt / Etc.
+                <FontAwesomeIcon icon={Icons.faTable} /> Estimate / Invoice /
+                Receipt / Etc.
               </h5>
               <button
                 type="button"
@@ -2941,7 +2970,7 @@ const Drive = () => {
                     data-toggle="tooltip"
                     title="A descriptive name so you know what it's for. Will display to all parties."
                   >
-                    <FontAwesomeIcon icon={Icons.faQuestionCircle}/>
+                    <FontAwesomeIcon icon={Icons.faQuestionCircle} />
                   </span>
                 </label>
                 <div className="col-sm-8">
@@ -2955,7 +2984,10 @@ const Drive = () => {
                 </div>
               </div>
               <div className="mb-3 row align-items-center">
-                <label for="invoiceTypeOpts" className="col-sm-4 col-form-label">
+                <label
+                  for="invoiceTypeOpts"
+                  className="col-sm-4 col-form-label"
+                >
                   Status
                 </label>
                 <div className="col-sm-8">
@@ -3001,10 +3033,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3024,7 +3056,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newWebFormModalTitle">
-              <FontAwesomeIcon icon={Icons.faThList}/> Web Form
+                <FontAwesomeIcon icon={Icons.faThList} /> Web Form
               </h5>
               <button
                 type="button"
@@ -3055,10 +3087,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3078,8 +3110,8 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newFolderWorkroomModalTitle">
-                <FontAwesomeIcon icon={Icons.faFolder}/> Folder /{" "}
-                <FontAwesomeIcon icon={Icons.faUsers}/> Workroom
+                <FontAwesomeIcon icon={Icons.faFolder} /> Folder /{" "}
+                <FontAwesomeIcon icon={Icons.faUsers} /> Workroom
               </h5>
               <button
                 type="button"
@@ -3095,22 +3127,20 @@ const Drive = () => {
                                 <!-- THIS STATUS CORRESPONDS TO NEXT STEP, WHICH ALSO CORRESPONDS TO PREVIOUS DISPOSITION --> */}
                   <ul className="nav nav-wizard">
                     <li className="SaleStatus_Pending" data-step="1">
-                      <a
-                        href="javascript:;"
-                        data-toggle="tooltip"
-                        title="Recipient(s)"
-                      >
-                        <FontAwesomeIcon icon={Icons.faUser}/> <span>Recipient(s)</span>
+                      <a href data-toggle="tooltip" title="Recipient(s)">
+                        <FontAwesomeIcon icon={Icons.faUser} />{" "}
+                        <span>Recipient(s)</span>
                       </a>
                     </li>
                     <li className="SaleStatus_NotStarted" data-step="2">
                       <a
-                        href="javascript:;"
+                        href
+                        onClick={(e) => e.preventDefault()}
                         data-toggle="tooltip"
                         title="Edit & Send Message"
                         onclick="event.stopPropagation();"
                       >
-                        <FontAwesomeIcon icon={Icons.faPaperPlane}/>{" "}
+                        <FontAwesomeIcon icon={Icons.faPaperPlane} />{" "}
                         <span>Send Message</span>
                       </a>
                     </li>
@@ -3143,7 +3173,8 @@ const Drive = () => {
                     for="sendWithOtherPeople"
                     className="css-checkbox-label radGroup2 form-inline mr-sm-2"
                   >
-                    <FontAwesomeIcon icon={Icons.faUsers}/> Share with other people
+                    <FontAwesomeIcon icon={Icons.faUsers} /> Share with other
+                    people
                   </label>
                 </div>
               </div>
@@ -3164,12 +3195,13 @@ const Drive = () => {
                         <option>List of Roles</option>
                       </select>
                       <a
-                        href="javascript:;"
+                        href
+                        onClick={(e) => e.preventDefault()}
                         className="btnRemovePeople"
                         data-toggle="tooltip"
                         title="Remove User"
                       >
-                        <FontAwesomeIcon icon={Icons.faTrashAlt}/>
+                        <FontAwesomeIcon icon={Icons.faTrashAlt} />
                       </a>
                     </div>
                   </div>
@@ -3181,7 +3213,7 @@ const Drive = () => {
                         data-toggle="tooltip"
                         title="Add New"
                       >
-                        <FontAwesomeIcon icon={Icons.faPlus}/>
+                        <FontAwesomeIcon icon={Icons.faPlus} />
                       </button>
                     </div>
                   </div>
@@ -3193,8 +3225,12 @@ const Drive = () => {
                         id="sendInvitation"
                         className="css-checkbox"
                       />
-                      <label for="sendInvitation" className="css-checkbox-label">
-                        <FontAwesomeIcon icon={Icons.faPaperPlane}/> Send Invitation
+                      <label
+                        for="sendInvitation"
+                        className="css-checkbox-label"
+                      >
+                        <FontAwesomeIcon icon={Icons.faPaperPlane} /> Send
+                        Invitation
                       </label>
                     </div>
                   </div>
@@ -3207,10 +3243,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3230,7 +3266,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newEnvelopeModalTitle">
-              <FontAwesomeIcon icon={Icons.faEnvelope}/> Envelope
+                <FontAwesomeIcon icon={Icons.faEnvelope} /> Envelope
               </h5>
               <button
                 type="button"
@@ -3261,10 +3297,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3284,7 +3320,8 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newItemModalTitle">
-              <FontAwesomeIcon icon={Icons.faShoppingCart}/> SKU / Item You Sell
+                <FontAwesomeIcon icon={Icons.faShoppingCart} /> SKU / Item You
+                Sell
               </h5>
               <button
                 type="button"
@@ -3315,10 +3352,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3338,7 +3375,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newSequenceModalTitle">
-                <FontAwesomeIcon icon={Icons.faEllipsisH}/> New Sequence
+                <FontAwesomeIcon icon={Icons.faEllipsisH} /> New Sequence
               </h5>
               <button
                 type="button"
@@ -3355,7 +3392,7 @@ const Drive = () => {
                     data-toggle="tooltip"
                     title="Often yourself, but could be an employee, or any asset (i.e. boat, backhoe, or conference room, etc) - anything or anyone you want to schedule access to."
                   >
-                    <FontAwesomeIcon icon={Icons.faQuestionCircle}/>
+                    <FontAwesomeIcon icon={Icons.faQuestionCircle} />
                   </span>
                 </label>
                 <div className="col-sm-8">
@@ -3375,10 +3412,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3398,7 +3435,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newSchedulerModalTitle">
-                <FontAwesomeIcon icon={Icons.faCalendar}/> Add New Scheduler
+                <FontAwesomeIcon icon={Icons.faCalendar} /> Add New Scheduler
               </h5>
               <button
                 type="button"
@@ -3415,7 +3452,7 @@ const Drive = () => {
                     data-toggle="tooltip"
                     title="Who or what? i.e. Jane Doe, Boardroom A. You'll define purpose and block of time on the next step."
                   >
-                    <FontAwesomeIcon icon={Icons.faQuestionCircle}/>
+                    <FontAwesomeIcon icon={Icons.faQuestionCircle} />
                   </span>
                 </label>
                 <div className="col-sm-8">
@@ -3436,10 +3473,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3459,7 +3496,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newPhoneModalTitle">
-                <FontAwesomeIcon icon={Icons.faPhone}/> Phone Number
+                <FontAwesomeIcon icon={Icons.faPhone} /> Phone Number
               </h5>
               <button
                 type="button"
@@ -3482,8 +3519,7 @@ const Drive = () => {
                   <div className="phone_search_result_container display-none">
                     <div className="phone_search_loader display-none">
                       <div className="phone_search_loader_content">
-                        <FontAwesomeIcon icon={Icons.faSpinner}/>{" "}
-                        Provisioning
+                        <FontAwesomeIcon icon={Icons.faSpinner} /> Provisioning
                       </div>
                     </div>
                     <ul id="show_phone_number_ul"></ul>
@@ -3510,10 +3546,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3533,7 +3569,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newPaywallModalTitle">
-                <FontAwesomeIcon icon={Icons.faSignIn}/> Paywall
+                <FontAwesomeIcon icon={Icons.faSignIn} /> Paywall
               </h5>
               <button
                 type="button"
@@ -3564,10 +3600,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3587,7 +3623,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="FreeBaitLeadGenTitle">
-                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
+                <FontAwesomeIcon icon={Icons.faFolder} /> Select Folder
               </h5>
               <button
                 type="button"
@@ -3612,10 +3648,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3635,7 +3671,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="DirectSellUpsellTitle">
-                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
+                <FontAwesomeIcon icon={Icons.faFolder} /> Select Folder
               </h5>
               <button
                 type="button"
@@ -3660,10 +3696,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3682,8 +3718,11 @@ const Drive = () => {
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="QualifierAppointmentSchedulerTitle">
-                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
+              <h5
+                className="modal-title"
+                id="QualifierAppointmentSchedulerTitle"
+              >
+                <FontAwesomeIcon icon={Icons.faFolder} /> Select Folder
               </h5>
               <button
                 type="button"
@@ -3708,10 +3747,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3731,7 +3770,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="NewtoMarketValidatorTitle">
-                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
+                <FontAwesomeIcon icon={Icons.faFolder} /> Select Folder
               </h5>
               <button
                 type="button"
@@ -3756,10 +3795,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3779,7 +3818,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="FreeShippingUpsellsTitle">
-                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
+                <FontAwesomeIcon icon={Icons.faFolder} /> Select Folder
               </h5>
               <button
                 type="button"
@@ -3804,10 +3843,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3827,7 +3866,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="FreeTripwireSaleTitle">
-                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
+                <FontAwesomeIcon icon={Icons.faFolder} /> Select Folder
               </h5>
               <button
                 type="button"
@@ -3852,10 +3891,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
@@ -3875,7 +3914,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="FreeBaitWebinarVideoTitle">
-                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
+                <FontAwesomeIcon icon={Icons.faFolder} /> Select Folder
               </h5>
               <button
                 type="button"
@@ -3900,10 +3939,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
+                <FontAwesomeIcon icon={Icons.faClose} /> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <FontAwesomeIcon icon={Icons.faCheck}/> Save
+                <FontAwesomeIcon icon={Icons.faCheck} /> Save
               </button>
             </div>
           </div>
