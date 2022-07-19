@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import avatar from '../../assets/images/avatar.gif';
+import './Settings.css';
 
 const Settings = () => {
     const [openTeamAdmin, setOpenTeamAdmin] = useState(false);
@@ -12,7 +14,7 @@ const Settings = () => {
                     <div className="row">
                         <div className="col text-center">
                             <div className="adbook-profile-pic">
-                                <img className="main_profile_pic" src="images/avatar.gif" />
+                                <img className="main_profile_pic" src={avatar} />
                                 <button
                                     type="button"
                                     data-toggle="modal"

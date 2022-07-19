@@ -1,5 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import './Navbar.css';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import avatar from '../../assets/images/avatar.gif';
 
 const Navbar = () => {
     return (
@@ -10,7 +14,7 @@ const Navbar = () => {
                     <ul>
                         <li>
                             <Link to="#" className="user_status" title="{username}">
-                                <img src="images/avatar.gif" className="rounded-circle" />
+                                <img src={avatar} className="rounded-circle" />
                                 <span className="user-online"></span>
                             </Link>
                             <ul >
@@ -23,7 +27,7 @@ const Navbar = () => {
                         </li>
 
                         <li>
-                            <Link to="#" className="nav_active" title="Home"><i className="fa fa-home"></i></Link>
+                            <Link to="#" className="nav_active" title="Home"><FontAwesomeIcon icon={Icons.faHome}/></Link>
                             <ul style={{ top: "68px", left: "79px" }}>
                                 <li><Link to="#"><i className="fa fa-home"></i> My Feed</Link> </li>
                                 <li><Link to="#"><i className="fa fa-inbox"></i> Inbox</Link> </li>
@@ -31,7 +35,7 @@ const Navbar = () => {
                         </li>
 
                         <li className="leftNavFilterContainer">
-                            <Link to="#" title="Filter"><i className="fa fa-bullseye"></i></Link>
+                            <Link to="#" title="Filter"><FontAwesomeIcon icon={Icons.faBullseye}/></Link>
                             <ul style={{ top: "126px", left: "79px" }}>
                                 <li><Link to="#"><i className="fa fa-home"></i> Filter 1</Link> </li>
                                 <li><Link to="#"><i className="fa fa-home"></i> Filter 2</Link> </li>
@@ -39,7 +43,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="#"><i className="fa fa-search"></i></Link>
+                            <Link to="#"><FontAwesomeIcon icon={Icons.faSearch}/></Link>
                             <ul style={{ top: "175px", left: "79px" }}>
                                 <li>
                                     <form className="navbar-form" role="search" action="#" method="GET">
@@ -52,7 +56,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="contacts.html" title="Contacts"><i className="fa fa-user"></i></Link>
+                            <Link to="contacts.html" title="Contacts"><FontAwesomeIcon icon={Icons.faUser}/></Link>
                             <ul style={{ top: "184px", left: "79px" }}>
                                 <li><Link to="#"><i className="fa fa-users"></i> All Contacts</Link> </li>
                                 <li><Link to="#"><i className="fa fa-user-plus"></i> Add New Contact</Link> </li>
@@ -68,7 +72,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="#" title="Drive / Storage"><i className="fa fa-database"></i></Link>
+                            <Link to="#" title="Drive / Storage"><FontAwesomeIcon icon={Icons.faDatabase}/></Link>
                             <ul style={{ top: "262px", left: "79px" }}>
                                 <li><Link to="/drive"><i className="fa fa-database"></i> Drive</Link> </li>
                                 <li><Link to="#"><i className="fa fa-cloud-upload"></i> Upload</Link> </li>
@@ -76,7 +80,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="#" title="Tasks &amp; Projects"><i className="fa-solid fa-check"></i></Link>
+                            <Link to="#" title="Tasks &amp; Projects"><FontAwesomeIcon icon={Icons.faCheck}/></Link>
                             <ul style={{ top: "288px", left: "79px" }}>
                                 <li><Link to="#"><i className="fa fa-check-square"></i> All Tasks</Link> </li>
                                 <li><Link to="#"><i className="fa fa-check-square"></i> New Task / Job / Sales Opportunity</Link> </li>
@@ -92,7 +96,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="#" title="Marketing"><i className="fa fa-bullhorn"></i></Link>
+                            <Link to="#" title="Marketing"><FontAwesomeIcon icon={Icons.faBullhorn}/></Link>
                             <ul style={{ top: "265px", left: "79px" }}>
                                 <li><Link to="#"><i className="fa fa-bullhorn"></i> Campaigns &amp; Experiments</Link> </li>
                                 <li>
@@ -123,7 +127,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="#" title="Calendar"><i className="fa-regular fa-calendar-days"></i></Link>
+                            <Link to="#" title="Calendar"><FontAwesomeIcon icon={Icons.faCalendarDays}/></Link>
                             <ul style={{ top: "299px", left: "79px" }}>
                                 <li><Link to="#"><i className="fa-regular fa-calendar-days"></i> Calendar</Link> </li>
                                 <li><Link to="#"><i className="fa fa-history fa-flip-horizontal"></i> Agenda</Link> </li>
@@ -134,7 +138,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="#" title="Accounting"><i className="fa fa-dollar"></i></Link>
+                            <Link to="#" title="Accounting"><FontAwesomeIcon icon={Icons.faDollar}/></Link>
                             <ul style={{ top: "450px", left: "79px" }}>
                                 <li><Link to="#"><i className="fa fa-exchange"></i> Accounting</Link> </li>
                                 <li>
@@ -156,7 +160,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="#" title="Settings"><i className="fa fa-gear"></i></Link>
+                            <Link to="#" title="Settings"><FontAwesomeIcon icon={Icons.faGear}/></Link>
                             <ul style={{ top: "381px", left: "79px" }}>
                                 <li><Link to="#" className="btnThemeMode"><i className="fa-regular fa-moon"></i> Change to Dark Mode</Link> </li>
                                 <li><Link to="/settings"><i className="fa fa-gear"></i> General Settings</Link> </li>
@@ -167,7 +171,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="#" title="Support"><i className="fa fa-question-circle"></i></Link>
+                            <Link to="#" title="Support"><FontAwesomeIcon icon={Icons.faQuestionCircle}/></Link>
                             <ul style={{ top: "545px", left: "79px" }}>
                                 <li><Link to="https://swiftcloud.ai/support/" target="_blank"><i className="fa fa-question-circle"></i>  This Page Help</Link> </li>
                                 <li><Link to="https://swiftcloud.ai/support/" target="_blank"><i className="fa fa-laptop"></i> Support Center</Link> </li>
@@ -176,7 +180,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </nav>
-                <Link to="#" className="nav_logout"><i className="fa fa-power-off"></i></Link>
+                <Link to="#" className="nav_logout"><FontAwesomeIcon icon={Icons.faPowerOff}/></Link>
             </div>
 
             {/* <!-- Mobile menu --> */}

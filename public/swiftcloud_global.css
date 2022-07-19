@@ -116,7 +116,7 @@ a:hover, a:active, a:focus{
 .btnAddNewBlueDashed{
     border: 1px dashed var(--bs-blue-color);
     background-color: var(--bs-white-color);
-    color: var(--bs-blue-color); !important;
+    color: var(--bs-blue-color) !important;
     display: inline-block;
     font-size: 14px;
     line-height: 28px;

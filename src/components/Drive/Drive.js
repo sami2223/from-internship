@@ -1,8 +1,12 @@
 import React, { useRef } from "react";
 import { Modal } from "bootstrap";
 import "./Drive.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import {faClone,faFileZipper,faFileVideo,faFileAudio, faFilePdf} from '@fortawesome/free-regular-svg-icons';
 
 const Drive = () => {
+
   const newDocModalRef = useRef();
   const contactsSortByTagModalRef = useRef();
   const sortByTagDropResultModalRef = useRef();
@@ -40,6 +44,7 @@ const Drive = () => {
   //   };
   return (
     <>
+    
       <div className="row g-0">
         <div className="col" id="page-urls">
           <div className="row">
@@ -82,7 +87,9 @@ const Drive = () => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        <i className="fa fa-plus"></i>{" "}
+                        
+                        <FontAwesomeIcon icon={Icons.faPlus} />
+                        {" "}
                         <span className="d-none d-md-inline">Add New</span>
                       </button>
                       <ul
@@ -99,7 +106,9 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa fa-file"></i> Doc
+                            
+                            <FontAwesomeIcon icon={Icons.faFile} />{" "}
+                             Doc
                           </a>
                         </li>
                         <li>
@@ -112,7 +121,9 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa fa-table"></i> Spreadsheet
+                             
+                            <FontAwesomeIcon icon={Icons.faTable} />{" "}
+                            Spreadsheet
                           </a>
                         </li>
                         <li>
@@ -125,7 +136,9 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa fa-table"></i> Estimate / Invoice /
+                            
+                            <FontAwesomeIcon icon={Icons.faTable} /> {" "}
+                            Estimate / Invoice /
                             Etc.
                           </a>
                         </li>
@@ -139,7 +152,9 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa fa-th-list"></i> Web Form
+                            
+                            <FontAwesomeIcon icon={Icons.faThList} />{" "}
+                             Web Form
                           </a>
                         </li>
                         <li>
@@ -152,8 +167,11 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa-solid fa-folder"></i> Folder /{" "}
-                            <i className="fa fa-users"></i> Workroom
+                             
+                            <FontAwesomeIcon icon={Icons.faFolder} />{" "}
+                            
+                            Folder /{" "}
+                            <FontAwesomeIcon icon={Icons.faUsers}/> Workroom
                           </a>
                         </li>
                         <li>
@@ -166,7 +184,7 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa fa-envelope"></i> Envelope
+                            <FontAwesomeIcon icon={Icons.faEnvelope}/> Envelope
                           </a>
                         </li>
                         <li>
@@ -179,7 +197,7 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa fa-shopping-cart"></i> SKU / Item
+                            <FontAwesomeIcon icon={Icons.faShoppingCart}/> SKU / Item
                             You Sell
                           </a>
                         </li>
@@ -193,7 +211,7 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa fa-ellipsis-h"></i> Sequence of
+                            <FontAwesomeIcon icon={Icons.faEllipsisH}/> Sequence of
                             Events
                           </a>
                         </li>
@@ -207,12 +225,12 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="far fa-calendar"></i> Scheduler
+                            <FontAwesomeIcon icon={Icons.faCalendar}/> Scheduler
                           </a>
                         </li>
                         <li>
                           <a className="dropdown-item" href="#">
-                            <i className="fa fa-clone"></i> Template
+                            <FontAwesomeIcon icon={Icons.faClone}/> Template
                           </a>
                         </li>
                         <li className="dropdown-submenu">
@@ -223,7 +241,8 @@ const Drive = () => {
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                           >
-                            <i className="fa fa-filter"></i> 1-Click Funnels
+                            <FontAwesomeIcon icon={Icons.faFilter} />
+                             1-Click Funnels
                           </a>
                           <ul
                             className="dropdown-menu"
@@ -339,7 +358,7 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa fa-phone"></i> Phone Number
+                            <FontAwesomeIcon icon={Icons.faPhone}/> Phone Number
                           </a>
                         </li>
                         <li>
@@ -352,7 +371,7 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa fa-sign-in"></i> Paywall
+                            <FontAwesomeIcon icon={Icons.faSignIn}/> Paywall
                           </a>
                         </li>
                         <li>
@@ -365,7 +384,7 @@ const Drive = () => {
                             className="dropdown-item"
                             style={{ cursor: "pointer" }}
                           >
-                            <i className="fa fa-exchange"></i> Ledger
+                           <FontAwesomeIcon icon={Icons.faExchange} /> Ledger
                           </a>
                         </li>
                         <li>
@@ -374,7 +393,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newShortcutModal"
                           >
-                            <i className="fa fa-sign-out"></i> Shortcut
+                            <FontAwesomeIcon icon={Icons.faSignOut} /> Shortcut
                           </a>
                         </li>
                         <li>
@@ -383,7 +402,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newSignalMonitorModal"
                           >
-                            <i className="fa fa-bullseye"></i> Signal Monitor
+                            <FontAwesomeIcon icon={Icons.faBullseye} /> Signal Monitor
                           </a>
                         </li>
                       </ul>
@@ -394,7 +413,8 @@ const Drive = () => {
                       type="button"
                       className="btn btn-secondary btnUpload"
                     >
-                      <i className="fa-solid fa-cloud-arrow-up"></i>{" "}
+                      
+                      <FontAwesomeIcon icon={Icons.faCloudArrowUp}/>{" "}
                       <span className="d-none d-md-inline">Upload</span>
                     </button>
                   </li>
@@ -411,7 +431,8 @@ const Drive = () => {
                       data-placement="top"
                       title="Drive"
                     >
-                      <i className="fa fa-database"></i>
+                      
+                      <FontAwesomeIcon icon={Icons.faDatabase}/>
                     </a>
                   </li>
                   <li className="nav-item" role="presentation">
@@ -427,7 +448,8 @@ const Drive = () => {
                       data-placement="top"
                       title="Small Icons"
                     >
-                      <i className="fa-solid fa-table-cells-large"></i>
+                      
+                      <FontAwesomeIcon icon={Icons.faTableCellsLarge} />
                     </a>
                   </li>
                   <li className="nav-item" role="presentation">
@@ -443,7 +465,7 @@ const Drive = () => {
                       data-placement="top"
                       title="Large Icons"
                     >
-                      <i className="fa fa-stop"></i>
+                      <FontAwesomeIcon icon={Icons.faStop}/>
                     </a>
                   </li>
                   <li className="nav-item nav-item-trash" role="presentation">
@@ -454,7 +476,7 @@ const Drive = () => {
                       data-placement="top"
                       title="View Templates"
                     >
-                      <i className="fa-regular fa-clone"></i>
+                      <FontAwesomeIcon icon={faClone}/>
                     </a>
                   </li>
                   <li className="nav-item nav-item-trash" role="presentation">
@@ -465,7 +487,7 @@ const Drive = () => {
                       data-placement="top"
                       title="Trash"
                     >
-                      <i className="fa fa-trash-alt"></i>
+                      <FontAwesomeIcon icon={Icons.faTrashAlt} />
                     </a>
                   </li>
                 </ul>
@@ -480,7 +502,7 @@ const Drive = () => {
                       type="button"
                       className="btn btn-secondary btnUpload me-1"
                     >
-                      <i className="fa-solid fa-cloud-arrow-up"></i>
+                      <FontAwesomeIcon icon={Icons.faCloudArrowUp}/>
                     </button>
                   </li>
                   <li className="nav-item">
@@ -492,7 +514,8 @@ const Drive = () => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        <i className="fa fa-plus"></i>
+                        
+                        <FontAwesomeIcon icon={Icons.faPlus}/>
                       </button>
                       <ul
                         className="dropdown-menu"
@@ -504,7 +527,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newDocModal"
                           >
-                            <i className="fa fa-file"></i> Doc
+                            <FontAwesomeIcon icon={Icons.faFile}/> Doc
                           </a>
                         </li>
                         <li>
@@ -513,7 +536,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newSheetModal"
                           >
-                            <i className="fa fa-table"></i> Spreadsheet
+                            <FontAwesomeIcon icon={Icons.faTable}/> Spreadsheet
                           </a>
                         </li>
                         <li>
@@ -522,7 +545,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newInvoiceModal"
                           >
-                            <i className="fa fa-table"></i> Estimate / Invoice /
+                            <FontAwesomeIcon icon={Icons.faTable}/> Estimate / Invoice /
                             Etc.
                           </a>
                         </li>
@@ -532,7 +555,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newWebFormModal"
                           >
-                            <i className="fa fa-th-list"></i> Web Form
+                            <FontAwesomeIcon icon={Icons.faThList}/> Web Form
                           </a>
                         </li>
                         <li>
@@ -541,8 +564,8 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newFolderWorkroomModal"
                           >
-                            <i className="fa-solid fa-folder"></i> Folder /{" "}
-                            <i className="fa fa-users"></i> Workroom
+                            <FontAwesomeIcon icon={Icons.faFolder} /> Folder /{" "}
+                            <FontAwesomeIcon icon={Icons.faUsers}/> Workroom
                           </a>
                         </li>
                         <li>
@@ -551,7 +574,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newEnvelopeModal"
                           >
-                            <i className="fa fa-envelope"></i> Envelope
+                            <FontAwesomeIcon icon={Icons.faEnvelope}/> Envelope
                           </a>
                         </li>
                         <li>
@@ -560,7 +583,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newItemModal"
                           >
-                            <i className="fa fa-shopping-cart"></i> SKU / Item
+                            <FontAwesomeIcon icon={Icons.faShoppingCart}/> SKU / Item
                             You Sell
                           </a>
                         </li>
@@ -570,7 +593,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newSequenceModal"
                           >
-                            <i className="fa fa-ellipsis-h"></i> Sequence of
+                            <FontAwesomeIcon icon={Icons.faEllipsisH}/> Sequence of
                             Events
                           </a>
                         </li>
@@ -580,12 +603,12 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newSchedulerModal"
                           >
-                            <i className="far fa-calendar"></i> Scheduler
+                            <FontAwesomeIcon icon={Icons.faCalendar}/> Scheduler
                           </a>
                         </li>
                         <li>
                           <a className="dropdown-item" href="#">
-                            <i className="fa fa-clone"></i> Template
+                            <FontAwesomeIcon icon={Icons.faClone}/> Template
                           </a>
                         </li>
                         <li className="dropdown-submenu">
@@ -596,7 +619,7 @@ const Drive = () => {
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                           >
-                            <i className="fa fa-filter"></i> 1-Click Funnels
+                            <FontAwesomeIcon icon={Icons.faFilter} /> 1-Click Funnels
                           </a>
                           <ul
                             className="dropdown-menu"
@@ -680,7 +703,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newLedgerModal"
                           >
-                            <i className="fa fa-exchange"></i> Ledger
+                            <FontAwesomeIcon icon={Icons.faExchange} /> Ledger
                           </a>
                         </li>
                         <li>
@@ -689,7 +712,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newShortcutModal"
                           >
-                            <i className="fa fa-sign-out"></i> Shortcut
+                            <FontAwesomeIcon icon={Icons.faSignOut} /> Shortcut
                           </a>
                         </li>
                         <li>
@@ -698,7 +721,7 @@ const Drive = () => {
                             data-bs-toggle="modal"
                             href="#newSignalMonitorModal"
                           >
-                            <i className="fa fa-bullseye"></i> Signal Monitor
+                            <FontAwesomeIcon icon={Icons.faBullseye}/> Signal Monitor
                           </a>
                         </li>
                       </ul>
@@ -712,7 +735,7 @@ const Drive = () => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        <i className="fa fa-database"></i>
+                        {/* <FontAwesomeIcon icon={faDatabase}/> */}
                       </button>
                       <ul
                         className="dropdown-menu"
@@ -728,7 +751,8 @@ const Drive = () => {
                             aria-controls="drive"
                             aria-selected="false"
                           >
-                            <i className="fa fa-database"></i> Drive
+                            {/* <FontAwesomeIcon icon={faDatabase}/> */}
+                             Drive
                           </a>
                         </li>
                         <li>
@@ -741,7 +765,7 @@ const Drive = () => {
                             aria-controls="small-icon"
                             aria-selected="false"
                           >
-                            <i className="fa-solid fa-table-cells-large"></i>{" "}
+                            <FontAwesomeIcon icon={Icons.faTableCellsLarge} />{" "}
                             Small Icons
                           </a>
                         </li>
@@ -755,17 +779,17 @@ const Drive = () => {
                             aria-controls="large-icon"
                             aria-selected="false"
                           >
-                            <i className="fa fa-stop"></i> Large Icons
+                            <FontAwesomeIcon icon={Icons.faStop}/> Large Icons
                           </a>
                         </li>
                         <li>
                           <a className="dropdown-item" href="#">
-                            <i className="fa-regular fa-clone"></i> Templates
+                          <FontAwesomeIcon icon={faClone}/> Templates
                           </a>
                         </li>
                         <li>
                           <a className="dropdown-item" href="#">
-                            <i className="fa fa-trash-alt"></i> Trash
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} /> Trash
                           </a>
                         </li>
                       </ul>
@@ -805,7 +829,7 @@ const Drive = () => {
                               data-toggle="tooltip"
                               title="Advanced Tag Search"
                             >
-                              <i className="fa fa-tag"></i>
+                              <FontAwesomeIcon icon={Icons.faTag}/>
                             </span>
                           </button>
                         </th>
@@ -821,7 +845,7 @@ const Drive = () => {
                         <td colspan="4" className="text-left">
                           <div className="batch-action-container">
                             <button className="btn btn-trash">
-                              <i className="fa fa-trash-alt"></i> Move to Trash
+                              <FontAwesomeIcon icon={Icons.faTrashAlt} /> Move to Trash
                             </button>
                             <button
                               className="btn btn-default"
@@ -829,20 +853,20 @@ const Drive = () => {
                               data-placement="top"
                               title="Archive (Searchable but Hidden)"
                             >
-                              <i className="fa fa-archive"></i> Archive
+                              <FontAwesomeIcon icon={Icons.faArchive}/> Archive
                             </button>
                             <button className="btn btn-secondary">
-                              <i className="fa fa-tags"></i> Apply Tag(s)
+                            <FontAwesomeIcon icon={Icons.faTags}/> Apply Tag(s)
                             </button>
                             <button className="btn btn-success">
-                              <i className="fa fa-user-plus"></i> Manage Sharing
+                              <FontAwesomeIcon icon={Icons.faUserPlus}/> Manage Sharing
                             </button>
                             <button className="btn btn-primary">
-                              <i className="fa fa-unlock"></i> Manage
+                            <FontAwesomeIcon icon={Icons.faUnlock}/> Manage
                               Permissions
                             </button>
                             <button className="btn btn-secondary">
-                              <i className="fa fa-arrows"></i> Move To...
+                            <FontAwesomeIcon icon={Icons.faArrows}/> Move To...
                             </button>
                           </div>
                         </td>
@@ -1025,7 +1049,7 @@ const Drive = () => {
                                                     data-toggle="tooltip"
                                                     title="Remove search"
                                                   >
-                                                    <i className="fa fa-close"></i>
+                                                    <FontAwesomeIcon icon={Icons.faClose}/>
                                                   </a>
                                                 </div>
                                                 <div className="col-lg-12 FV_addsortbytag_search_within_row">
@@ -1035,7 +1059,7 @@ const Drive = () => {
                                                     data-toggle="tooltip"
                                                     title="Add filter condition"
                                                   >
-                                                    <i className="fa fa-plus"></i>
+                                                    <FontAwesomeIcon icon={Icons.faPlus}/>
                                                   </button>
                                                   <button
                                                     type="button"
@@ -1043,7 +1067,8 @@ const Drive = () => {
                                                     data-toggle="tooltip"
                                                     title="Search"
                                                   >
-                                                    <i className="fa fa-search"></i>
+                                                    
+                                                    <FontAwesomeIcon icon={Icons.faSearch}/>
                                                   </button>
                                                   <div className="hidden_FV_sortbytag_filter_condition_row display-none">
                                                     <div className="input-group mb-3">
@@ -1075,7 +1100,7 @@ const Drive = () => {
                                                       data-toggle="tooltip"
                                                       title="Remove filter"
                                                     >
-                                                      <i className="fa fa-close"></i>
+                                                      <FontAwesomeIcon icon={Icons.faClose}/>
                                                     </a>
                                                   </div>
                                                 </div>
@@ -1106,26 +1131,28 @@ const Drive = () => {
                                       type="button"
                                       className="btn btn-default btnCloseFilteredView"
                                     >
-                                      <i className="fa fa-close"></i> Cancel
+                                      
+                                      <FontAwesomeIcon icon={Icons.faClose}/>
+                                       Cancel
                                     </button>
                                     <button
                                       className="btn btn-secondary btnSaveFilteredView"
                                       data-toggle="modal"
                                       data-target="#newFilterModal"
                                     >
-                                      <i className="fa fa-save"></i> Save
+                                      <FontAwesomeIcon icon={Icons.faSave}/> Save
                                       Filtered View{" "}
-                                      <i className="fa fa-bullseye"></i>
+                                      <FontAwesomeIcon icon={Icons.faBullseye}/>
                                     </button>
                                     <button
                                       className="btn btn-primary"
                                       id="viewFilterResult"
                                     >
-                                      <i className="fa fa-check"></i> View
-                                      Results <i className="fa fa-bullseye"></i>
+                                      <FontAwesomeIcon icon={Icons.faCheck}/> View
+                                      Results <FontAwesomeIcon icon={Icons.faBullseye}/>
                                     </button>
                                     <button className="btn btnDeleteFilterView display-none">
-                                      <i className="fa fa-trash"></i> Delete
+                                      <FontAwesomeIcon icon={Icons.faTrash}/> Delete
                                       Filtered View
                                     </button>
                                   </div>
@@ -1136,7 +1163,7 @@ const Drive = () => {
                                 <ul id="savedFilteredList">
                                   <li>
                                     <a href="#" className="btn btn-default">
-                                      <i className="fa fa-folder"></i> Real
+                                    <FontAwesomeIcon icon={Icons.faFolder}/> Real
                                       estate listing
                                     </a>
                                     <a
@@ -1146,7 +1173,7 @@ const Drive = () => {
                                       title="Edit"
                                       className="editFiltered"
                                     >
-                                      <i className="fa fa-edit"></i>
+                                      <FontAwesomeIcon icon={Icons.faEdit}/>
                                     </a>
                                     <a
                                       href
@@ -1155,12 +1182,12 @@ const Drive = () => {
                                       title="Delete"
                                       className="deleteFilter"
                                     >
-                                      <i className="fa fa-trash"></i>
+                                      <FontAwesomeIcon icon={Icons.faTrash}/>
                                     </a>
                                   </li>
                                   <li>
                                     <a href="#" className="btn btn-default">
-                                      <i className="fa fa-check"></i> Plumber
+                                      <FontAwesomeIcon icon={Icons.faCheck}/> Plumber
                                       Transaction
                                     </a>
                                     <a
@@ -1170,7 +1197,7 @@ const Drive = () => {
                                       title="Edit"
                                       className="editFiltered"
                                     >
-                                      <i className="fa fa-edit"></i>
+                                      <FontAwesomeIcon icon={Icons.faEdit}/>
                                     </a>
                                     <a
                                       href
@@ -1179,12 +1206,12 @@ const Drive = () => {
                                       title="Delete"
                                       className="deleteFilter"
                                     >
-                                      <i className="fa fa-trash"></i>
+                                      <FontAwesomeIcon icon={Icons.faTrash}/>
                                     </a>
                                   </li>
                                   <li>
                                     <a href="#" className="btn btn-default">
-                                      <i className="fa fa-user"></i> Doctors
+                                      <FontAwesomeIcon icon={Icons.faUser}/> Doctors
                                       Appointment
                                     </a>
                                     <a
@@ -1194,7 +1221,7 @@ const Drive = () => {
                                       title="Edit"
                                       className="editFiltered"
                                     >
-                                      <i className="fa fa-edit"></i>
+                                      <FontAwesomeIcon icon={Icons.faEdit}/>
                                     </a>
                                     <a
                                       href
@@ -1203,7 +1230,7 @@ const Drive = () => {
                                       title="Delete"
                                       className="deleteFilter"
                                     >
-                                      <i className="fa fa-trash"></i>
+                                      <FontAwesomeIcon icon={Icons.faTrash}/>
                                     </a>
                                   </li>
                                 </ul>
@@ -1227,7 +1254,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-folder">
-                            <i className="fa-solid fa-folder"></i>
+                            <FontAwesomeIcon icon={Icons.faFolder} />
                           </span>
                         </td>
                         <td>
@@ -1251,7 +1278,8 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1268,7 +1296,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1285,7 +1313,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-folder">
-                            <i className="fa-solid fa-folder"></i>
+                            <FontAwesomeIcon icon={Icons.faFolder} />
                           </span>
                         </td>
                         <td>
@@ -1296,7 +1324,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1313,7 +1341,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1330,7 +1358,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan archiveIconBg">
-                            <i className="fa-regular fa-file-zipper"></i>
+                          <FontAwesomeIcon icon={faFileZipper}/>
                           </span>
                         </td>
                         <td>
@@ -1394,7 +1422,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1411,7 +1439,8 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Download"
                           >
-                            <i className="fa-solid fa-cloud-arrow-down"></i>
+                            
+                            <FontAwesomeIcon icon={Icons.faCloudArrowDown}/>
                           </a>
                           <a
                             href
@@ -1420,7 +1449,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1437,7 +1466,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan videoIconBg">
-                            <i className="fa-regular fa-file-video"></i>
+                          <FontAwesomeIcon icon={faFileVideo}/>
                           </span>
                         </td>
                         <td>
@@ -1474,7 +1503,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1491,7 +1520,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Download"
                           >
-                            <i className="fa-solid fa-cloud-arrow-down"></i>
+                            <FontAwesomeIcon icon={Icons.faCloudArrowDown}/>
                           </a>
                           <a
                             href
@@ -1500,7 +1529,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1517,7 +1546,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan audioIconBg">
-                            <i className="fa-regular fa-file-audio"></i>
+                          <FontAwesomeIcon icon={faFileAudio}/>
                           </span>
                         </td>
                         <td>
@@ -1554,7 +1583,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1571,7 +1600,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Download"
                           >
-                            <i className="fa-solid fa-cloud-arrow-down"></i>
+                            <FontAwesomeIcon icon={Icons.faCloudArrowDown}/>
                           </a>
                           <a
                             href
@@ -1580,7 +1609,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1597,7 +1626,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan pdfIconBg">
-                            <i className="fa-regular fa-file-pdf"></i>
+                          <FontAwesomeIcon icon={faFilePdf}/>
                           </span>
                         </td>
                         <td>
@@ -1639,7 +1668,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1656,7 +1685,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Download"
                           >
-                            <i className="fa-solid fa-cloud-arrow-down"></i>
+                            <FontAwesomeIcon icon={Icons.faCloudArrowDown}/>
                           </a>
                           <a
                             href
@@ -1665,7 +1694,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1693,7 +1722,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1710,7 +1739,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Download"
                           >
-                            <i className="fa-solid fa-cloud-arrow-down"></i>
+                            <FontAwesomeIcon icon={Icons.faCloudArrowDown}/>
                           </a>
                           <a
                             href
@@ -1719,7 +1748,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1736,7 +1765,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-file"></i>
+                          <FontAwesomeIcon icon={Icons.faFile}/>
                           </span>
                         </td>
                         <td>
@@ -1769,7 +1798,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1786,7 +1815,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1803,7 +1832,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-table"></i>
+                            <FontAwesomeIcon icon={Icons.faTable}/>
                           </span>
                         </td>
                         <td>
@@ -1814,7 +1843,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1831,7 +1860,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1848,7 +1877,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-table"></i>
+                            <FontAwesomeIcon icon={Icons.faTable}/>
                           </span>
                         </td>
                         <td>
@@ -1859,7 +1888,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1876,7 +1905,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1893,7 +1922,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-th-list"></i>
+                            <FontAwesomeIcon icon={Icons.faThList}/>
                           </span>
                         </td>
                         <td>
@@ -1904,7 +1933,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1921,7 +1950,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1938,7 +1967,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-envelope"></i>
+                            <FontAwesomeIcon icon={Icons.faEnvelope}/>
                           </span>
                         </td>
                         <td>
@@ -1949,7 +1978,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -1966,7 +1995,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -1983,7 +2012,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-users"></i>
+                            <FontAwesomeIcon icon={Icons.faUsers}/>
                           </span>
                         </td>
                         <td>
@@ -1994,7 +2023,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2011,7 +2040,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -2028,7 +2057,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-shopping-cart"></i>
+                            <FontAwesomeIcon icon={Icons.faShoppingCart}/>
                           </span>
                         </td>
                         <td>
@@ -2039,7 +2068,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2056,7 +2085,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -2073,7 +2102,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-ellipsis-h"></i>
+                            <FontAwesomeIcon icon={Icons.faEllipsisH}/>
                           </span>
                         </td>
                         <td>
@@ -2084,7 +2113,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2101,7 +2130,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -2118,7 +2147,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="far fa-calendar"></i>
+                            <FontAwesomeIcon icon={Icons.faCalendar}/>
                           </span>
                         </td>
                         <td>
@@ -2129,7 +2158,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2146,7 +2175,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -2163,7 +2192,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-clone"></i>
+                            <FontAwesomeIcon icon={Icons.faClone}/>
                           </span>
                         </td>
                         <td>
@@ -2174,7 +2203,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2191,7 +2220,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -2208,7 +2237,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-phone"></i>
+                            <FontAwesomeIcon icon={Icons.faPhone}/>
                           </span>
                         </td>
                         <td>
@@ -2219,7 +2248,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2236,7 +2265,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -2253,7 +2282,7 @@ const Drive = () => {
                             className="css-checkbox-label"
                           ></label>
                           <span className="tableColChkSpan btn-secondary">
-                            <i className="fa fa-sign-in"></i>
+                            <FontAwesomeIcon icon={Icons.faSignIn}/>
                           </span>
                         </td>
                         <td>
@@ -2264,7 +2293,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Share / Attach to Contact"
                           >
-                            <i className="fa fa-user-plus"></i>
+                            <FontAwesomeIcon icon={Icons.faUserPlus}/>
                           </a>
                         </td>
                         <td className="d-none d-md-table-cell">
@@ -2281,7 +2310,7 @@ const Drive = () => {
                             data-toggle="tooltip"
                             title="Delete"
                           >
-                            <i className="fa fa-trash-alt"></i>
+                            <FontAwesomeIcon icon={Icons.faTrashAlt} />
                           </a>
                         </td>
                       </tr>
@@ -2298,7 +2327,7 @@ const Drive = () => {
                     <li className="folderIcon">
                       <a href="#">
                         <span>
-                          <i className="fa-solid fa-folder"></i>
+                          <FontAwesomeIcon icon={Icons.faFolder} />
                         </span>
                         <span className="fileName">Incoming</span>
                       </a>
@@ -2306,7 +2335,7 @@ const Drive = () => {
                     <li className="folderIcon">
                       <a href="#">
                         <span>
-                          <i className="fa-solid fa-folder"></i>
+                          <FontAwesomeIcon icon={Icons.faFolder} />
                         </span>
                         <span className="fileName">Tasks and Projects</span>
                       </a>
@@ -2314,7 +2343,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-file"></i>
+                          <FontAwesomeIcon icon={Icons.faFile}/>
                         </span>
                         <span className="fileName">eDoc</span>
                       </a>
@@ -2322,7 +2351,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-table"></i>
+                          <FontAwesomeIcon icon={Icons.faTable}/>
                         </span>
                         <span className="fileName">Spreadsheet</span>
                       </a>
@@ -2330,7 +2359,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-table"></i>
+                          <FontAwesomeIcon icon={Icons.faTable}/>
                         </span>
                         <span className="fileName">Invoice</span>
                       </a>
@@ -2338,7 +2367,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-th-list"></i>
+                          <FontAwesomeIcon icon={Icons.faThList}/>
                         </span>
                         <span className="fileName">Web form</span>
                       </a>
@@ -2346,7 +2375,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-envelope"></i>
+                          <FontAwesomeIcon icon={Icons.faEnvelope}/>
                         </span>
                         <span className="fileName">Envelope</span>
                       </a>
@@ -2354,7 +2383,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-users"></i>
+                          <FontAwesomeIcon icon={Icons.faUsers}/>
                         </span>
                         <span className="fileName">Workroom</span>
                       </a>
@@ -2362,7 +2391,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-shopping-cart"></i>
+                          <FontAwesomeIcon icon={Icons.faShoppingCart}/>
                         </span>
                         <span className="fileName">Item you sell</span>
                       </a>
@@ -2370,7 +2399,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-ellipsis-h"></i>
+                          <FontAwesomeIcon icon={Icons.faEllipsisH}/>
                         </span>
                         <span className="fileName">Sequence</span>
                       </a>
@@ -2378,7 +2407,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="far fa-calendar"></i>
+                          <FontAwesomeIcon icon={Icons.faCalendar}/>
                         </span>
                         <span className="fileName">Scheduler</span>
                       </a>
@@ -2386,7 +2415,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-clone"></i>
+                          <FontAwesomeIcon icon={Icons.faClone}/>
                         </span>
                         <span className="fileName">Template</span>
                       </a>
@@ -2394,7 +2423,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-phone"></i>
+                          <FontAwesomeIcon icon={Icons.faPhone}/>
                         </span>
                         <span className="fileName">Phone number</span>
                       </a>
@@ -2402,7 +2431,7 @@ const Drive = () => {
                     <li>
                       <a href="#">
                         <span className="btn-secondary fileTypeIcon">
-                          <i className="fa fa-sign-in"></i>
+                          <FontAwesomeIcon icon={Icons.faSignIn}/>
                         </span>
                         <span className="fileName">Paywall</span>
                       </a>
@@ -2427,7 +2456,7 @@ const Drive = () => {
                     <li className="folderIcon">
                       <a href="#">
                         <span>
-                          <i className="fa-solid fa-folder"></i>
+                          <FontAwesomeIcon icon={Icons.faFolder} />
                         </span>
                         <span className="fileName">Incoming</span>
                       </a>
@@ -2435,7 +2464,7 @@ const Drive = () => {
                     <li className="folderIcon">
                       <a href="#">
                         <span>
-                          <i className="fa-solid fa-folder"></i>
+                          <FontAwesomeIcon icon={Icons.faFolder} />
                         </span>
                         <span className="fileName">Tasks and Projects</span>
                       </a>
@@ -2443,7 +2472,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-file"></i>
+                          <FontAwesomeIcon icon={Icons.faFile}/>
                         </span>
                         <span className="fileName">eDoc</span>
                       </a>
@@ -2451,7 +2480,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-table"></i>
+                          <FontAwesomeIcon icon={Icons.faTable}/>
                         </span>
                         <span className="fileName">Spreadsheet</span>
                       </a>
@@ -2459,7 +2488,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-table"></i>
+                          <FontAwesomeIcon icon={Icons.faTable}/>
                         </span>
                         <span className="fileName">Invoice</span>
                       </a>
@@ -2467,7 +2496,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-th-list"></i>
+                          <FontAwesomeIcon icon={Icons.faThList}/>
                         </span>
                         <span className="fileName">Web form</span>
                       </a>
@@ -2475,7 +2504,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-envelope"></i>
+                          <FontAwesomeIcon icon={Icons.faEnvelope}/>
                         </span>
                         <span className="fileName">Envelope</span>
                       </a>
@@ -2483,7 +2512,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-users"></i>
+                          <FontAwesomeIcon icon={Icons.faUsers}/>
                         </span>
                         <span className="fileName">Workroom</span>
                       </a>
@@ -2491,7 +2520,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-shopping-cart"></i>
+                          <FontAwesomeIcon icon={Icons.faShoppingCart}/>
                         </span>
                         <span className="fileName">Item you sell</span>
                       </a>
@@ -2499,7 +2528,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-ellipsis-h"></i>
+                          <FontAwesomeIcon icon={Icons.faEllipsisH}/>
                         </span>
                         <span className="fileName">Sequence</span>
                       </a>
@@ -2507,7 +2536,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="far fa-calendar"></i>
+                          <FontAwesomeIcon icon={Icons.faCalendar}/>
                         </span>
                         <span className="fileName">Scheduler</span>
                       </a>
@@ -2515,7 +2544,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-clone"></i>
+                          <FontAwesomeIcon icon={Icons.faClone}/>
                         </span>
                         <span className="fileName">Template</span>
                       </a>
@@ -2523,7 +2552,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-phone"></i>
+                          <FontAwesomeIcon icon={Icons.faPhone}/>
                         </span>
                         <span className="fileName">Phone number</span>
                       </a>
@@ -2531,7 +2560,7 @@ const Drive = () => {
                     <li className="btn-secondary">
                       <a href="#">
                         <span className="fileTypeIcon">
-                          <i className="fa fa-sign-in"></i>
+                          <FontAwesomeIcon icon={Icons.faSignIn}/>
                         </span>
                         <span className="fileName">Paywall</span>
                       </a>
@@ -2557,7 +2586,7 @@ const Drive = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="newDocModalTitle">
-                <i className="fa fa-file"></i> Doc
+                <FontAwesomeIcon icon={Icons.faFile}/> Doc
               </h5>
               <button
                 type="button"
@@ -2629,10 +2658,10 @@ const Drive = () => {
                 className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i className="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
               <button type="button" className="btn btn-primary">
-                <i className="fa fa-check"></i> Save
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -2641,34 +2670,34 @@ const Drive = () => {
 
       {/* <!-- Advanced Tag Search modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={contactsSortByTagModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="ContactsSortByTagModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="ContactsSortByTagModalTitle">
-                <i class="fa fa-sort"></i> Advanced Tag Search
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="ContactsSortByTagModalTitle">
+              <FontAwesomeIcon icon={Icons.faSort}/> Advanced Tag Search
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-lg-12 sortbytag_row">
-                  <div class="input-group mb-3">
+            <div className="modal-body">
+              <div className="row">
+                <div className="col-lg-12 sortbytag_row">
+                  <div className="input-group mb-3">
                     <select
                       name="sortbytag_with_or_without"
                       id="sortbytag_with_or_without"
-                      class="form-select"
+                      className="form-select"
                     >
                       <option value="Tagged with">Tagged with</option>
                       <option value="Not Tagged with">Not Tagged with</option>
@@ -2677,13 +2706,13 @@ const Drive = () => {
                       type="text"
                       name="sortbytag_input"
                       id="sortbytag_input"
-                      class="form-control"
+                      className="form-control"
                       value="tag"
                     />
                     <select
                       name="sortbytag_score_opt"
                       id="sortbytag_score_opt"
-                      class="form-select"
+                      className="form-select"
                     >
                       <option value="Any">Any TagScore</option>
                       <option value="Above">TagScore Above</option>
@@ -2693,11 +2722,11 @@ const Drive = () => {
                       type="number"
                       name="sortbytag_score_input"
                       id="sortbytag_score_input"
-                      class="form-control d-none"
+                      className="form-control d-none"
                       placeholder="Value"
                       value="50"
                     />
-                    <select name="sortbytag_asc_desc" class="form-select">
+                    <select name="sortbytag_asc_desc" className="form-select">
                       <option value="Ascending">Ascending</option>
                       <option value="Descending">Descending</option>
                       <option value="Newest">Newest</option>
@@ -2705,76 +2734,76 @@ const Drive = () => {
                     </select>
                   </div>
                 </div>
-                <div class="col-lg-12 mb-3 sortbytag_search_within_row display-none">
+                <div className="col-lg-12 mb-3 sortbytag_search_within_row display-none">
                   <input
                     type="text"
                     name="sortbytag_search_within"
                     id="sortbytag_search_within"
                     placeholder="Search Within Results"
-                    class="form-control"
+                    className="form-control"
                   />
                   <a
                     href="javascript:;"
-                    class="btnRemoveSearchWithinTag"
+                    className="btnRemoveSearchWithinTag"
                     data-toggle="tooltip"
                     title="Remove search"
                   >
-                    <i class="fa fa-close"></i>
+                    <FontAwesomeIcon icon={Icons.faClose}/>
                   </a>
                 </div>
-                <div class="col-lg-12 addsortbytag_search_within_row">
+                <div className="col-lg-12 addsortbytag_search_within_row">
                   <button
                     type="button"
-                    class="btnAddNewGreenDashed btnAddSortbyTagFilerCondition"
+                    className="btnAddNewGreenDashed btnAddSortbyTagFilerCondition"
                     data-toggle="tooltip"
                     title="Add filter condition"
                   >
-                    <i class="fa fa-plus"></i>
+                    <FontAwesomeIcon icon={Icons.faPlus}/>
                   </button>
                   <button
                     type="button"
-                    class="btnAddNewGreenDashed btnAddSortbyTagSearchCondition"
+                    className="btnAddNewGreenDashed btnAddSortbyTagSearchCondition"
                     data-toggle="tooltip"
                     title="Search"
                   >
-                    <i class="fa fa-search"></i>
+                    <FontAwesomeIcon icon={Icons.faSearch}/>
                   </button>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <div class="hidden_sortbytag_filter_condition_row display-none">
-                <div class="col-lg-12 sortbytag_filter_condition_row">
-                  <div class="input-group mb-3">
-                    <select name="sortbytagSearchCondition" class="form-select">
+            <div className="modal-footer">
+              <div className="hidden_sortbytag_filter_condition_row display-none">
+                <div className="col-lg-12 sortbytag_filter_condition_row">
+                  <div className="input-group mb-3">
+                    <select name="sortbytagSearchCondition" className="form-select">
                       <option value="OR">OR Tag...</option>
                       <option value="AND">AND Tag...</option>
                       <option value="NOT">NOT Tag...</option>
                     </select>
                     <input
                       type="text"
-                      class="form-control sortbytagSearchTaginput"
+                      className="form-control sortbytagSearchTaginput"
                     />
                   </div>
                   <a
                     href="javascript:;"
-                    class="btnRemoveSortbyTagFilter"
+                    className="btnRemoveSortbyTagFilter"
                     data-toggle="tooltip"
                     title="Remove filter"
                   >
-                    <i class="fa fa-close"></i>
+                    <FontAwesomeIcon icon={Icons.faClose}/>
                   </a>
                 </div>
               </div>
-              <button type="button" class="btn btn-danger btnDropResult">
-                <i class="fa fa-trash-alt"></i> Drop Results
+              <button type="button" className="btn btn-danger btnDropResult">
+                <FontAwesomeIcon icon={Icons.faTrashAlt}/> Drop Results
               </button>
-              <button type="button" class="btn btn-secondary">
-                <i class="fa fa-save"></i> Save Filtered View{" "}
-                <i class="fa fa-bullseye"></i>
+              <button type="button" className="btn btn-secondary">
+                <FontAwesomeIcon icon={Icons.faSave}/> Save Filtered View{" "}
+                <FontAwesomeIcon icon={Icons.faBullseye}/>
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-search"></i> Search
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faSearch}/> Search
               </button>
             </div>
           </div>
@@ -2783,45 +2812,45 @@ const Drive = () => {
 
       {/* <!-- Advanced Tag Search - Drop result modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={sortByTagDropResultModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="sortByTagDropResultModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="sortByTagDropResultModalTitle">
-                <i class="fa fa-trash-alt"></i> Drop Results
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="sortByTagDropResultModalTitle">
+                <FontAwesomeIcon icon={Icons.faTrashAlt}/> Drop Results
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="sortbytag_drop_result_container mx-auto w-100 text-center">
-                <div class="alert alert-warning" role="alert">
-                  <i class="fa-solid fa-triangle-exclamation"></i> Ok to drop
+            <div className="modal-body">
+              <div className="sortbytag_drop_result_container mx-auto w-100 text-center">
+                <div className="alert alert-warning" role="alert">
+                <FontAwesomeIcon icon={Icons.faTriangleExclamation}/> Ok to drop
                   1234 matches? This cannot be undone.
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Abort Unchanged
+                <FontAwesomeIcon icon={Icons.faClose}/> Abort Unchanged
               </button>
-              <button type="button" class="btn btn-danger btnDropResult">
-                <i class="fa fa-check"></i> Yes, Proceed & Drop{" "}
-                <i class="fa fa-trash-alt"></i>
+              <button type="button" className="btn btn-danger btnDropResult">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Yes, Proceed & Drop{" "}
+                <FontAwesomeIcon icon={Icons.faTrashAlt}/>
               </button>
             </div>
           </div>
@@ -2830,52 +2859,52 @@ const Drive = () => {
 
       {/* <!-- New SpreadSheet modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newSheetModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="newSheetModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newSheetModalTitle">
-                <i class="fa fa-table"></i> SpreadSheet
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="newSheetModalTitle">
+                <FontAwesomeIcon icon={Icons.faTable}/> SpreadSheet
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <label for="sheetName" class="col-sm-4 col-form-label">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <label for="sheetName" className="col-sm-4 col-form-label">
                   SpreadSheet Name
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     name="sheetName"
                     id="sheetName"
                     placeholder="Name"
-                    class="form-control"
+                    className="form-control"
                     type="text"
                   />
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -2884,55 +2913,55 @@ const Drive = () => {
 
       {/* <!-- New Invoice modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newInvoiceModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="newInvoiceModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newInvoiceModalTitle">
-                <i class="fa fa-table"></i> Estimate / Invoice / Receipt / Etc.
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="newInvoiceModalTitle">
+                <FontAwesomeIcon icon={Icons.faTable}/> Estimate / Invoice / Receipt / Etc.
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <label for="invoiceName" class="col-sm-4 col-form-label">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <label for="invoiceName" className="col-sm-4 col-form-label">
                   Title{" "}
                   <span
                     data-toggle="tooltip"
                     title="A descriptive name so you know what it's for. Will display to all parties."
                   >
-                    <i class="fa fa-question-circle"></i>
+                    <FontAwesomeIcon icon={Icons.faQuestionCircle}/>
                   </span>
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     name="invoiceName"
                     id="invoiceName"
                     placeholder="Name"
-                    class="form-control"
+                    className="form-control"
                     type="text"
                   />
                 </div>
               </div>
-              <div class="mb-3 row align-items-center">
-                <label for="invoiceTypeOpts" class="col-sm-4 col-form-label">
+              <div className="mb-3 row align-items-center">
+                <label for="invoiceTypeOpts" className="col-sm-4 col-form-label">
                   Status
                 </label>
-                <div class="col-sm-8">
-                  <div class="input-group">
+                <div className="col-sm-8">
+                  <div className="input-group">
                     <select
-                      class="form-select mb-1"
+                      className="form-select mb-1"
                       name="invoiceType"
                       id="invoiceTypeOpts"
                     >
@@ -2947,7 +2976,7 @@ const Drive = () => {
                       <option value="Receipt">Receipt</option>
                     </select>
                     <select
-                      class="form-select mb-1"
+                      className="form-select mb-1"
                       name="invoiceStatus"
                       id="invoice_status_opts"
                     >
@@ -2966,16 +2995,16 @@ const Drive = () => {
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -2984,52 +3013,52 @@ const Drive = () => {
 
       {/* <!-- New Form modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newWebFormModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="newWebFormModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newWebFormModalTitle">
-                <i class="fa fa-th-list"></i> Web Form
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="newWebFormModalTitle">
+              <FontAwesomeIcon icon={Icons.faThList}/> Web Form
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <label for="formName" class="col-sm-4 col-form-label">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <label for="formName" className="col-sm-4 col-form-label">
                   Web Form Name
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     name="formName"
                     id="formName"
                     placeholder="Name"
-                    class="form-control"
+                    className="form-control"
                     type="text"
                   />
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3038,150 +3067,150 @@ const Drive = () => {
 
       {/* <!-- New Folder / Workroom modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newFolderWorkRoomModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="newFolderWorkroomModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newFolderWorkroomModalTitle">
-                <i class="fa fa-folder"></i> Folder /{" "}
-                <i class="fa fa-users"></i> Workroom
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="newFolderWorkroomModalTitle">
+                <FontAwesomeIcon icon={Icons.faFolder}/> Folder /{" "}
+                <FontAwesomeIcon icon={Icons.faUsers}/> Workroom
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body pt-0">
-              <div class="row stepProcess d-none">
-                <div class="col-lg-12 p-0">
+            <div className="modal-body pt-0">
+              <div className="row stepProcess d-none">
+                <div className="col-lg-12 p-0">
                   {/* <!-- ONLY YELLOW (ACTIVE STEP) SHOW FULL LABEL, ALL OTHERS ICON ONLY -->
                                 <!-- THIS STATUS CORRESPONDS TO NEXT STEP, WHICH ALSO CORRESPONDS TO PREVIOUS DISPOSITION --> */}
-                  <ul class="nav nav-wizard">
-                    <li class="SaleStatus_Pending" data-step="1">
+                  <ul className="nav nav-wizard">
+                    <li className="SaleStatus_Pending" data-step="1">
                       <a
                         href="javascript:;"
                         data-toggle="tooltip"
                         title="Recipient(s)"
                       >
-                        <i class="fa fa-user"></i> <span>Recipient(s)</span>
+                        <FontAwesomeIcon icon={Icons.faUser}/> <span>Recipient(s)</span>
                       </a>
                     </li>
-                    <li class="SaleStatus_NotStarted" data-step="2">
+                    <li className="SaleStatus_NotStarted" data-step="2">
                       <a
                         href="javascript:;"
                         data-toggle="tooltip"
                         title="Edit & Send Message"
                         onclick="event.stopPropagation();"
                       >
-                        <i class="fa fa-paper-plane"></i>{" "}
+                        <FontAwesomeIcon icon={Icons.faPaperPlane}/>{" "}
                         <span>Send Message</span>
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="my-3 row align-items-center">
-                <label for="folderName" class="col-sm-4 col-form-label">
+              <div className="my-3 row align-items-center">
+                <label for="folderName" className="col-sm-4 col-form-label">
                   Folder Name
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     name="folderName"
                     id="folderName"
                     placeholder="Name / Label"
-                    class="form-control"
+                    className="form-control"
                     type="text"
                   />
                 </div>
               </div>
-              <div class="mb-3 row align-items-center">
-                <div class="col-md-12 shareWithOtherPeopleOpts">
+              <div className="mb-3 row align-items-center">
+                <div className="col-md-12 shareWithOtherPeopleOpts">
                   <input
                     type="checkbox"
                     name="sendWorkroomInvitation"
                     id="sendWithOtherPeople"
-                    class="css-checkbox"
+                    className="css-checkbox"
                   />
                   <label
                     for="sendWithOtherPeople"
-                    class="css-checkbox-label radGroup2 form-inline mr-sm-2"
+                    className="css-checkbox-label radGroup2 form-inline mr-sm-2"
                   >
-                    <i class="fa fa-users"></i> Share with other people
+                    <FontAwesomeIcon icon={Icons.faUsers}/> Share with other people
                   </label>
                 </div>
               </div>
-              <div class="mb-3 row align-items-center shareWithOtherPeopleContainer d-none">
-                <div class="col-md-12">
-                  <div class="row mb-3 position-relative">
-                    <div class="col-lg-6">
+              <div className="mb-3 row align-items-center shareWithOtherPeopleContainer d-none">
+                <div className="col-md-12">
+                  <div className="row mb-3 position-relative">
+                    <div className="col-lg-6">
                       <input
-                        class="form-control"
+                        className="form-control"
                         type="text"
                         name="userEmailName"
                         placeholder="Email or Username"
                         autocomplete="off"
                       />
                     </div>
-                    <div class="col-lg-6">
-                      <select name="userRoleSelect" class="form-select">
+                    <div className="col-lg-6">
+                      <select name="userRoleSelect" className="form-select">
                         <option>List of Roles</option>
                       </select>
                       <a
                         href="javascript:;"
-                        class="btnRemovePeople"
+                        className="btnRemovePeople"
                         data-toggle="tooltip"
                         title="Remove User"
                       >
-                        <i class="fa fa-trash-alt"></i>
+                        <FontAwesomeIcon icon={Icons.faTrashAlt}/>
                       </a>
                     </div>
                   </div>
-                  <div class="row mb-3 btnAddNewPeopleRow">
-                    <div class="col-lg-12 text-center">
+                  <div className="row mb-3 btnAddNewPeopleRow">
+                    <div className="col-lg-12 text-center">
                       <button
                         type="button"
-                        class="btnAddNewGreenDashed btnAddNewPeople"
+                        className="btnAddNewGreenDashed btnAddNewPeople"
                         data-toggle="tooltip"
                         title="Add New"
                       >
-                        <i class="fa fa-plus"></i>
+                        <FontAwesomeIcon icon={Icons.faPlus}/>
                       </button>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-12">
+                  <div className="row">
+                    <div className="col-lg-12">
                       <input
                         type="checkbox"
                         name="sendInvitation"
                         id="sendInvitation"
-                        class="css-checkbox"
+                        className="css-checkbox"
                       />
-                      <label for="sendInvitation" class="css-checkbox-label">
-                        <i class="fa fa-paper-plane"></i> Send Invitation
+                      <label for="sendInvitation" className="css-checkbox-label">
+                        <FontAwesomeIcon icon={Icons.faPaperPlane}/> Send Invitation
                       </label>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3190,52 +3219,52 @@ const Drive = () => {
 
       {/* <!-- New Envelope modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newEnvelopeModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="newEnvelopeModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newEnvelopeModalTitle">
-                <i class="fa fa-envelope"></i> Envelope
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="newEnvelopeModalTitle">
+              <FontAwesomeIcon icon={Icons.faEnvelope}/> Envelope
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <label for="envelopeName" class="col-sm-4 col-form-label">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <label for="envelopeName" className="col-sm-4 col-form-label">
                   Envelope Name
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     name="envelopeName"
                     id="envelopeName"
                     placeholder="Name / Label"
-                    class="form-control"
+                    className="form-control"
                     type="text"
                   />
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3244,52 +3273,52 @@ const Drive = () => {
 
       {/* <!-- New Item modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newItemModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="newItemModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newItemModalTitle">
-                <i class="fa fa-shopping-cart"></i> SKU / Item You Sell
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="newItemModalTitle">
+              <FontAwesomeIcon icon={Icons.faShoppingCart}/> SKU / Item You Sell
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <label for="itemName" class="col-sm-4 col-form-label">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <label for="itemName" className="col-sm-4 col-form-label">
                   Item Name
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     name="itemName"
                     id="itemName"
                     placeholder="Name"
-                    class="form-control"
+                    className="form-control"
                     type="text"
                   />
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3298,41 +3327,41 @@ const Drive = () => {
 
       {/* <!-- New Sequence modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newSequenceModalRef}
-        tabindex="-1"
+        tabIndex="-1"
         role="dialog"
         aria-labelledby="newSequenceModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newSequenceModalTitle">
-                <i class="fa fa-ellipsis-h"></i> New Sequence
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="newSequenceModalTitle">
+                <FontAwesomeIcon icon={Icons.faEllipsisH}/> New Sequence
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <label for="sequenceName" class="col-sm-4 col-form-label">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <label for="sequenceName" className="col-sm-4 col-form-label">
                   Sequence Name{" "}
                   <span
                     data-toggle="tooltip"
                     title="Often yourself, but could be an employee, or any asset (i.e. boat, backhoe, or conference room, etc) - anything or anyone you want to schedule access to."
                   >
-                    <i class="fa fa-question-circle"></i>
+                    <FontAwesomeIcon icon={Icons.faQuestionCircle}/>
                   </span>
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     name="sequenceName"
                     id="sequenceName"
                     placeholder="Sequence Name"
@@ -3340,16 +3369,16 @@ const Drive = () => {
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3358,59 +3387,59 @@ const Drive = () => {
 
       {/* <!-- New Scheduler modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newSchedulerModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="newSchedulerModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newSchedulerModalTitle">
-                <i class="far fa-calendar"></i> Add New Scheduler
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="newSchedulerModalTitle">
+                <FontAwesomeIcon icon={Icons.faCalendar}/> Add New Scheduler
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <label for="schedulerName" class="col-sm-4 col-form-label">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <label for="schedulerName" className="col-sm-4 col-form-label">
                   Name{" "}
                   <span
                     data-toggle="tooltip"
                     title="Who or what? i.e. Jane Doe, Boardroom A. You'll define purpose and block of time on the next step."
                   >
-                    <i class="fa fa-question-circle"></i>
+                    <FontAwesomeIcon icon={Icons.faQuestionCircle}/>
                   </span>
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     name="schedulerName"
                     id="schedulerName"
                     placeholder="Name"
-                    class="form-control"
+                    className="form-control"
                     type="text"
                     value=""
                   />
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3419,41 +3448,41 @@ const Drive = () => {
 
       {/* <!-- New Phone modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newPhoneModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="newPhoneModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newPhoneModalTitle">
-                <i class="fa fa-phone"></i> Phone Number
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="newPhoneModalTitle">
+                <FontAwesomeIcon icon={Icons.faPhone}/> Phone Number
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-5 row align-items-center">
-                <div class="col-sm-12">
+            <div className="modal-body">
+              <div className="mb-5 row align-items-center">
+                <div className="col-sm-12">
                   {/* <!--Add {PHONE} to 01_Settings >> Phone AND to Main Drive --> */}
                   <input
-                    class="form-control form-control-lg"
+                    className="form-control form-control-lg"
                     type="tel"
                     name="add_phone_search"
                     id="add_phone_search"
                     placeholder=""
                   />
-                  <div class="phone_search_result_container display-none">
-                    <div class="phone_search_loader display-none">
-                      <div class="phone_search_loader_content">
-                        <i class="fa fa-spinner fa-spin-2x fa-pulse fa-fw"></i>{" "}
+                  <div className="phone_search_result_container display-none">
+                    <div className="phone_search_loader display-none">
+                      <div className="phone_search_loader_content">
+                        <FontAwesomeIcon icon={Icons.faSpinner}/>{" "}
                         Provisioning
                       </div>
                     </div>
@@ -3461,8 +3490,8 @@ const Drive = () => {
                   </div>
                 </div>
               </div>
-              <div class="row align-items-center">
-                <div class="col-sm-12 text-center">
+              <div className="row align-items-center">
+                <div className="col-sm-12 text-center">
                   <p>What country & area code?</p>
                   <p>
                     <a
@@ -3475,16 +3504,16 @@ const Drive = () => {
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3493,52 +3522,52 @@ const Drive = () => {
 
       {/* <!-- New Paywall modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newPaywallModalRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="newPaywallModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newPaywallModalTitle">
-                <i class="fa fa-sign-in"></i> Paywall
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="newPaywallModalTitle">
+                <FontAwesomeIcon icon={Icons.faSignIn}/> Paywall
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <label for="paywallName" class="col-sm-4 col-form-label">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <label for="paywallName" className="col-sm-4 col-form-label">
                   Paywall Name
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     name="paywallName"
                     id="paywallName"
                     placeholder="Name"
-                    class="form-control"
+                    className="form-control"
                     type="text"
                   />
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3547,46 +3576,46 @@ const Drive = () => {
 
       {/* <!-- FreeBaitLeadGen modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={freeBaitLeadGenRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="FreeBaitLeadGenTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="FreeBaitLeadGenTitle">
-                <i class="fa fa-folder"></i> Select Folder
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="FreeBaitLeadGenTitle">
+                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <div class="col-sm-12">
-                  <select class="form-select">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <div className="col-sm-12">
+                  <select className="form-select">
                     <option>Select Folder</option>
                     <option>Root</option>
                   </select>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3595,46 +3624,46 @@ const Drive = () => {
 
       {/* <!-- DirectSellUpsell modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={directSellUpsellRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="DirectSellUpsellTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="DirectSellUpsellTitle">
-                <i class="fa fa-folder"></i> Select Folder
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="DirectSellUpsellTitle">
+                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <div class="col-sm-12">
-                  <select class="form-select">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <div className="col-sm-12">
+                  <select className="form-select">
                     <option>Select Folder</option>
                     <option>Root</option>
                   </select>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3643,46 +3672,46 @@ const Drive = () => {
 
       {/* <!-- QualifierAppointmentScheduler modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={qualifierAppointmentSchedulerRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="QualifierAppointmentSchedulerTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="QualifierAppointmentSchedulerTitle">
-                <i class="fa fa-folder"></i> Select Folder
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="QualifierAppointmentSchedulerTitle">
+                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <div class="col-sm-12">
-                  <select class="form-select">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <div className="col-sm-12">
+                  <select className="form-select">
                     <option>Select Folder</option>
                     <option>Root</option>
                   </select>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3691,46 +3720,46 @@ const Drive = () => {
 
       {/* <!-- NewtoMarketValidator modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={newtoMarketValidatorRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="NewtoMarketValidatorTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="NewtoMarketValidatorTitle">
-                <i class="fa fa-folder"></i> Select Folder
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="NewtoMarketValidatorTitle">
+                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <div class="col-sm-12">
-                  <select class="form-select">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <div className="col-sm-12">
+                  <select className="form-select">
                     <option>Select Folder</option>
                     <option>Root</option>
                   </select>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3739,46 +3768,46 @@ const Drive = () => {
 
       {/* <!-- FreeShippingUpsells modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={freeShippingUpsellsRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="FreeShippingUpsellsTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="FreeShippingUpsellsTitle">
-                <i class="fa fa-folder"></i> Select Folder
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="FreeShippingUpsellsTitle">
+                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <div class="col-sm-12">
-                  <select class="form-select">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <div className="col-sm-12">
+                  <select className="form-select">
                     <option>Select Folder</option>
                     <option>Root</option>
                   </select>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3787,46 +3816,46 @@ const Drive = () => {
 
       {/* <!-- FreeTripwireSale modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={freeTripwireSaleRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="FreeTripwireSaleTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="FreeTripwireSaleTitle">
-                <i class="fa fa-folder"></i> Select Folder
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="FreeTripwireSaleTitle">
+                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <div class="col-sm-12">
-                  <select class="form-select">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <div className="col-sm-12">
+                  <select className="form-select">
                     <option>Select Folder</option>
                     <option>Root</option>
                   </select>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
@@ -3835,46 +3864,46 @@ const Drive = () => {
 
       {/* <!-- FreeBaitWebinarVideo modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         ref={freeBaitWebinarVideoRef}
         tabindex="-1"
         role="dialog"
         aria-labelledby="FreeBaitWebinarVideoTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="FreeBaitWebinarVideoTitle">
-                <i class="fa fa-folder"></i> Select Folder
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="FreeBaitWebinarVideoTitle">
+                <FontAwesomeIcon icon={Icons.faFolder}/> Select Folder
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3 row align-items-center">
-                <div class="col-sm-12">
-                  <select class="form-select">
+            <div className="modal-body">
+              <div className="mb-3 row align-items-center">
+                <div className="col-sm-12">
+                  <select className="form-select">
                     <option>Select Folder</option>
                     <option>Root</option>
                   </select>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-default"
+                className="btn btn-default"
                 data-bs-dismiss="modal"
               >
-                <i class="fa fa-close"></i> Cancel
+                <FontAwesomeIcon icon={Icons.faClose}/> Cancel
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-check"></i> Save
+              <button type="button" className="btn btn-primary">
+                <FontAwesomeIcon icon={Icons.faCheck}/> Save
               </button>
             </div>
           </div>
