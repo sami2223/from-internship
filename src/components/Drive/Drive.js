@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Modal } from "bootstrap";
 import "./Drive.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +11,10 @@ import {
   faFilePdf,
 } from "@fortawesome/free-regular-svg-icons";
 import AdvanceTagSearchModal from "./AdvanceTagSearchModal";
+import "jquery/dist/jquery.min.js";
+import "datatables.net-dt/js/dataTables.dataTables";
+import "datatables.net-dt/css/jquery.dataTables.min.css";
+import $ from "jquery";
 
 const Drive = () => {
   // const [addSearchInput, setAddSearchInput] = useState(false);
@@ -45,6 +49,15 @@ const Drive = () => {
     bsModal.show();
   };
 
+  useEffect(() => {
+    //initialize datatable
+    $(document).ready(function () {
+      $("#tblDrive").DataTable({
+        dom: "rtipf",
+      });
+    });
+  }, []);
+
   //   const hideModal = () => {
   //     const modalEle = newDocModalRef.current;
   //     const bsModal = Modal.getInstance(modalEle);
@@ -56,7 +69,7 @@ const Drive = () => {
         <div className="col" id="page-urls">
           <div className="row">
             <div className="col-lg-12">
-              <select
+              <select style={{ width:"60px" }}
                 data-width="55px"
                 className="btn-DriveFilterView btn-secondary float-start"
               >
@@ -1047,7 +1060,6 @@ const Drive = () => {
                                                     href
                                                     onClick={(e) => {
                                                       e.preventDefault();
-                                                      
                                                     }}
                                                     className="btnRemoveSearchWithinTag"
                                                     data-toggle="tooltip"
@@ -1076,7 +1088,6 @@ const Drive = () => {
                                                     title="Search"
                                                     onClick={(e) => {
                                                       e.preventDefault();
-                                                      
                                                     }}
                                                   >
                                                     <FontAwesomeIcon
@@ -2686,7 +2697,9 @@ const Drive = () => {
       </div>
 
       {/* <!-- Advanced Tag Search modal --> */}
-      <AdvanceTagSearchModal contactsSortByTagModalRef={contactsSortByTagModalRef}/>
+      <AdvanceTagSearchModal
+        contactsSortByTagModalRef={contactsSortByTagModalRef}
+      />
 
       {/* <!-- New SpreadSheet modal --> */}
       <div
