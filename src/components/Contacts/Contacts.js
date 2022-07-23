@@ -60,7 +60,7 @@ const Contacts = () => {
                 data-toggle="selectpicker"
               >
                 
-                <option value="0" data-icon="" disabled={true} selected="">
+                <option value="0" data-icon="" disabled="" selected="">
                   == Saved Filtered Views ==
                 </option>
                 <option value="1" data-icon="fa-bullseye">
