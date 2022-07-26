@@ -28,7 +28,18 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 const Settings = () => {
   const [show, setShow] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
+  const [dropdownIcon, seDropdownIcon] = useState([<FontAwesomeIcon icon={Icons.faEyeSlash}/>]);
   const drop = useRef();
+
+  const clickHandleDropdownItem=(icon)=>{
+    if(icon==='eyeSlash'){
+      seDropdownIcon([<FontAwesomeIcon icon={Icons.faEyeSlash}/>])
+    } else if(icon==='globe'){
+      seDropdownIcon([<FontAwesomeIcon icon={Icons.faGlobe}/>])
+    } else if(icon==='users'){
+      seDropdownIcon([<FontAwesomeIcon icon={Icons.faUsers}/>])
+    }
+  }
   return (
     <>
       <div className="row g-0">
@@ -819,15 +830,13 @@ const Settings = () => {
               >
                 <DropdownButton
                   id="dropdown-item-button"
-                  // className="btn btn-outline-secondary"
-                  title={<FontAwesomeIcon icon={Icons.faEyeSlash} />}
-                  
+                  title={dropdownIcon}                
                 >
-                  <Dropdown.Item as="button"><FontAwesomeIcon icon={Icons.faEyeSlash} /> Hidden /
+                  <Dropdown.Item as="button" onClick={()=>clickHandleDropdownItem('eyeSlash')}><FontAwesomeIcon icon={Icons.faEyeSlash} /> Hidden /
                         Secret</Dropdown.Item>
-                  <Dropdown.Item as="button"><FontAwesomeIcon icon={Icons.faUsers} /> Connections
+                  <Dropdown.Item as="button" onClick={()=>clickHandleDropdownItem('users')}><FontAwesomeIcon icon={Icons.faUsers} /> Connections
                         only</Dropdown.Item>
-                  <Dropdown.Item as="button"><FontAwesomeIcon icon={Icons.faGlobe} /> Public</Dropdown.Item>
+                  <Dropdown.Item as="button" onClick={()=>clickHandleDropdownItem('globe')}><FontAwesomeIcon icon={Icons.faGlobe} /> Public</Dropdown.Item>
                 </DropdownButton>
               </div>
 
