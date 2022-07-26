@@ -22,6 +22,8 @@ import ClientPortal from "./ClientPortal";
 import ChangePassword from "./ChangePassword";
 import APIAccess from "./APIAccess";
 import ClosePrivatizeAccount from "./ClosePrivatizeAccount";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 
 const Settings = () => {
   const [show, setShow] = useState(false);
@@ -178,6 +180,7 @@ const Settings = () => {
                 </div>
               )}
             </div>
+
             <div className="col-md-4 inputbox">
               <input
                 type="text"
@@ -579,7 +582,7 @@ const Settings = () => {
                     setShow(true);
                   }}
                   className="btnAddNewUserDetail"
-                  style={{ cursor:"pointer" }}
+                  style={{ cursor: "pointer" }}
                 >
                   <FontAwesomeIcon icon={Icons.faPlus} />
                 </a>
@@ -811,40 +814,21 @@ const Settings = () => {
               </div>
 
               <div
-                ref={drop}
+                // ref={drop}
                 className="col-md-2 text-center privacy-col dropdown"
               >
-                <button
-                  type="button"
-                  tabindex="-1"
-                  class="btn btn-outline-secondary"
-                  style={{ border: "none" }}
-                  // onClick={()=>{
-                  //   setOpenDropdown(openDropdown => !openDropdown)
-                  // }}
+                <DropdownButton
+                  id="dropdown-item-button"
+                  // className="btn btn-outline-secondary"
+                  title={<FontAwesomeIcon icon={Icons.faEyeSlash} />}
+                  
                 >
-                  <FontAwesomeIcon
-                    icon={Icons.faEyeSlash}
-                    style={{ color: "grey", marginTop: "1px" }}
-                  />
-                </button>
-                {openDropdown && (
-                  <div>
-                    <ul>
-                      <li onClick={() => setOpenDropdown(false)}>
-                        <FontAwesomeIcon icon={Icons.faEyeSlash} /> Hidden /
-                        Secret
-                      </li>
-                      <li onClick={() => setOpenDropdown(false)}>
-                        <FontAwesomeIcon icon={Icons.faUsers} /> Connections
-                        only
-                      </li>
-                      <li onClick={() => setOpenDropdown(false)}>
-                        <FontAwesomeIcon icon={Icons.faGlobe} /> Public
-                      </li>
-                    </ul>
-                  </div>
-                )}
+                  <Dropdown.Item as="button"><FontAwesomeIcon icon={Icons.faEyeSlash} /> Hidden /
+                        Secret</Dropdown.Item>
+                  <Dropdown.Item as="button"><FontAwesomeIcon icon={Icons.faUsers} /> Connections
+                        only</Dropdown.Item>
+                  <Dropdown.Item as="button"><FontAwesomeIcon icon={Icons.faGlobe} /> Public</Dropdown.Item>
+                </DropdownButton>
               </div>
 
               <div className="col-md-4 inputbox">

@@ -1,3 +1,17 @@
+.dropdown-toggle::after{
+    display: none !important;
+}
+
+.dropdown-toggle {
+ background-color: #f7f7f7;
+ border: none;
+ color: #6c757d;
+}
+.dropdown-toggle:hover {
+    background-color: #dfdfdf;
+    border: 1px solid #b5b5b5;
+    color: #6c757d;
+   }
 #addressbook .adbook-profile-pic{
     position: relative;
     max-width: 140px;
