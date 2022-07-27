@@ -6,7 +6,6 @@ import * as Icons from "@fortawesome/free-solid-svg-icons";
 import AdvanceTagSearchModal from "./AdvanceTagSearchModal";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import "jquery/dist/jquery.min.js";
 import "datatables.net-dt/js/dataTables.dataTables";
 import "datatables.net-dt/css/jquery.dataTables.min.css";

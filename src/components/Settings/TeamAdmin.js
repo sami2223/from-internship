@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
-import RangeSlider from "react-bootstrap-range-slider";
-import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
+import "./tree.css";
+import avatar from '../../assets/images/avatar.gif'
 
 const TeamAdmin = () => {
   const [openTeamAdmin, setOpenTeamAdmin] = useState(false);
@@ -12,13 +12,14 @@ const TeamAdmin = () => {
     <>
       <div className="row g-0 block-content border-bottom">
         <div className="col-lg-12">
-          <div className="row editable align-items-center" >
+          <div className="row editable align-items-center">
             <div className="col-10">
-              <h5 className="block-title" onClick={() => {
-                  setOpenTeamAdmin(
-                    (prevopenTeamAdmin) => !prevopenTeamAdmin
-                  );
-                }}>
+              <h5
+                className="block-title"
+                onClick={() => {
+                  setOpenTeamAdmin((prevopenTeamAdmin) => !prevopenTeamAdmin);
+                }}
+              >
                 <FontAwesomeIcon icon={Icons.faUsers} /> Team Admin (IAM - ID &
                 Access Management)
               </h5>
@@ -26,12 +27,10 @@ const TeamAdmin = () => {
             <div className="col-2 text-end">
               <span
                 onClick={() => {
-                    setOpenTeamAdmin(
-                      (prevOpenTeamAdmin) => !prevOpenTeamAdmin
-                    );
-                  }}
+                  setOpenTeamAdmin((prevOpenTeamAdmin) => !prevOpenTeamAdmin);
+                }}
                 className="round-edit-icon"
-                style={{ cursor:"pointer" }}
+                style={{ cursor: "pointer" }}
               >
                 {!openTeamAdmin ? (
                   <FontAwesomeIcon icon={Icons.faPencil} />
@@ -252,503 +251,502 @@ const TeamAdmin = () => {
                             </div>
                           </div>
                         </div>
+                        
+                        {/*  */}
                         <div className="row">
                           <div className="col-lg-12">
                             <ul
                               id="userAdminTree"
-                              className="easyui-tree"
+                              className="easyui-tree tree tree-lines"
                               data-options="dnd: true,animate:true,lines:true"
                             >
                               <li>
-                                <span>
-                                  Visionary / Founder / CEO
-                                  <div className="teamUserInfoContainer">
-                                    <div className="teamUserInfo">
-                                      <div className="teamUserInfoAction">
-                                        <a
-                                          href="#"
-                                          className="btnTeamUserInfoActionTrash"
-                                          data-toggle="tooltip"
-                                          data-placement="bottom"
-                                          title="Remove Role / Position"
-                                        >
-                                          <FontAwesomeIcon
-                                            icon={Icons.faTrash}
-                                          />
-                                        </a>
-                                        <a
-                                          href="#"
-                                          className="btnTeamUserInfoActionSettings"
-                                          data-toggle="tooltip"
-                                          data-placement="bottom"
-                                          title="Settings & Permissions"
-                                        >
-                                          <FontAwesomeIcon
-                                            icon={Icons.faGear}
-                                          />
-                                        </a>
-                                        <a
-                                          href="#"
-                                          className="btnTeamUserInfoActionReportingRole"
-                                          data-toggle="tooltip"
-                                          data-placement="bottom"
-                                          title="Add Staff Position / Reporting Role Below"
-                                        >
-                                          {/* <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/> */}
-                                          <FontAwesomeIcon
-                                            icon={Icons.faLevelUp}
-                                            className="fa-rotate-90"
-                                          />
-                                        </a>
-                                        <a
-                                          href="#"
-                                          className="btnTeamUserInfoActionAdd"
-                                          data-toggle="tooltip"
-                                          data-placement="bottom"
-                                          title="Invite / Assign Role"
-                                        >
-                                          <FontAwesomeIcon
-                                            icon={Icons.faUserPlus}
-                                          />
-                                        </a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </span>
-                                <ul>
-                                  <li>
-                                    Integrator / COO
+                                <div
+                                  id="userAdminTree_easyui_tree_1"
+                                  className="tree-node droppable tree-root-one tree-node-last tree-node-selected"
+                                >
+                                  <span className="tree-hit tree-expanded"></span>
+                                  <span className="tree-icon tree-folder tree-folder-open"></span>
+                                  <span className="tree-title">
+                                    Visionary / Founder / CEO
                                     <div className="teamUserInfoContainer">
                                       <div className="teamUserInfo">
                                         <div className="teamUserInfoAction">
                                           <a
-                                            href="#"
+                                            href onClick={(e)=>e.preventDefault()}
                                             className="btnTeamUserInfoActionTrash"
                                             data-toggle="tooltip"
                                             data-placement="bottom"
-                                            title="Remove Role / Position"
+                                            title=""
+                                            data-bs-original-title="Remove Role / Position"
+                                            aria-label="Remove Role / Position"
                                           >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faTrash}
-                                            />
+                                            <FontAwesomeIcon icon={Icons.faTrash} />
                                           </a>
                                           <a
-                                            href="#"
+                                            href onClick={(e)=>e.preventDefault()}
                                             className="btnTeamUserInfoActionSettings"
                                             data-toggle="tooltip"
                                             data-placement="bottom"
-                                            title="Settings & Permissions"
+                                            title=""
+                                            data-bs-original-title="Settings &amp; Permissions"
+                                            aria-label="Settings &amp; Permissions"
                                           >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faGear}
-                                            />
+                                            <FontAwesomeIcon icon={Icons.faGear} />
                                           </a>
                                           <a
-                                            href="#"
+                                            href onClick={(e)=>e.preventDefault()}
                                             className="btnTeamUserInfoActionReportingRole"
                                             data-toggle="tooltip"
                                             data-placement="bottom"
-                                            title="Add Staff Position / Reporting Role Below"
+                                            title=""
+                                            data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                            aria-label="Add Staff Position / Reporting Role Below"
                                           >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faLevelUp}
-                                              className="fa-rotate-90"
-                                            />
+                                            <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
                                           </a>
                                           <a
-                                            href="#"
+                                            href onClick={(e)=>e.preventDefault()}
                                             className="btnTeamUserInfoActionAdd"
                                             data-toggle="tooltip"
                                             data-placement="bottom"
-                                            title="Invite / Assign Role"
+                                            title=""
+                                            data-bs-original-title="Invite / Assign Role"
+                                            aria-label="Invite / Assign Role"
                                           >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faUserPlus}
-                                            />
+                                            <FontAwesomeIcon icon={Icons.faUserPlus} />
                                           </a>
                                         </div>
                                       </div>
                                     </div>
-                                  </li>
+                                  </span>
+                                </div>
+                                <ul style={{ display: "block" }}>
                                   <li>
-                                    <span>
-                                      Product / Operations / Fulfillment
-                                      <div className="teamUserInfoContainer">
-                                        <div className="teamUserInfo">
-                                          <div className="teamUserInfoAction">
-                                            <a
-                                              href="#"
-                                              className="btnTeamUserInfoActionTrash"
-                                              data-toggle="tooltip"
-                                              data-placement="bottom"
-                                              title="Remove Role / Position"
-                                            >
-                                              <FontAwesomeIcon
-                                                icon={Icons.faTrash}
-                                              />
-                                            </a>
-                                            <a
-                                              href="#"
-                                              className="btnTeamUserInfoActionSettings"
-                                              data-toggle="tooltip"
-                                              data-placement="bottom"
-                                              title="Settings & Permissions"
-                                            >
-                                              <FontAwesomeIcon
-                                                icon={Icons.faGear}
-                                              />
-                                            </a>
-                                            <a
-                                              href="#"
-                                              className="btnTeamUserInfoActionReportingRole"
-                                              data-toggle="tooltip"
-                                              data-placement="bottom"
-                                              title="Add Staff Position / Reporting Role Below"
-                                            >
-                                              <FontAwesomeIcon
-                                                icon={Icons.faLevelUp}
-                                                className="fa-rotate-90"
-                                              />
-                                            </a>
-                                            <a
-                                              href="#"
-                                              className="btnTeamUserInfoActionAdd"
-                                              data-toggle="tooltip"
-                                              data-placement="bottom"
-                                              title="Invite / Assign Role"
-                                            >
-                                              <FontAwesomeIcon
-                                                icon={Icons.faUserPlus}
-                                              />
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </span>
-
-                                    <ul>
-                                      <li>
-                                        <span>
-                                          Programming
-                                          <div className="teamUserInfoContainer">
-                                            <div className="teamUserInfo">
-                                              <div className="teamUserInfoAction">
-                                                <a
-                                                  href="#"
-                                                  className="btnTeamUserInfoActionTrash"
-                                                  data-toggle="tooltip"
-                                                  data-placement="bottom"
-                                                  title="Remove Role / Position"
-                                                >
-                                                  <FontAwesomeIcon
-                                                    icon={Icons.faTrash}
-                                                  />
-                                                </a>
-                                                <a
-                                                  href="#"
-                                                  className="btnTeamUserInfoActionSettings"
-                                                  data-toggle="tooltip"
-                                                  data-placement="bottom"
-                                                  title="Settings & Permissions"
-                                                >
-                                                  <FontAwesomeIcon
-                                                    icon={Icons.faGear}
-                                                  />
-                                                </a>
-                                                <a
-                                                  href="#"
-                                                  className="btnTeamUserInfoActionReportingRole"
-                                                  data-toggle="tooltip"
-                                                  data-placement="bottom"
-                                                  title="Add Staff Position / Reporting Role Below"
-                                                >
-                                                  <FontAwesomeIcon
-                                                    icon={Icons.faLevelUp}
-                                                    className="fa-rotate-90"
-                                                  />
-                                                </a>
-                                                <a
-                                                  href="#"
-                                                  className="btnTeamUserInfoActionAdd"
-                                                  data-toggle="tooltip"
-                                                  data-placement="bottom"
-                                                  title="Invite / Assign Role"
-                                                >
-                                                  <FontAwesomeIcon
-                                                    icon={Icons.faUserPlus}
-                                                  />
-                                                </a>
-                                              </div>
+                                    <div
+                                      id="userAdminTree_easyui_tree_2"
+                                      className="tree-node droppable"
+                                    >
+                                      <span className="tree-indent"></span>
+                                      <span className="tree-indent tree-join"></span>
+                                      <span className="tree-icon tree-file "></span>
+                                      <span className="tree-title">
+                                        Integrator / COO
+                                        <div className="teamUserInfoContainer">
+                                          <div className="teamUserInfo">
+                                            <div className="teamUserInfoAction">
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionTrash"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Remove Role / Position"
+                                                aria-label="Remove Role / Position"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faTrash} />
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionSettings"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Settings &amp; Permissions"
+                                                aria-label="Settings &amp; Permissions"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faGear} />
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionReportingRole"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                                aria-label="Add Staff Position / Reporting Role Below"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionAdd"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Invite / Assign Role"
+                                                aria-label="Invite / Assign Role"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faUserPlus} />
+                                              </a>
                                             </div>
                                           </div>
-                                        </span>
-
-                                        <ul>
-                                          <li>
-                                            Programmer 1
+                                        </div>
+                                      </span>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div
+                                      id="userAdminTree_easyui_tree_3"
+                                      className="tree-node droppable"
+                                    >
+                                      <span className="tree-indent"></span>
+                                      <span className="tree-hit tree-expanded"></span>
+                                      <span className="tree-icon tree-folder tree-folder-open"></span>
+                                      <span className="tree-title">
+                                        Product / Operations / Fulfillment
+                                        <div className="teamUserInfoContainer">
+                                          <div className="teamUserInfo">
+                                            <div className="teamUserInfoAction">
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionTrash"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Remove Role / Position"
+                                                aria-label="Remove Role / Position"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faTrash} />
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionSettings"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Settings &amp; Permissions"
+                                                aria-label="Settings &amp; Permissions"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faGear} />
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionReportingRole"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                                aria-label="Add Staff Position / Reporting Role Below"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionAdd"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Invite / Assign Role"
+                                                aria-label="Invite / Assign Role"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faUserPlus} />
+                                              </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </span>
+                                    </div>
+                                    <ul style={{ display: "block" }}>
+                                      <li>
+                                        <div
+                                          id="userAdminTree_easyui_tree_4"
+                                          className="tree-node droppable"
+                                        >
+                                          <span className="tree-indent"></span>
+                                          <span className="tree-indent tree-line"></span>
+                                          <span className="tree-hit tree-expanded"></span>
+                                          <span className="tree-icon tree-folder tree-folder-open"></span>
+                                          <span className="tree-title">
+                                            Programming
                                             <div className="teamUserInfoContainer">
                                               <div className="teamUserInfo">
                                                 <div className="teamUserInfoAction">
                                                   <a
-                                                    href="#"
+                                                    href onClick={(e)=>e.preventDefault()}
                                                     className="btnTeamUserInfoActionTrash"
                                                     data-toggle="tooltip"
                                                     data-placement="bottom"
-                                                    title="Remove Role / Position"
+                                                    title=""
+                                                    data-bs-original-title="Remove Role / Position"
+                                                    aria-label="Remove Role / Position"
                                                   >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faTrash}
-                                                    />
+                                                    <FontAwesomeIcon icon={Icons.faTrash} />
                                                   </a>
                                                   <a
-                                                    href="#"
+                                                    href onClick={(e)=>e.preventDefault()}
                                                     className="btnTeamUserInfoActionSettings"
                                                     data-toggle="tooltip"
                                                     data-placement="bottom"
-                                                    title="Settings & Permissions"
+                                                    title=""
+                                                    data-bs-original-title="Settings &amp; Permissions"
+                                                    aria-label="Settings &amp; Permissions"
                                                   >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faGear}
-                                                    />
+                                                    <FontAwesomeIcon icon={Icons.faGear} />
                                                   </a>
                                                   <a
-                                                    href="#"
+                                                    href onClick={(e)=>e.preventDefault()}
                                                     className="btnTeamUserInfoActionReportingRole"
                                                     data-toggle="tooltip"
                                                     data-placement="bottom"
-                                                    title="Add Staff Position / Reporting Role Below"
+                                                    title=""
+                                                    data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                                    aria-label="Add Staff Position / Reporting Role Below"
                                                   >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faLevelUp}
-                                                      className="fa-rotate-90"
-                                                    />
-                                                  </a>
-                                                </div>
-
-                                                <img src="images/avatar.gif" />
-                                                <div className="teamUsername">
-                                                  <a href="#">
-                                                    Hiren Wama software
+                                                    <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
                                                   </a>
                                                   <a
-                                                    href="#"
-                                                    className="btnTeamUserInfoActionRemove"
+                                                    href onClick={(e)=>e.preventDefault()}
+                                                    className="btnTeamUserInfoActionAdd"
                                                     data-toggle="tooltip"
                                                     data-placement="bottom"
-                                                    title="Remove from Role"
+                                                    title=""
+                                                    data-bs-original-title="Invite / Assign Role"
+                                                    aria-label="Invite / Assign Role"
                                                   >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faClose}
-                                                    />
+                                                    <FontAwesomeIcon icon={Icons.faUserPlus} />
                                                   </a>
                                                 </div>
-                                                <div className="teamUserInfoTags">
-                                                  <ul>
-                                                    <li>
-                                                      <a href="#">#Design</a>
-                                                    </li>
-                                                    <li>
-                                                      <a href="#">#Frontend</a>
-                                                    </li>
-                                                  </ul>
-                                                </div>
                                               </div>
+                                            </div>
+                                          </span>
+                                        </div>
+                                        <ul style={{ display: "block" }}>
+                                          <li>
+                                            <div
+                                              id="userAdminTree_easyui_tree_5"
+                                              className="tree-node droppable"
+                                            >
+                                              <span className="tree-indent"></span>
+                                              <span className="tree-indent tree-line"></span>
+                                              <span className="tree-indent tree-line"></span>
+                                              <span className="tree-indent tree-join"></span>
+                                              <span className="tree-icon tree-file "></span>
+                                              <span className="tree-title">
+                                                Programmer 1
+                                                <div className="teamUserInfoContainer">
+                                                  <div className="teamUserInfo">
+                                                    <div className="teamUserInfoAction">
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionTrash"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Remove Role / Position"
+                                                        aria-label="Remove Role / Position"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faTrash} />
+                                                      </a>
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionSettings"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Settings &amp; Permissions"
+                                                        aria-label="Settings &amp; Permissions"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faGear} />
+                                                      </a>
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionReportingRole"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                                        aria-label="Add Staff Position / Reporting Role Below"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
+                                                      </a>
+                                                    </div>
+
+                                                    <img src={avatar} alt="avatar" />
+                                                    <div className="teamUsername">
+                                                      <a href="#">
+                                                        Hiren Wama software
+                                                      </a>
+                                                      <a
+                                                        href="#"
+                                                        className="btnTeamUserInfoActionRemove"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Remove from Role"
+                                                        aria-label="Remove from Role"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faClose} />
+                                                      </a>
+                                                    </div>
+                                                    <div className="teamUserInfoTags">
+                                                      <ul>
+                                                        <li>
+                                                          <a href="#">
+                                                            #Design
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="#">
+                                                            #Frontend
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </span>
                                             </div>
                                           </li>
                                           <li>
-                                            Programmer 2
-                                            <div className="teamUserInfoContainer">
-                                              <div className="teamUserInfo">
-                                                <div className="teamUserInfoAction">
-                                                  <a
-                                                    href="#"
-                                                    className="btnTeamUserInfoActionTrash"
-                                                    data-toggle="tooltip"
-                                                    data-placement="bottom"
-                                                    title="Remove Role / Position"
-                                                  >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faTrash}
-                                                    />
-                                                  </a>
-                                                  <a
-                                                    href="#"
-                                                    className="btnTeamUserInfoActionSettings"
-                                                    data-toggle="tooltip"
-                                                    data-placement="bottom"
-                                                    title="Settings & Permissions"
-                                                  >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faGear}
-                                                    />
-                                                  </a>
-                                                  <a
-                                                    href="#"
-                                                    className="btnTeamUserInfoActionReportingRole"
-                                                    data-toggle="tooltip"
-                                                    data-placement="bottom"
-                                                    title="Add Staff Position / Reporting Role Below"
-                                                  >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faLevelUp}
-                                                      className="fa-rotate-90"
-                                                    />
-                                                  </a>
-                                                </div>
+                                            <div
+                                              id="userAdminTree_easyui_tree_6"
+                                              className="tree-node droppable tree-node-last"
+                                            >
+                                              <span className="tree-indent"></span>
+                                              <span className="tree-indent tree-line"></span>
+                                              <span className="tree-indent tree-line"></span>
+                                              <span className="tree-indent tree-joinbottom"></span>
+                                              <span className="tree-icon tree-file "></span>
+                                              <span className="tree-title">
+                                                Programmer 2
+                                                <div className="teamUserInfoContainer">
+                                                  <div className="teamUserInfo">
+                                                    <div className="teamUserInfoAction">
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionTrash"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Remove Role / Position"
+                                                        aria-label="Remove Role / Position"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faTrash} />
+                                                      </a>
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionSettings"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Settings &amp; Permissions"
+                                                        aria-label="Settings &amp; Permissions"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faGear} />
+                                                      </a>
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionReportingRole"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                                        aria-label="Add Staff Position / Reporting Role Below"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
+                                                      </a>
+                                                    </div>
 
-                                                <img src="images/avatar.gif" />
-                                                <div className="teamUsername">
-                                                  <a href="#">Mayur Nadiya</a>
-                                                  <a
-                                                    href="#"
-                                                    className="btnTeamUserInfoActionRemove"
-                                                    data-toggle="tooltip"
-                                                    data-placement="bottom"
-                                                    title="Remove from Role"
-                                                  >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faClose}
-                                                    />
-                                                  </a>
+                                                    <img src={avatar} alt="avatar" />
+                                                    <div className="teamUsername">
+                                                      <a href="#">
+                                                        Mayur Nadiya
+                                                      </a>
+                                                      <a
+                                                        href="#"
+                                                        className="btnTeamUserInfoActionRemove"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Remove from Role"
+                                                        aria-label="Remove from Role"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faClose} />
+                                                      </a>
+                                                    </div>
+                                                    <div className="teamUserInfoTags">
+                                                      <ul>
+                                                        <li>
+                                                          <a href="#">
+                                                            #Design
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="#">
+                                                            #Frontend
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
                                                 </div>
-                                                <div className="teamUserInfoTags">
-                                                  <ul>
-                                                    <li>
-                                                      <a href="#">#Design</a>
-                                                    </li>
-                                                    <li>
-                                                      <a href="#">#Frontend</a>
-                                                    </li>
-                                                  </ul>
-                                                </div>
-                                              </div>
+                                              </span>
                                             </div>
                                           </li>
                                         </ul>
                                       </li>
                                       <li>
-                                        <span>
-                                          UI/UX
-                                          <div className="teamUserInfoContainer">
-                                            <div className="teamUserInfo">
-                                              <div className="teamUserInfoAction">
-                                                <a
-                                                  href="#"
-                                                  className="btnTeamUserInfoActionTrash"
-                                                  data-toggle="tooltip"
-                                                  data-placement="bottom"
-                                                  title="Remove Role / Position"
-                                                >
-                                                  <FontAwesomeIcon
-                                                    icon={Icons.faTrash}
-                                                  />
-                                                </a>
-                                                <a
-                                                  href="#"
-                                                  className="btnTeamUserInfoActionSettings"
-                                                  data-toggle="tooltip"
-                                                  data-placement="bottom"
-                                                  title="Settings & Permissions"
-                                                >
-                                                  <FontAwesomeIcon
-                                                    icon={Icons.faGear}
-                                                  />
-                                                </a>
-                                                <a
-                                                  href="#"
-                                                  className="btnTeamUserInfoActionReportingRole"
-                                                  data-toggle="tooltip"
-                                                  data-placement="bottom"
-                                                  title="Add Staff Position / Reporting Role Below"
-                                                >
-                                                  <FontAwesomeIcon
-                                                    icon={Icons.faLevelUp}
-                                                    className="fa-rotate-90"
-                                                  />
-                                                </a>
-                                              </div>
-                                              <img src="images/avatar.gif" />
-                                              <div className="teamUsername">
-                                                <a href="#">Tejas Hapani</a>
-                                                <a
-                                                  href="#"
-                                                  className="btnTeamUserInfoActionRemove"
-                                                  data-toggle="tooltip"
-                                                  data-placement="bottom"
-                                                  title="Remove from Role"
-                                                >
-                                                  <FontAwesomeIcon
-                                                    icon={Icons.faClose}
-                                                  />
-                                                </a>
-                                              </div>
-                                              <div className="teamUserInfoTags">
-                                                <ul>
-                                                  <li>
-                                                    <a href="#">#Design</a>
-                                                  </li>
-                                                  <li>
-                                                    <a href="#">#Frontend</a>
-                                                  </li>
-                                                </ul>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </span>
-                                        <ul>
-                                          <li>
-                                            Demo user 1
+                                        <div
+                                          id="userAdminTree_easyui_tree_7"
+                                          className="tree-node droppable tree-node-last"
+                                        >
+                                          <span className="tree-indent"></span>
+                                          <span className="tree-indent tree-line"></span>
+                                          <span className="tree-hit tree-expanded"></span>
+                                          <span className="tree-icon tree-folder tree-folder-open"></span>
+                                          <span className="tree-title">
+                                            UI/UX
                                             <div className="teamUserInfoContainer">
                                               <div className="teamUserInfo">
                                                 <div className="teamUserInfoAction">
                                                   <a
-                                                    href="#"
+                                                    href onClick={(e)=>e.preventDefault()}
                                                     className="btnTeamUserInfoActionTrash"
                                                     data-toggle="tooltip"
                                                     data-placement="bottom"
-                                                    title="Remove Role / Position"
+                                                    title=""
+                                                    data-bs-original-title="Remove Role / Position"
+                                                    aria-label="Remove Role / Position"
                                                   >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faTrash}
-                                                    />
+                                                    <FontAwesomeIcon icon={Icons.faTrash} />
                                                   </a>
                                                   <a
-                                                    href="#"
+                                                    href onClick={(e)=>e.preventDefault()}
                                                     className="btnTeamUserInfoActionSettings"
                                                     data-toggle="tooltip"
                                                     data-placement="bottom"
-                                                    title="Settings & Permissions"
+                                                    title=""
+                                                    data-bs-original-title="Settings &amp; Permissions"
+                                                    aria-label="Settings &amp; Permissions"
                                                   >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faGear}
-                                                    />
+                                                    <FontAwesomeIcon icon={Icons.faGear} />
                                                   </a>
                                                   <a
-                                                    href="#"
+                                                    href onClick={(e)=>e.preventDefault()}
                                                     className="btnTeamUserInfoActionReportingRole"
                                                     data-toggle="tooltip"
                                                     data-placement="bottom"
-                                                    title="Add Staff Position / Reporting Role Below"
+                                                    title=""
+                                                    data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                                    aria-label="Add Staff Position / Reporting Role Below"
                                                   >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faLevelUp}
-                                                      className="fa-rotate-90"
-                                                    />
+                                                    <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
                                                   </a>
                                                 </div>
-                                                <img src="images/avatar.gif" />
+                                                <img src={avatar} alt="avatar" />
                                                 <div className="teamUsername">
-                                                  <a href="#">Demo user 1</a>
+                                                  <a href="#">Tejas Hapani</a>
                                                   <a
                                                     href="#"
                                                     className="btnTeamUserInfoActionRemove"
                                                     data-toggle="tooltip"
                                                     data-placement="bottom"
-                                                    title="Remove from Role"
+                                                    title=""
+                                                    data-bs-original-title="Remove from Role"
+                                                    aria-label="Remove from Role"
                                                   >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faClose}
-                                                    />
+                                                    <FontAwesomeIcon icon={Icons.faClose} />
                                                   </a>
                                                 </div>
                                                 <div className="teamUserInfoTags">
@@ -762,74 +760,178 @@ const TeamAdmin = () => {
                                                   </ul>
                                                 </div>
                                               </div>
+                                            </div>
+                                          </span>
+                                        </div>
+                                        <ul style={{ display: "block" }}>
+                                          <li>
+                                            <div
+                                              id="userAdminTree_easyui_tree_8"
+                                              className="tree-node droppable"
+                                            >
+                                              <span className="tree-indent"></span>
+                                              <span className="tree-indent tree-line"></span>
+                                              <span className="tree-indent"></span>
+                                              <span className="tree-indent tree-join"></span>
+                                              <span className="tree-icon tree-file "></span>
+                                              <span className="tree-title">
+                                                Demo user 1
+                                                <div className="teamUserInfoContainer">
+                                                  <div className="teamUserInfo">
+                                                    <div className="teamUserInfoAction">
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionTrash"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Remove Role / Position"
+                                                        aria-label="Remove Role / Position"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faTrash} />
+                                                      </a>
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionSettings"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Settings &amp; Permissions"
+                                                        aria-label="Settings &amp; Permissions"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faGear} />
+                                                      </a>
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionReportingRole"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                                        aria-label="Add Staff Position / Reporting Role Below"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
+                                                      </a>
+                                                    </div>
+                                                    <img src={avatar} alt="avatar" />
+                                                    <div className="teamUsername">
+                                                      <a href="#">
+                                                        Demo user 1
+                                                      </a>
+                                                      <a
+                                                        href="#"
+                                                        className="btnTeamUserInfoActionRemove"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Remove from Role"
+                                                        aria-label="Remove from Role"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faClose} />
+                                                      </a>
+                                                    </div>
+                                                    <div className="teamUserInfoTags">
+                                                      <ul>
+                                                        <li>
+                                                          <a href="#">
+                                                            #Design
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="#">
+                                                            #Frontend
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </span>
                                             </div>
                                           </li>
                                           <li>
-                                            Demo user 2
-                                            <div className="teamUserInfoContainer">
-                                              <div className="teamUserInfo">
-                                                <div className="teamUserInfoAction">
-                                                  <a
-                                                    href="#"
-                                                    className="btnTeamUserInfoActionTrash"
-                                                    data-toggle="tooltip"
-                                                    data-placement="bottom"
-                                                    title="Remove Role / Position"
-                                                  >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faTrash}
-                                                    />
-                                                  </a>
-                                                  <a
-                                                    href="#"
-                                                    className="btnTeamUserInfoActionSettings"
-                                                    data-toggle="tooltip"
-                                                    data-placement="bottom"
-                                                    title="Settings & Permissions"
-                                                  >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faGear}
-                                                    />
-                                                  </a>
-                                                  <a
-                                                    href="#"
-                                                    className="btnTeamUserInfoActionReportingRole"
-                                                    data-toggle="tooltip"
-                                                    data-placement="bottom"
-                                                    title="Add Staff Position / Reporting Role Below"
-                                                  >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faLevelUp}
-                                                      className="fa-rotate-90"
-                                                    />
-                                                  </a>
+                                            <div
+                                              id="userAdminTree_easyui_tree_9"
+                                              className="tree-node droppable tree-node-last"
+                                            >
+                                              <span className="tree-indent"></span>
+                                              <span className="tree-indent tree-line"></span>
+                                              <span className="tree-indent"></span>
+                                              <span className="tree-indent tree-joinbottom"></span>
+                                              <span className="tree-icon tree-file "></span>
+                                              <span className="tree-title">
+                                                Demo user 2
+                                                <div className="teamUserInfoContainer">
+                                                  <div className="teamUserInfo">
+                                                    <div className="teamUserInfoAction">
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionTrash"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Remove Role / Position"
+                                                        aria-label="Remove Role / Position"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faTrash} />
+                                                      </a>
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionSettings"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Settings &amp; Permissions"
+                                                        aria-label="Settings &amp; Permissions"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faGear} />
+                                                      </a>
+                                                      <a
+                                                        href onClick={(e)=>e.preventDefault()}
+                                                        className="btnTeamUserInfoActionReportingRole"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                                        aria-label="Add Staff Position / Reporting Role Below"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
+                                                      </a>
+                                                    </div>
+                                                    <img src={avatar} alt="avatar" />
+                                                    <div className="teamUsername">
+                                                      <a href="#">
+                                                        Demo user 2
+                                                      </a>
+                                                      <a
+                                                        href="#"
+                                                        className="btnTeamUserInfoActionRemove"
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title=""
+                                                        data-bs-original-title="Remove from Role"
+                                                        aria-label="Remove from Role"
+                                                      >
+                                                        <FontAwesomeIcon icon={Icons.faClose} />
+                                                      </a>
+                                                    </div>
+                                                    <div className="teamUserInfoTags">
+                                                      <ul>
+                                                        <li>
+                                                          <a href="#">
+                                                            #Design
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="#">
+                                                            #Frontend
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
                                                 </div>
-                                                <img src="images/avatar.gif" />
-                                                <div className="teamUsername">
-                                                  <a href="#">Demo user 2</a>
-                                                  <a
-                                                    href="#"
-                                                    className="btnTeamUserInfoActionRemove"
-                                                    data-toggle="tooltip"
-                                                    data-placement="bottom"
-                                                    title="Remove from Role"
-                                                  >
-                                                    <FontAwesomeIcon
-                                                      icon={Icons.faClose}
-                                                    />
-                                                  </a>
-                                                </div>
-                                                <div className="teamUserInfoTags">
-                                                  <ul>
-                                                    <li>
-                                                      <a href="#">#Design</a>
-                                                    </li>
-                                                    <li>
-                                                      <a href="#">#Frontend</a>
-                                                    </li>
-                                                  </ul>
-                                                </div>
-                                              </div>
+                                              </span>
                                             </div>
                                           </li>
                                         </ul>
@@ -837,111 +939,129 @@ const TeamAdmin = () => {
                                     </ul>
                                   </li>
                                   <li>
-                                    Sales & Marketing
-                                    <div className="teamUserInfoContainer">
-                                      <div className="teamUserInfo">
-                                        <div className="teamUserInfoAction">
-                                          <a
-                                            href="#"
-                                            className="btnTeamUserInfoActionTrash"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Remove Role / Position"
-                                          >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faTrash}
-                                            />
-                                          </a>
-                                          <a
-                                            href="#"
-                                            className="btnTeamUserInfoActionSettings"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Settings & Permissions"
-                                          >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faGear}
-                                            />
-                                          </a>
-                                          <a
-                                            href="#"
-                                            className="btnTeamUserInfoActionReportingRole"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Add Staff Position / Reporting Role Below"
-                                          >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faLevelUp}
-                                              className="fa-rotate-90"
-                                            />
-                                          </a>
-                                          <a
-                                            href="#"
-                                            className="btnTeamUserInfoActionAdd"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Invite / Assign Role"
-                                          >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faUserPlus}
-                                            />
-                                          </a>
+                                    <div
+                                      id="userAdminTree_easyui_tree_10"
+                                      className="tree-node droppable"
+                                    >
+                                      <span className="tree-indent"></span>
+                                      <span className="tree-indent tree-join"></span>
+                                      <span className="tree-icon tree-file "></span>
+                                      <span className="tree-title">
+                                        Sales &amp; Marketing
+                                        <div className="teamUserInfoContainer">
+                                          <div className="teamUserInfo">
+                                            <div className="teamUserInfoAction">
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionTrash"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Remove Role / Position"
+                                                aria-label="Remove Role / Position"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faTrash} />
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionSettings"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Settings &amp; Permissions"
+                                                aria-label="Settings &amp; Permissions"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faGear} />
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionReportingRole"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                                aria-label="Add Staff Position / Reporting Role Below"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionAdd"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Invite / Assign Role"
+                                                aria-label="Invite / Assign Role"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faUserPlus} />
+                                              </a>
+                                            </div>
+                                          </div>
                                         </div>
-                                      </div>
+                                      </span>
                                     </div>
                                   </li>
                                   <li>
-                                    Finance
-                                    <div className="teamUserInfoContainer">
-                                      <div className="teamUserInfo">
-                                        <div className="teamUserInfoAction">
-                                          <a
-                                            href="#"
-                                            className="btnTeamUserInfoActionTrash"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Remove Role / Position"
-                                          >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faTrash}
-                                            />
-                                          </a>
-                                          <a
-                                            href="#"
-                                            className="btnTeamUserInfoActionSettings"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Settings & Permissions"
-                                          >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faGear}
-                                            />
-                                          </a>
-                                          <a
-                                            href="#"
-                                            className="btnTeamUserInfoActionReportingRole"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Add Staff Position / Reporting Role Below"
-                                          >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faLevelUp}
-                                              className="fa-rotate-90"
-                                            />
-                                          </a>
-                                          <a
-                                            href="#"
-                                            className="btnTeamUserInfoActionAdd"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Invite / Assign Role"
-                                          >
-                                            <FontAwesomeIcon
-                                              icon={Icons.faUserPlus}
-                                            />
-                                          </a>
+                                    <div
+                                      id="userAdminTree_easyui_tree_11"
+                                      className="tree-node droppable tree-node-last"
+                                    >
+                                      <span className="tree-indent"></span>
+                                      <span className="tree-indent tree-joinbottom"></span>
+                                      <span className="tree-icon tree-file "></span>
+                                      <span className="tree-title">
+                                        Finance
+                                        <div className="teamUserInfoContainer">
+                                          <div className="teamUserInfo">
+                                            <div className="teamUserInfoAction">
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionTrash"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Remove Role / Position"
+                                                aria-label="Remove Role / Position"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faTrash} />
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionSettings"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Settings &amp; Permissions"
+                                                aria-label="Settings &amp; Permissions"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faGear} />
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionReportingRole"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Add Staff Position / Reporting Role Below"
+                                                aria-label="Add Staff Position / Reporting Role Below"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faLevelUp} className="fa-rotate-90"/>
+                                              </a>
+                                              <a
+                                                href onClick={(e)=>e.preventDefault()}
+                                                className="btnTeamUserInfoActionAdd"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title=""
+                                                data-bs-original-title="Invite / Assign Role"
+                                                aria-label="Invite / Assign Role"
+                                              >
+                                                <FontAwesomeIcon icon={Icons.faUserPlus} />
+                                              </a>
+                                            </div>
+                                          </div>
                                         </div>
-                                      </div>
+                                      </span>
                                     </div>
                                   </li>
                                 </ul>

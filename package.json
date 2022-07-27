@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-bootstrap-range-slider": "^3.0.8",
+    "react-bs-datatable": "^3.5.0",
     "react-dom": "^18.2.0",
     "react-fa-icon-picker": "^1.0.3",
     "react-router-dom": "^6.3.0",
