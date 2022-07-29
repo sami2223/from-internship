@@ -51,10 +51,9 @@ const Drive = () => {
 
   useEffect(() => {
     //initialize datatable
-    $(document).ready(function () {
-      $("#tblDrive").DataTable({
-        dom: "rtipf",
-      });
+    $("#tblDrive").DataTable({
+      destroy: true,
+      dom: "rtipf",
     });
   }, []);
 
@@ -69,7 +68,8 @@ const Drive = () => {
         <div className="col" id="page-urls">
           <div className="row">
             <div className="col-lg-12">
-              <select style={{ width:"60px" }}
+              <select
+                style={{ width: "60px" }}
                 data-width="55px"
                 className="btn-DriveFilterView btn-secondary float-start"
               >

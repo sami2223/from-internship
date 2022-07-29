@@ -16,10 +16,9 @@ const Contacts = () => {
 
   useEffect(() => {
     //initialize datatable
-    $(document).ready(function () {
-      $("#tblContacts").DataTable({
-        dom: "rtipf",
-      });
+    $("#tblContacts").DataTable({
+      destroy: true,
+      dom: "rtipf",
     });
   }, []);
 
@@ -58,7 +57,6 @@ const Contacts = () => {
                 className="btn-helpDeskTask btn-secondary float-start"
                 data-toggle="selectpicker"
               >
-                
                 <option value="0" data-icon="" disabled="" selected="">
                   == Saved Filtered Views ==
                 </option>

@@ -1,168 +1,195 @@
-.dataTables_filter{
-    position: absolute;
-    top: -38px;
-    left: 75px;
+.dataTables_filter {
+  position: absolute;
+  top: -38px;
+  left: 75px;
 }
 .table#tblUrls {
-    margin-top: 0 !important;
-    border-top: 0;
-    background: #FFF;
+  margin-top: 0 !important;
+  border-top: 0;
+  background: #fff;
 }
 .table#tblUrls .colAction {
-    height: 32px;
+  height: 32px;
 }
 .table#tblUrls .colAction a.btn-colAction {
-    display: none;
+  display: none;
 }
-.table#tblUrls .colAction:hover a, .table#tblUrls tr:hover .colAction a {
-    display: inline-block;
-    opacity: 1;
+.table#tblUrls .colAction:hover a,
+.table#tblUrls tr:hover .colAction a {
+  display: inline-block;
+  opacity: 1;
 }
 .table#tblUrls .colAction a {
-    position: relative;
-    opacity: 0.5;
+  position: relative;
+  opacity: 0.5;
 }
 .table#tblUrls .colAction a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 .table#tblUrls .batch-action-container {
-    padding: 10px;
-    background: #FFF;
-    border-radius: 4px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 4px;
 }
-.btn-helpDeskTask .dropdown-toggle.btn-default{
-    background-color: #186abc;
-    background-image: linear-gradient(to bottom, #186abc, #186abc);
-    background-repeat: repeat-x;
-    border-color: #186abc;
-    color: #fff !important;
-    text-shadow: none;
+.btn-helpDeskTask .dropdown-toggle.btn-default {
+  background-color: #186abc;
+  background-image: linear-gradient(to bottom, #186abc, #186abc);
+  background-repeat: repeat-x;
+  border-color: #186abc;
+  color: #fff !important;
+  text-shadow: none;
 }
 .btn-helpDeskTask .dropdown-toggle.btn-default:hover {
-    background-color: #186abc;
-    background-image: linear-gradient(to bottom, #186abc, #186abc);
-    background-repeat: repeat-x;
-    border-color: #186abc;
-    color: #fff !important;
-    text-shadow: none;
+  background-color: #186abc;
+  background-image: linear-gradient(to bottom, #186abc, #186abc);
+  background-repeat: repeat-x;
+  border-color: #186abc;
+  color: #fff !important;
+  text-shadow: none;
 }
-.bootstrap-select.btn-group.btn-helpDeskTask .dropdown-menu li:hover:last-child{
-    background: #186abc !important;
-    color: #FFF;
+.bootstrap-select.btn-group.btn-helpDeskTask
+  .dropdown-menu
+  li:hover:last-child {
+  background: #186abc !important;
+  color: #fff;
 }
 .btn-helpDeskTask.bootstrap-select .dropdown-menu li:hover,
-.btn-helpDeskTask.bootstrap-select.btn-group .dropdown-menu li.selected{
-    background: #fe7201 !important;
+.btn-helpDeskTask.bootstrap-select.btn-group .dropdown-menu li.selected {
+  background: #fe7201 !important;
 }
 .btn-helpDeskTask.bootstrap-select .dropdown-menu li:hover a,
-.btn-helpDeskTask.bootstrap-select.btn-group .dropdown-menu li.selected a{
-    color: #fff !important;
+.btn-helpDeskTask.bootstrap-select.btn-group .dropdown-menu li.selected a {
+  color: #fff !important;
 }
 .btn-helpDeskTask.bootstrap-select .dropdown-menu li:hover a:hover,
-.btn-helpDeskTask.bootstrap-select.btn-group .dropdown-menu li.selected a:hover{
-    color: #fff !important;
+.btn-helpDeskTask.bootstrap-select.btn-group
+  .dropdown-menu
+  li.selected
+  a:hover {
+  color: #fff !important;
 }
-.btn-helpDeskTask.bootstrap-select .dropdown-menu li.dropdown-header:hover{
-    background-color: transparent !important;
+.btn-helpDeskTask.bootstrap-select .dropdown-menu li.dropdown-header:hover {
+  background-color: transparent !important;
 }
 .filter_table_action_container td {
-    background-color: #a3a1a1;
-    border: 0;
+  background-color: #a3a1a1;
+  border: 0;
 }
 .filter-batch-action-container {
-    padding: 10px;
-    background: #FFF;
-    border-radius: 4px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 4px;
 }
 .filterOpts .btn-danger {
-    position: absolute;
-    right: -10px;
-    top: -10px;
-    display: none;
-    width: 18px;
-    height: 18px;
-    line-height: 16px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  display: none;
+  width: 18px;
+  height: 18px;
+  line-height: 16px;
 }
 .filterOpts .btn-danger i {
-    font-size: 12px;
-    line-height: 16px;
+  font-size: 12px;
+  line-height: 16px;
 }
 .filterOpts:hover .btn-danger {
-    display: block;
+  display: block;
 }
-#newFilterModal .modal-body .form-control-lg{
-    font-weight: 600;
+#newFilterModal .modal-body .form-control-lg {
+  font-weight: 600;
 }
-.createNewFilterView{
-    background: #125fad !important;
-    color: #fff !important;
+.createNewFilterView {
+  background: #125fad !important;
+  color: #fff !important;
 }
-.savedFilterdView ul{
-    margin: 0px;
-    padding: 0px;
+.savedFilterdView ul {
+  margin: 0px;
+  padding: 0px;
 }
-.savedFilterdView ul li{
-    list-style: none;
-    margin-bottom: 5px;
+.savedFilterdView ul li {
+  list-style: none;
+  margin-bottom: 5px;
 }
-.savedFilterdView ul li a{
-    display: inline-block;
+.savedFilterdView ul li a {
+  display: inline-block;
 }
-.savedFilterdView ul li a.editFiltered{
-    opacity: 0 !important;
+.savedFilterdView ul li a.editFiltered {
+  opacity: 0 !important;
 }
-.savedFilterdView ul li:hover a.editFiltered{
-    opacity: 1 !important;
+.savedFilterdView ul li:hover a.editFiltered {
+  opacity: 1 !important;
 }
-.addNewURLContainer .colHeading{
-    background-color: #eae8e8;
-    display: block;
-    color: #413c3c;
-    border-radius: 4px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    padding: 10px;
-    margin-top: 15px;
+.addNewURLContainer .colHeading {
+  background-color: #eae8e8;
+  display: block;
+  color: #413c3c;
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 10px;
+  margin-top: 15px;
 }
-.addNewURLContainer .dh-block-body{
-    background-color: #FFF;
-    padding: 10px;
-    border: 1px solid #e1e1e1;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+.addNewURLContainer .dh-block-body {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
-.btnTHCampaignFilter, .btnTHTypeFilter{
-    color: #FFF;
+.btnTHCampaignFilter,
+.btnTHTypeFilter {
+  color: #fff;
 }
-#filterByCampaignContainer, #filterByMetricContainer{
-    position: absolute;
-    left: -50000px;
+#filterByCampaignContainer,
+#filterByMetricContainer {
+  position: absolute;
+  left: -50000px;
 }
 .popover-body #filterByCampaignContainer,
-.popover-body #filterByMetricContainer{
-    position: relative;
-    left: 0;
+.popover-body #filterByMetricContainer {
+  position: relative;
+  left: 0;
 }
-.popover-header .btnClosePopover{
-    position: absolute;
-    right: 10px;
-    font-size: 18px;
-    text-decoration: none;
-    top: 5px;
+.popover-header .btnClosePopover {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  top: 5px;
 }
-.btnURLChatDock{
-    background-color: #ffeb3b;
+.btnURLChatDock {
+  background-color: #ffeb3b;
 }
 
-@media(max-width:991px) {
-    #Global_URLInjector .post_to_social{
-        margin-bottom: 5px;
-    }
+@media (max-width: 991px) {
+  #Global_URLInjector .post_to_social {
+    margin-bottom: 5px;
+  }
 }
-@media(max-width:768px) {
+@media (max-width: 768px) {
 }
-@media(max-width:767px) {
-    .btnAddNewURLs span{
-        display: none;
-    }
+@media (max-width: 767px) {
+  .btnAddNewURLs span {
+    display: none;
+  }
+}
+
+.url .dropdown-toggle::after {
+  display: inline-block;
+}
+
+.url .dropdown-toggle {
+  background: #186abc;
+}
+.url .dropdown-toggle:hover {
+  background-color: #186abc;
+  border: 1px solid #4a92db;
+}
+#tblUrls_filter input {
+  background-color: transparent;
+  width: 320px;
+  position: relative;
+  padding-left: 30px !important;
+  background: url(../../assets/images/search.png) no-repeat 8px 8px !important;
 }

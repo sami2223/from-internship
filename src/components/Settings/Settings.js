@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import avatar from "../../assets/images/avatar.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Icons from "@fortawesome/free-solid-svg-icons";

@@ -5,7 +5,6 @@ const AddNew = ({Dropdown, DropdownButton, Icons, FontAwesomeIcon }) => {
   const [dropdownIcon, setDropdownIcon] = useState([
     <FontAwesomeIcon icon={Icons.faEyeSlash} style={{ color: "#ccc" }} />
   ]);
-  const [dropdownOption, setDropdownOption] = useState(["Please select"]);
 
   const clickHandleDropdownItem = (icon) => {
     if (icon === "eyeSlash") {
