@@ -3,6 +3,23 @@ import React, { useState } from "react";
 const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [isCheckedAddChatbot, setIsCheckedAddChatbot] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [userSendCaseSelector, setUserSendCaseSelector] = useState({
+    value: "inAllCases",
+    label: "in all cases",
+  });
+  const [raveScoreForm, setRaveScoreForm] = useState(1);
+  const [tagScoreForm, setTagScoreForm] = useState(1);
+  const [agendaForm, setAgendaForm] = useState(1);
+
+  const handleSelectChange = (event) => {
+    const index = event.target.selectedIndex;
+    setUserSendCaseSelector({
+      value: event.target.value,
+      label: event.target[index].text,
+    });
+  };
+
   return (
     <div className="panel panel-default" id="URLInj_pinkBoxContainer">
       <div className="panel-heading">
@@ -31,26 +48,49 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
         <div className="panel-body py-3">
           <div className="">
             <div className="row align-items-center mb-2">
-              <div className="col-lg-12 hiddenSelectboxContainer">
-                <span className="text-dash-underline userWillGoText">
-                  in all cases
-                </span>
-                <select className="form-select inlineSelectBox display-none userWillGo">
-                  <option value="in all cases">in all cases</option>
-                  <option value="splitTested50">
-                    be Split Tested (50-50) &
-                  </option>
-                  <option value="splitTested33">be Split Tested (33%) &</option>
-                  <option value="RAVEScore">depending on RAVE score</option>
-                  <option value="TagScore">depending on TagScore</option>
-                  <option value="Agenda">depending on Agenda</option>
-                  <option value="PayWall">depending on PayWall</option>
-                </select>
+              <div
+                className="col-lg-12 hiddenSelectboxContainer"
+                onMouseEnter={() => setShowDropdown(true)}
+                onMouseLeave={() => setShowDropdown(false)}
+              >
+                {!showDropdown && (
+                  <span className="text-dash-underline userWillGoText">
+                    {/* in all cases */}
+                    {userSendCaseSelector.label}
+                  </span>
+                )}
+                {showDropdown && (
+                  <select
+                    value={userSendCaseSelector.value}
+                    onChange={handleSelectChange}
+                    className="form-select inlineSelectBox  userWillGo"
+                  >
+                    <option value="inAllCases">in all cases</option>
+                    <option value="splitTested50">
+                      be Split Tested (50-50) &
+                    </option>
+                    <option value="splitTested33">
+                      be Split Tested (33%) &
+                    </option>
+                    <option value="RAVEScore">depending on RAVE score</option>
+                    <option value="TagScore">depending on TagScore</option>
+                    <option value="Agenda">depending on Agenda</option>
+                    <option value="PayWall">depending on PayWall</option>
+                  </select>
+                )}{" "}
                 be sent to...
               </div>
             </div>
             <div className="row">
-              <div className="col-lg-12 userWillGoOpts inAllCaseBox">
+              <div
+                className={`col-lg-12 userWillGoOpts inAllCaseBox ${
+                  userSendCaseSelector.value === "splitTested50" ||
+                  userSendCaseSelector.value === "splitTested33" ||
+                  userSendCaseSelector.value === "inAllCases"
+                    ? ""
+                    : "display-none"
+                }`}
+              >
                 <div className="pinkBoxBorder">
                   <div className="row align-items-center">
                     <div className="col-lg-12">
@@ -68,7 +108,14 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                         />
                       </div>
                     </div>
-                    <div className="col-lg-12 mt-2 splitTested50 splitTested33 userWillGoOpts display-none">
+                    <div
+                      className={`col-lg-12 mt-2  userWillGoOpts ${
+                        userSendCaseSelector.value === "splitTested50" ||
+                        userSendCaseSelector.value === "splitTested33"
+                          ? ""
+                          : "display-none"
+                      }`}
+                    >
                       <div className="input-group">
                         <select className="form-select urlTypeList">
                           <option value="URL" selected="selected">
@@ -83,7 +130,14 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                         />
                       </div>
                     </div>
-                    <div className="col-lg-12 mt-2 splitTested33 userWillGoOpts display-none">
+
+                    <div
+                      className={`col-lg-12 mt-2 userWillGoOpts ${
+                        userSendCaseSelector.value === "splitTested33"
+                          ? ""
+                          : "display-none"
+                      }`}
+                    >
                       <div className="input-group">
                         <select className="form-select urlTypeList">
                           <option value="URL" selected="selected">
@@ -102,35 +156,91 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                 </div>
               </div>
 
-              <div className="col-lg-12 userWillGoOpts raveScoreBox display-none">
-                <div className="pinkBoxBorder mb-3">
-                  <div className="row row-cols-lg-auto g-2 align-items-center mb-2">
-                    <div className="col-12">If Score is...</div>
-                    <div className="col-12">
-                      <select
-                        name="tagScoreOpt"
-                        className="form-select mb-1 mb-lg-0"
+              {userSendCaseSelector.value === "RAVEScore" ? (
+                <div className="col-lg-12 userWillGoOpts raveScoreBox">
+                  {Array.from(Array(Number(raveScoreForm)).keys()).map(
+                    (item, index) => (
+                      <div key={index} className="pinkBoxBorder mb-3">
+                        <div className="row row-cols-lg-auto g-2 align-items-center mb-2">
+                          <div className="col-12">If Score is...</div>
+                          <div className="col-12">
+                            <select
+                              name="tagScoreOpt"
+                              className="form-select mb-1 mb-lg-0"
+                            >
+                              <option value="lessthan" selected="selected">
+                                {" "}
+                                Less Than
+                              </option>
+                              <option value="morethan"> More Than</option>
+                            </select>
+                          </div>
+                          <div className="col-12">
+                            <input
+                              type="text"
+                              name="tagScoreInput"
+                              className="form-control tagScoreNo"
+                              defaultValue="50"
+                            />
+                          </div>
+                        </div>
+                        <div className="row align-items-center">
+                          <div className="col-lg-12">
+                            <div className="input-group">
+                              <div className="input-group-text">go to...</div>
+                              <select className="form-select urlTypeList">
+                                <option value="URL" selected="selected">
+                                  URL
+                                </option>
+                              </select>
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="https://"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        {index > 0 && (
+                          <a
+                            href
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setRaveScoreForm(Number(raveScoreForm) - 1);
+                            }}
+                            class="btn-delete btn-round btnDeletePinkBox"
+                            data-toggle="tooltip"
+                            data-placement="bottom"
+                            data-animation="false"
+                            title=""
+                            data-bs-original-title="Remove"
+                            aria-label="Remove"
+                          >
+                            <FontAwesomeIcon icon={Icons.faClose} />
+                          </a>
+                        )}
+                      </div>
+                    )
+                  )}
+
+                  <div className="row align-items-center">
+                    <div className="col-lg-12 text-center mb-3">
+                      <a
+                        href
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setRaveScoreForm(Number(raveScoreForm) + 1);
+                        }}
+                        className="btnAddNewGreenDashed btnAddNewPinkRaveScoreBox"
                       >
-                        <option value="lessthan" selected="selected">
-                          {" "}
-                          Less Than
-                        </option>
-                        <option value="morethan"> More Than</option>
-                      </select>
+                        <FontAwesomeIcon icon={Icons.faPlus} />
+                      </a>
                     </div>
-                    <div className="col-12">
-                      <input
-                        type="text"
-                        name="tagScoreInput"
-                        className="form-control tagScoreNo"
-                        defaultValue="50"
-                      />
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
                     <div className="col-lg-12">
                       <div className="input-group">
-                        <div className="input-group-text">go to...</div>
+                        <div className="input-group-text">
+                          Otherwise go to...
+                        </div>
                         <select className="form-select urlTypeList">
                           <option value="URL" selected="selected">
                             URL
@@ -143,75 +253,262 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                         />
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div className="row align-items-center">
-                  <div className="col-lg-12 text-center mb-3">
-                    <a
-                      href="#"
-                      className="btnAddNewGreenDashed btnAddNewPinkRaveScoreBox"
-                    >
-                      <FontAwesomeIcon icon={Icons.faPlus} />
-                    </a>
-                  </div>
-                  <div className="col-lg-12">
-                    <div className="input-group">
-                      <div className="input-group-text">Otherwise go to...</div>
-                      <select className="form-select urlTypeList">
-                        <option value="URL" selected="selected">
-                          URL
-                        </option>
-                      </select>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="https://"
-                      />
+                    <div className="col-lg-12">
+                      <small>Rules will run top to bottom.</small>
                     </div>
                   </div>
-                  <div className="col-lg-12">
-                    <small>Rules will run top to bottom.</small>
-                  </div>
                 </div>
-              </div>
+              ) : (
+                ""
+              )}
 
-              <div className="col-lg-12 userWillGoOpts tagScoreBox display-none">
-                <div className="pinkBoxBorder mb-3">
-                  <div className="row row-cols-lg-auto g-2 align-items-center mb-2">
-                    <div className="col-12">If</div>
-                    <div className="col-12 tagsInputContainer">
-                      <input
-                        type="text"
-                        className="form-control tagScoreInput"
-                        defaultValue="EditMe"
-                      />
-                    </div>
-                    <div className="col-12">Score is...</div>
-                    <div className="col-12">
-                      <select
-                        name="tagScoreOpt"
-                        className="form-select mb-1 mb-lg-0"
+              {userSendCaseSelector.value === "TagScore" ? (
+                <div className="col-lg-12 userWillGoOpts tagScoreBox">
+                  {Array.from(Array(Number(tagScoreForm)).keys()).map(
+                    (item, index) => (
+                      <div key={index} className="pinkBoxBorder mb-3">
+                        <div className="row row-cols-lg-auto g-2 align-items-center mb-2">
+                          <div className="col-12">If</div>
+                          <div className="col-12 tagsInputContainer">
+                            <input
+                              type="text"
+                              className="form-control tagScoreInput"
+                              defaultValue="EditMe"
+                            />
+                          </div>
+                          <div className="col-12">Score is...</div>
+                          <div className="col-12">
+                            <select
+                              name="tagScoreOpt"
+                              className="form-select mb-1 mb-lg-0"
+                            >
+                              <option value="lessthan" selected="selected">
+                                Less Than
+                              </option>
+                              <option value="morethan"> More Than</option>
+                            </select>
+                          </div>
+                          <div className="col-12">
+                            <input
+                              type="text"
+                              name="tagScoreInput"
+                              className="form-control tagScoreNo"
+                              defaultValue="50"
+                            />
+                          </div>
+                        </div>
+                        <div className="row align-items-center">
+                          <div className="col-lg-12">
+                            <div className="input-group">
+                              <div className="input-group-text">go to...</div>
+                              <select className="form-select urlTypeList">
+                                <option value="URL" selected="selected">
+                                  URL
+                                </option>
+                              </select>
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="https://"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        {index > 0 && (
+                          <a
+                            href
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setTagScoreForm(Number(tagScoreForm) - 1);
+                            }}
+                            class="btn-delete btn-round btnDeletePinkBox"
+                            data-toggle="tooltip"
+                            data-placement="bottom"
+                            data-animation="false"
+                            title=""
+                            data-bs-original-title="Remove"
+                            aria-label="Remove"
+                          >
+                            <FontAwesomeIcon icon={Icons.faClose} />
+                          </a>
+                        )}
+                      </div>
+                    )
+                  )}
+
+                  <div className="row align-items-center">
+                    <div className="col-lg-12 text-center mb-3">
+                      <a
+                        href
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setTagScoreForm(Number(tagScoreForm) + 1);
+                        }}
+                        className="btnAddNewGreenDashed btnAddNewPinkTagScoreBox"
                       >
-                        <option value="lessthan" selected="selected">
-                          Less Than
-                        </option>
-                        <option value="morethan"> More Than</option>
-                      </select>
+                        <FontAwesomeIcon icon={Icons.faPlus} />
+                      </a>
                     </div>
-                    <div className="col-12">
-                      <input
-                        type="text"
-                        name="tagScoreInput"
-                        className="form-control tagScoreNo"
-                        defaultValue="50"
-                      />
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
                     <div className="col-lg-12">
                       <div className="input-group">
-                        <div className="input-group-text">go to...</div>
+                        <div className="input-group-text">
+                          Otherwise go to...
+                        </div>
+                        <select className="form-select urlTypeList">
+                          <option value="URL" selected="selected">
+                            URL
+                          </option>
+                        </select>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="https://"
+                        />
+                      </div>
+                    </div>
+                    <div className="col-lg-12">
+                      <small>Rules will run top to bottom.</small>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+
+              {userSendCaseSelector.value === "Agenda" ? (
+                <div className="col-lg-12 userWillGoOpts agendaBox">
+                  {Array.from(Array(Number(agendaForm)).keys()).map(
+                    (item, index) => (
+                      <div className="pinkBoxBorder mb-3">
+                        <div className="row row-cols-lg-auto g-2 align-items-center mb-2">
+                          <div className="col-12">If Agenda is...</div>
+                        </div>
+                        <div className="row align-items-center">
+                          <div className="col-lg-12">
+                            <div className="input-group">
+                              <select className="form-select agendaList">
+                                <option value="capture">Capture</option>
+                                <option value="build_trust">Build Trust</option>
+                                <option value="tripwire_offer">
+                                  Tripwire Offer
+                                </option>
+                                <option value="intro_offer">Intro Offer</option>
+                                <option value="main_offer">Main Offer</option>
+                                <option value="upsell_offer">
+                                  Upsell Offer
+                                </option>
+                                <option value="promoter">Promoter</option>
+                              </select>
+                              <div className="input-group-text">go to...</div>
+                              <select className="form-select urlTypeList">
+                                <option value="URL" selected="selected">
+                                  URL
+                                </option>
+                              </select>
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="https://"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        {index > 0 && (
+                          <a
+                            href
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setAgendaForm(Number(agendaForm) - 1);
+                            }}
+                            class="btn-delete btn-round btnDeletePinkBox"
+                            data-toggle="tooltip"
+                            data-placement="bottom"
+                            data-animation="false"
+                            title=""
+                            data-bs-original-title="Remove"
+                            aria-label="Remove"
+                          >
+                            <FontAwesomeIcon icon={Icons.faClose} />
+                          </a>
+                        )}
+                      </div>
+                    )
+                  )}
+
+                  <div className="row align-items-center">
+                    <div className="col-lg-12 text-center mb-3">
+                      <a
+                        href
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setAgendaForm(Number(agendaForm) + 1);
+                        }}
+                        className="btnAddNewGreenDashed btnAddNewPinkAgendaBox"
+                      >
+                        <FontAwesomeIcon icon={Icons.faPlus} />
+                      </a>
+                    </div>
+                    <div className="col-lg-12">
+                      <div className="input-group">
+                        <div className="input-group-text">
+                          Otherwise go to...
+                        </div>
+                        <select className="form-select urlTypeList">
+                          <option value="URL" selected="selected">
+                            URL
+                          </option>
+                        </select>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="https://"
+                        />
+                      </div>
+                    </div>
+                    <div className="col-lg-12">
+                      <small>Rules will run top to bottom.</small>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+
+              {userSendCaseSelector.value === "PayWall" ? (
+                <div className="col-lg-12 userWillGoOpts paywallBox">
+                  <div className="pinkBoxBorder mb-3">
+                    <div className="row row-cols-lg-auto g-2 align-items-center mb-2">
+                      <div className="col-12">If Paywall is...</div>
+                    </div>
+                    <div className="row align-items-center">
+                      <div className="col-lg-12">
+                        <div className="input-group">
+                          <select className="form-select agendaList">
+                            <option value="Allowed">Allowed</option>
+                            <option value="Disallowed">Disallowed</option>
+                          </select>
+                          <div className="input-group-text">go to...</div>
+                          <select className="form-select urlTypeList">
+                            <option value="URL" selected="selected">
+                              URL
+                            </option>
+                          </select>
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder="https://"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <div className="input-group">
+                        <div className="input-group-text">
+                          Otherwise go to...
+                        </div>
                         <select className="form-select urlTypeList">
                           <option value="URL" selected="selected">
                             URL
@@ -226,146 +523,9 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                     </div>
                   </div>
                 </div>
-
-                <div className="row align-items-center">
-                  <div className="col-lg-12 text-center mb-3">
-                    <a
-                      href="#"
-                      className="btnAddNewGreenDashed btnAddNewPinkTagScoreBox"
-                    >
-                      <FontAwesomeIcon icon={Icons.faPlus} />
-                    </a>
-                  </div>
-                  <div className="col-lg-12">
-                    <div className="input-group">
-                      <div className="input-group-text">Otherwise go to...</div>
-                      <select className="form-select urlTypeList">
-                        <option value="URL" selected="selected">
-                          URL
-                        </option>
-                      </select>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="https://"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-lg-12">
-                    <small>Rules will run top to bottom.</small>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-12 userWillGoOpts agendaBox display-none">
-                <div className="pinkBoxBorder mb-3">
-                  <div className="row row-cols-lg-auto g-2 align-items-center mb-2">
-                    <div className="col-12">If Agenda is...</div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-lg-12">
-                      <div className="input-group">
-                        <select className="form-select agendaList">
-                          <option value="capture">Capture</option>
-                          <option value="build_trust">Build Trust</option>
-                          <option value="tripwire_offer">Tripwire Offer</option>
-                          <option value="intro_offer">Intro Offer</option>
-                          <option value="main_offer">Main Offer</option>
-                          <option value="upsell_offer">Upsell Offer</option>
-                          <option value="promoter">Promoter</option>
-                        </select>
-                        <div className="input-group-text">go to...</div>
-                        <select className="form-select urlTypeList">
-                          <option value="URL" selected="selected">
-                            URL
-                          </option>
-                        </select>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="https://"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="row align-items-center">
-                  <div className="col-lg-12 text-center mb-3">
-                    <a
-                      href="#"
-                      className="btnAddNewGreenDashed btnAddNewPinkAgendaBox"
-                    >
-                      <FontAwesomeIcon icon={Icons.faPlus} />
-                    </a>
-                  </div>
-                  <div className="col-lg-12">
-                    <div className="input-group">
-                      <div className="input-group-text">Otherwise go to...</div>
-                      <select className="form-select urlTypeList">
-                        <option value="URL" selected="selected">
-                          URL
-                        </option>
-                      </select>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="https://"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-lg-12">
-                    <small>Rules will run top to bottom.</small>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-12 userWillGoOpts paywallBox display-none">
-                <div className="pinkBoxBorder mb-3">
-                  <div className="row row-cols-lg-auto g-2 align-items-center mb-2">
-                    <div className="col-12">If Paywall is...</div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-lg-12">
-                      <div className="input-group">
-                        <select className="form-select agendaList">
-                          <option value="Allowed">Allowed</option>
-                          <option value="Disallowed">Disallowed</option>
-                        </select>
-                        <div className="input-group-text">go to...</div>
-                        <select className="form-select urlTypeList">
-                          <option value="URL" selected="selected">
-                            URL
-                          </option>
-                        </select>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="https://"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="row">
-                  <div className="col-lg-12">
-                    <div className="input-group">
-                      <div className="input-group-text">Otherwise go to...</div>
-                      <select className="form-select urlTypeList">
-                        <option value="URL" selected="selected">
-                          URL
-                        </option>
-                      </select>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="https://"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ) : (
+                ""
+              )}
 
               <div className="col-lg-12 pt-3">
                 <div className="mb-3 row g-0 pinkBoxBorder">
@@ -555,7 +715,9 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                         className="css-checkbox compressURLOn"
                         defaultValue="addChatbot"
                         checked={isCheckedAddChatbot}
-                        onChange={()=>setIsCheckedAddChatbot(!isCheckedAddChatbot)}
+                        onChange={() =>
+                          setIsCheckedAddChatbot(!isCheckedAddChatbot)
+                        }
                       />
                       <label
                         htmlFor="addChatbackOpt"
@@ -564,15 +726,17 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                         <FontAwesomeIcon icon={Icons.faComment} /> Add Chatbot
                       </label>
                     </div>
-                    {isCheckedAddChatbot && (<div className="chatbotOptsShow mt-3">
-                      <select
-                        name="chatBotOpts"
-                        id="chatBotOpts"
-                        className="form-select"
-                      >
-                        <option> == Chatbots ==</option>
-                      </select>
-                    </div>)}
+                    {isCheckedAddChatbot && (
+                      <div className="chatbotOptsShow mt-3">
+                        <select
+                          name="chatBotOpts"
+                          id="chatBotOpts"
+                          className="form-select"
+                        >
+                          <option> == Chatbots ==</option>
+                        </select>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
