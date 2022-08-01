@@ -343,7 +343,7 @@ const BeigeContainer = ({ Icons, FontAwesomeIcon }) => {
         <label htmlFor="email_subject" className="col-sm-2 col-form-label">
           Subject Line
         </label>
-        <div className="col-sm-6">
+        <div className="col-sm-5">
           <input
             type="text"
             className="form-control"
