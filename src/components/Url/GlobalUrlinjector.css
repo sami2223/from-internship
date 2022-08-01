@@ -183,7 +183,7 @@
   border: 3px dashed #125fad;
   background: #fff;
 }
-#Global_URLInjector .campaignContentImg a > i {
+#Global_URLInjector .campaignContentImg a > svg {
   background-color: #428bca;
   background-image: linear-gradient(to bottom, #428bcc, #428bca);
   background-repeat: repeat-x;
