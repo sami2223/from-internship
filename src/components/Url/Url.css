@@ -193,3 +193,20 @@
   padding-left: 30px !important;
   background: url(../../assets/images/search.png) no-repeat 8px 8px !important;
 }
+
+.url_seo .toggle-switch {
+  top: 13px !important;
+  margin-left: 5px;
+}
+
+.url_seo .inner:before {
+  content: "ON";
+  padding-left: 10px;
+  background: #75b936;
+  box-shadow: 0 0 2px #579022 inset;
+  color: #fff;
+}
+
+.ChatDockInputOpt {
+  display: inline;
+}

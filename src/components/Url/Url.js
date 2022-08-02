@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
-import { faFaceSmile } from "@fortawesome/free-regular-svg-icons";
+// import { faFaceSmile } from "@fortawesome/free-regular-svg-icons";
 import "./GlobalUrlinjector.css";
 import "./ChatDock.css";
 import "./Url.css";
@@ -37,6 +37,7 @@ const Url = () => {
         FontAwesomeIcon={FontAwesomeIcon}
         showHistory={showHistory}
         setShowHistory={setShowHistory}
+        
       />
 
       {/* <!-- History dock start --> */}
@@ -45,6 +46,8 @@ const Url = () => {
         setShowHistory={setShowHistory}
         Icons={Icons}
         FontAwesomeIcon={FontAwesomeIcon}
+        Dropdown={Dropdown}
+        DropdownButton={DropdownButton}
       />
 
       {/* <!-- Modal popup for NEW Global Popup - Global_URLInjector --> */}

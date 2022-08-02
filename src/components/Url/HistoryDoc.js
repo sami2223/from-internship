@@ -1,28 +1,70 @@
 import { faFaceSmile } from "@fortawesome/free-regular-svg-icons";
-import React from "react";
+import React, { useState } from "react";
 
 const HistoryDoc = ({
+  Dropdown,
+  DropdownButton,
   Icons,
   FontAwesomeIcon,
   showHistory,
   setShowHistory,
 }) => {
+  const [dropdown, setDropdownIcon] = useState("history");
+  const [dropdownSelectedValue, setDropdownSelectedValue] =
+    useState({title:"Nothing selected", value:""});
+
+  const DropDownTitle = (e) => {
+    if (e === "History") {
+      return (
+        <>
+          <FontAwesomeIcon icon={Icons.faHistory} /> History
+        </>
+      );
+    } else if (e === "Add Note") {
+      return (
+        <>
+          <FontAwesomeIcon icon={Icons.faStickyNote} /> Add Note
+        </>
+      );
+    } else if (e === "Generate Report") {
+      return (
+        <>
+          <FontAwesomeIcon icon={Icons.faBarChart} /> Generate Report
+        </>
+      );
+    }
+  };
+
+  const handleSelect = (e) => {
+    console.log(e);
+    setDropdownSelectedValue({
+      value: e,
+      title: DropDownTitle(e)
+    });
+  };
+
   return (
     <>
       {showHistory && (
         <div className="SCChatDockNonSocialAssetOnly">
           <div className="ChatDockHeader">
-            <select className="ChatDockInputOpt" data-width="200">
-              <option value="history" data-icon="fa-history">
-                History
-              </option>
-              <option value="Private_note" data-icon="fa-sticky-note" selected>
-                Add Note
-              </option>
-              <option value="report" data-icon="fa-bar-chart">
-                Generate Report
-              </option>
-            </select>
+            <DropdownButton
+              key="dropdown-item-button2"
+              // title={dropdownIcon}
+              title={dropdownSelectedValue.title}
+              className="ChatDockInputOpt url"
+              onSelect={handleSelect}
+            >
+              <Dropdown.Item eventKey="History">
+                <FontAwesomeIcon icon={Icons.faHistory} /> History
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="Add Note">
+                <FontAwesomeIcon icon={Icons.faStickyNote} /> Add Note
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="Generate Report">
+                <FontAwesomeIcon icon={Icons.faBarChart} /> Generate Report
+              </Dropdown.Item>
+            </DropdownButton>
             <a
               href
               onClick={(e) => {
@@ -102,7 +144,7 @@ const HistoryDoc = ({
             </ul>
           </div>
           <div className="ChatDockFooterContainer">
-            <div className="ChatDockOpt ChatDockPrivateNoteOpt">
+            { dropdownSelectedValue.value==="Add Note" && (<div className="ChatDockOpt ChatDockPrivateNoteOpt">
               <div className="mb-2">
                 <textarea
                   className="form-control"
@@ -146,15 +188,15 @@ const HistoryDoc = ({
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="ChatDockOpt ChatDockReportOpt d-none">
+            </div>)}
+            {dropdownSelectedValue.value==="Generate Report" && (<div className="ChatDockOpt ChatDockReportOpt">
               <div className="text-center py-3">
                 {/* <!-- call to data source and insert as note --> */}
                 <button type="button" className="btn btn-primary">
                   <FontAwesomeIcon icon={Icons.faBarChart} /> Generate Report
                 </button>
               </div>
-            </div>
+            </div>)}
           </div>
         </div>
       )}

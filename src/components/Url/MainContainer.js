@@ -1,20 +1,21 @@
 import React, { useState } from "react";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
+import Button from "react-bootstrap/Button";
 
 const MainContainer = ({
   Dropdown,
   DropdownButton,
   Icons,
   FontAwesomeIcon,
-  showHistory,
+  // showHistory,
   setShowHistory,
 }) => {
   const [dropdownIcon, setDropdownIcon] = useState([
     // <FontAwesomeIcon icon={Icons.faPlus} />,
     "==",
   ]);
-  const dropDownStyle = {
-    color: "red",
-  };
+
   return (
     <div className="row g-0">
       <div className="col" id="page-urls">
@@ -52,15 +53,56 @@ const MainContainer = ({
               </button>
             </div>
           </div>
-          <div className="col-lg-12">
-            <div id="filterByCampaignContainer">
+          <div className="col-lg-12">            
+
+            <table
+              id="tblUrls"
+              className="table dataTable"
+              cellSpacing="0"
+              width="100%"
+            >
+              <thead>
+                <tr style={{ backgroundColor: "#a3a1a1", color: "#FFF" }}>
+                  <th width="5%">&nbsp;</th>
+                  <th width="45%">Short URL</th>
+                  <th width="15%" className="d-none d-md-table-cell">
+                    <OverlayTrigger
+                      placement="right"
+                      trigger="click"
+                      overlay={
+                        <Popover>
+                          <Popover.Header as="h3">Filter By Campaign</Popover.Header>
+                          <Popover.Body>
+                          <div id="filterByCampaignContainer">
               <select id="filterByCampaign">
                 <option value="">== All ==</option>
                 <option value="1">Campaign 1</option>
                 <option value="2">Campaign 2</option>
               </select>
             </div>
-            <div id="filterByMetricContainer">
+                          </Popover.Body>
+                        </Popover>
+                      }
+                    >
+                      <button
+                        type="button"
+                        className="btn btn-sm btnTHCampaignFilter"
+                        id="btnTHCampaignFilter"
+                      >
+                        <FontAwesomeIcon icon={Icons.faFilter} />
+                      </button>
+                    </OverlayTrigger>
+                  </th>
+                  <th width="15%" className="d-none d-md-table-cell">
+                    
+                    <OverlayTrigger
+                      placement="right"
+                      trigger="click"
+                      overlay={
+                        <Popover>
+                          <Popover.Header as="h3">Filter By Metric Container</Popover.Header>
+                          <Popover.Body>
+                          <div id="filterByMetricContainer">
               <select id="filterByMetric">
                 <option value="">== All ==</option>
                 <option value="Doc" data-icon="fa-edit">
@@ -87,37 +129,18 @@ const MainContainer = ({
                 </option>
               </select>
             </div>
-            <table
-              id="tblUrls"
-              className="table dataTable"
-              cellSpacing="0"
-              width="100%"
-            >
-              <thead>
-                <tr style={{ backgroundColor: "#a3a1a1", color: "#FFF" }}>
-                  <th width="5%">&nbsp;</th>
-                  <th width="45%">Short URL</th>
-                  <th width="15%" className="d-none d-md-table-cell">
-                    <button
-                      type="button"
-                      className="btn btn-sm btnTHCampaignFilter"
-                      id="btnTHCampaignFilter"
-                      onClick={(event) => event.stopPropagation()}
-                      data-bs-toggle="campaign-popover"
+                          </Popover.Body>
+                        </Popover>
+                      }
                     >
-                      <FontAwesomeIcon icon={Icons.faFilter} />
-                    </button>
-                  </th>
-                  <th width="15%" className="d-none d-md-table-cell">
-                    <button
+                      <button
                       type="button"
                       className="btn btn-sm btnTHTypeFilter"
                       id="btnTHTypeFilter"
-                      onClick={(event) => event.stopPropagation()}
-                      data-bs-toggle="metric-popover"
                     >
                       <FontAwesomeIcon icon={Icons.faFilter} />
                     </button>
+                    </OverlayTrigger>
                   </th>
                   <th
                     width="20%"

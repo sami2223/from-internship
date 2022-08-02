@@ -4,8 +4,6 @@ import { Modal } from "bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
 import AdvanceTagSearchModal from "./AdvanceTagSearchModal";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
 import "jquery/dist/jquery.min.js";
 import "datatables.net-dt/js/dataTables.dataTables";
 import "datatables.net-dt/css/jquery.dataTables.min.css";
@@ -22,18 +20,16 @@ const Contacts = () => {
     });
   }, []);
 
-  const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      <div className="tagScoreContainer">
-        Assign Tag Score / Value{" "}
-        <div className="input-group">
-          <input type="text" className="form-control tagScoreInput" />
-          <button type="button" className="btn btn-success btnSaveTagScore">
-            <FontAwesomeIcon icon={Icons.faCheck} />
-          </button>
-        </div>
+  const TagPopover = () => (
+    <div className="tagScoreContainer">
+      Assign Tag Score / Value{" "}
+      <div className="input-group">
+        <input type="text" className="form-control tagScoreInput" />
+        <button type="button" className="btn btn-success btnSaveTagScore">
+          <FontAwesomeIcon icon={Icons.faCheck} />
+        </button>
       </div>
-    </Tooltip>
+    </div>
   );
 
   const showModal = (ref) => {
@@ -270,42 +266,53 @@ const Contacts = () => {
                       </div>
                       <div className="SwiftCloudTableTags">
                         <ul>
-                          <OverlayTrigger
-                            placement="bottom"
-                            overlay={renderTooltip}
-                          >
-                            {({ ref, ...triggerHandler }) => (
-                              <li {...triggerHandler}>
-                                <a
-                                  ref={ref}
-                                  href
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                  }}
-                                >
-                                  Designer
-                                </a>
-                              </li>
-                            )}
-                          </OverlayTrigger>
-                          <OverlayTrigger
-                            placement="bottom"
-                            overlay={renderTooltip}
-                          >
-                            {({ ref, ...triggerHandler }) => (
-                              <li {...triggerHandler}>
-                                <a
-                                  ref={ref}
-                                  href
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                  }}
-                                >
-                                  Support
-                                </a>
-                              </li>
-                            )}
-                          </OverlayTrigger>
+                          <li>
+                            {/* ---------------- */}
+                            {/* <OverlayTrigger
+                              ref="userHint"
+                              trigger="manual"
+                              placement="bottom"
+                              overlay={
+                                <Popover title="Invalid Username Format">
+                                  <strong>Warning!</strong> Valid user
+                                  credentials only contain alphanumeric
+                                  characters, as well as heifens and
+                                  underscores.
+                                </Popover>
+                              }
+                            >
+                              <Input
+                                type="text"
+                                value={value}
+                                label="Username"
+                                ref="input"
+                                groupClassName="input-group"
+                                className="form-control"
+                                onChange={handleChange}
+                              />
+                            </OverlayTrigger> */}
+                            {/* ---------------- */}
+                            <a
+                              // ref={ref}
+                              href
+                              onClick={(e) => {
+                                e.preventDefault();
+                              }}
+                            >
+                              Designer
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              // ref={ref}
+                              href
+                              onClick={(e) => {
+                                e.preventDefault();
+                              }}
+                            >
+                              Support
+                            </a>
+                          </li>
                         </ul>
                       </div>
                     </td>
@@ -383,24 +390,17 @@ const Contacts = () => {
                       </div>
                       <div className="SwiftCloudTableTags">
                         <ul>
-                          <OverlayTrigger
-                            placement="bottom"
-                            overlay={renderTooltip}
-                          >
-                            {({ ref, ...triggerHandler }) => (
-                              <li {...triggerHandler}>
-                                <a
-                                  ref={ref}
-                                  href
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                  }}
-                                >
-                                  Support
-                                </a>
-                              </li>
-                            )}
-                          </OverlayTrigger>
+                          <li>
+                            <a
+                              // ref={ref}
+                              href
+                              onClick={(e) => {
+                                e.preventDefault();
+                              }}
+                            >
+                              Support
+                            </a>
+                          </li>
                         </ul>
                       </div>
                     </td>
@@ -469,60 +469,39 @@ const Contacts = () => {
                       </div>
                       <div className="SwiftCloudTableTags">
                         <ul>
-                          <OverlayTrigger
-                            placement="bottom"
-                            overlay={renderTooltip}
-                          >
-                            {({ ref, ...triggerHandler }) => (
-                              <li {...triggerHandler}>
-                                <a
-                                  ref={ref}
-                                  href
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                  }}
-                                >
-                                  UI/UX
-                                </a>
-                              </li>
-                            )}
-                          </OverlayTrigger>
-                          <OverlayTrigger
-                            placement="bottom"
-                            overlay={renderTooltip}
-                          >
-                            {({ ref, ...triggerHandler }) => (
-                              <li {...triggerHandler}>
-                                <a
-                                  ref={ref}
-                                  href
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                  }}
-                                >
-                                  Designer
-                                </a>
-                              </li>
-                            )}
-                          </OverlayTrigger>
-                          <OverlayTrigger
-                            placement="bottom"
-                            overlay={renderTooltip}
-                          >
-                            {({ ref, ...triggerHandler }) => (
-                              <li {...triggerHandler}>
-                                <a
-                                  ref={ref}
-                                  href
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                  }}
-                                >
-                                  Wordpress
-                                </a>
-                              </li>
-                            )}
-                          </OverlayTrigger>
+                          <li>
+                            <a
+                              // ref={ref}
+                              href
+                              onClick={(e) => {
+                                e.preventDefault();
+                              }}
+                            >
+                              UI/UX
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              // ref={ref}
+                              href
+                              onClick={(e) => {
+                                e.preventDefault();
+                              }}
+                            >
+                              Designer
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              // ref={ref}
+                              href
+                              onClick={(e) => {
+                                e.preventDefault();
+                              }}
+                            >
+                              Wordpress
+                            </a>
+                          </li>
                         </ul>
                       </div>
                     </td>
@@ -581,24 +560,17 @@ const Contacts = () => {
                       </div>
                       <div className="SwiftCloudTableTags">
                         <ul>
-                          <OverlayTrigger
-                            placement="bottom"
-                            overlay={renderTooltip}
-                          >
-                            {({ ref, ...triggerHandler }) => (
-                              <li {...triggerHandler}>
-                                <a
-                                  ref={ref}
-                                  href
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                  }}
-                                >
-                                  Buyer
-                                </a>
-                              </li>
-                            )}
-                          </OverlayTrigger>
+                          <li>
+                            <a
+                              // ref={ref}
+                              href
+                              onClick={(e) => {
+                                e.preventDefault();
+                              }}
+                            >
+                              Buyer
+                            </a>
+                          </li>
                         </ul>
                       </div>
                     </td>
@@ -648,42 +620,28 @@ const Contacts = () => {
                       </div>
                       <div className="SwiftCloudTableTags">
                         <ul>
-                          <OverlayTrigger
-                            placement="bottom"
-                            overlay={renderTooltip}
-                          >
-                            {({ ref, ...triggerHandler }) => (
-                              <li {...triggerHandler}>
-                                <a
-                                  ref={ref}
-                                  href
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                  }}
-                                >
-                                  Actor
-                                </a>
-                              </li>
-                            )}
-                          </OverlayTrigger>
-                          <OverlayTrigger
-                            placement="bottom"
-                            overlay={renderTooltip}
-                          >
-                            {({ ref, ...triggerHandler }) => (
-                              <li {...triggerHandler}>
-                                <a
-                                  ref={ref}
-                                  href
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                  }}
-                                >
-                                  Bollywood
-                                </a>
-                              </li>
-                            )}
-                          </OverlayTrigger>
+                          <li>
+                            <a
+                              // ref={ref}
+                              href
+                              onClick={(e) => {
+                                e.preventDefault();
+                              }}
+                            >
+                              Actor
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              // ref={ref}
+                              href
+                              onClick={(e) => {
+                                e.preventDefault();
+                              }}
+                            >
+                              Bollywood
+                            </a>
+                          </li>
                         </ul>
                       </div>
                     </td>

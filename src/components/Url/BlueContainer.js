@@ -484,10 +484,14 @@ const BlueContainer = ({ Icons, FontAwesomeIcon }) => {
                           <FontAwesomeIcon icon={Icons.faPuzzlePiece} /> Make
                           URL Variables Sticky{" "}
                           <span
-                            data-toggle="tooltip"
-                            data-placement="bottom"
-                            data-animation="false"
-                            title="If you need variables tracked through multiple domains (such as a user leaving your site to pay then returning), this can solve that."
+                            
+                            data-tip="If you need variables tracked</br> through multiple domains (such</br> as a user leaving your site to pay</br> then returning), this can solve</br> that."
+                            data-class="text-center"
+                      onMouseEnter={() => setTooltip(true)}
+                      onMouseLeave={() => {
+                        setTooltip(false);
+                        setTimeout(() => setTooltip(true), 50);
+                      }}
                           >
                             <FontAwesomeIcon icon={Icons.faQuestionCircle} />
                           </span>
