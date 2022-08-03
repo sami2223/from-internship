@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
-import Button from "react-bootstrap/Button";
+import "./MainContainer.css";
 
 const MainContainer = ({
   Dropdown,
@@ -11,10 +11,107 @@ const MainContainer = ({
   // showHistory,
   setShowHistory,
 }) => {
-  const [dropdownIcon, setDropdownIcon] = useState([
-    // <FontAwesomeIcon icon={Icons.faPlus} />,
-    "==",
-  ]);
+  const [savedFilterViews, setSavedFilterViews] = useState({
+    value: "",
+    title: "==",
+  });
+
+  const [filterByCampaign, setFilterByCampaign] = useState({
+    value: "",
+    title: "== All ==",
+  });
+  const [filterByMetric, setFilterByMetric] = useState({
+    value: "",
+    title: "== All ==",
+  });
+
+  const handleSavedFilterViewsSelect = (e) => {
+    let titleText = "";
+    if (e === "") titleText = "==";
+    else if (e === "1") titleText = <FontAwesomeIcon icon={Icons.faBullseye}/>;
+    else if (e === "2") titleText = <FontAwesomeIcon icon={Icons.faBullseye}/>;
+    else if (e === "3") titleText = <FontAwesomeIcon icon={Icons.faBullseye}/>;
+    else if (e === "4") titleText = <FontAwesomeIcon icon={Icons.faPlus}/>;
+
+    setSavedFilterViews({
+      value: e,
+      title: titleText,
+    });
+  };
+
+  const handleFilterByCampaignSelect = (e) => {
+    let titleText = "";
+    if (e === "") titleText = "== All ==";
+    else if (e === "1") titleText = "Compaign 1";
+    else if (e === "2") titleText = "Compaign 2";
+
+    setFilterByCampaign({
+      value: e,
+      title: titleText,
+    });
+  };
+
+  const handleFilterByMetricSelect = (e) => {
+    let titleText = "";
+    if (e === "") {
+      titleText = "== All ==";
+    } else if (e === "Doc") {
+      titleText = (
+        <LabelWithIcon
+          icon={Icons.faEdit}
+          title="eSign / Complete a Doc / Form"
+        />
+      );
+    } else if (e === "Product") {
+      titleText = (
+        <LabelWithIcon
+          icon={Icons.faShoppingCart}
+          title="Make a Payment (Buy a Product)"
+        />                                  
+      );
+    } else if (e === "Scheduler") {
+      titleText = (
+        <LabelWithIcon
+          icon={Icons.faCalendarPlus}
+          title="Schedule an Appointment"
+        />                                  
+      );
+    } else if (e === "ChatBot") {
+      titleText = (
+        <LabelWithIcon
+          icon={Icons.faComments}
+          title="Chat with my Bot"
+        />                                  
+      );
+    } else if (e === "Review") {
+      titleText = (
+        <LabelWithIcon
+          icon={Icons.faStar}
+          title="Review (Complete Review Form)"
+        />                                  
+      );
+    } else if (e === "ClickThrough") {
+      titleText = (
+        <LabelWithIcon
+          icon={Icons.faSignOut}
+          title="Click Through / View Content"
+        />                                  
+      );
+    }
+
+    setFilterByMetric({
+      value: e,
+      title: titleText,
+    });
+  };
+  
+  const LabelWithIcon = ({ icon, title }) => {
+    return (
+      <div>
+        <FontAwesomeIcon icon={icon} /> {title}
+      </div>
+    );
+  };
 
   return (
     <div className="row g-0">
@@ -23,21 +120,21 @@ const MainContainer = ({
           <div className="col-lg-12 mb-1">
             <DropdownButton
               key="dropdown-item-button"
-              title={dropdownIcon}
+              title={savedFilterViews.title}
               className="float-start url"
-              // style={dropDownStyle}
+              onSelect={handleSavedFilterViewsSelect}
             >
-              <Dropdown.ItemText>== Saved Filtered Views ==</Dropdown.ItemText>
-              <Dropdown.Item as="button" onClick={() => {}}>
+              <Dropdown.ItemText>==Saved Filtered Views==</Dropdown.ItemText>
+              <Dropdown.Item eventKey="1">
                 <FontAwesomeIcon icon={Icons.faBullseye} /> Option 1
               </Dropdown.Item>
-              <Dropdown.Item as="button" onClick={() => {}}>
+              <Dropdown.Item eventKey="2">
                 <FontAwesomeIcon icon={Icons.faBullseye} /> Option 2
               </Dropdown.Item>
-              <Dropdown.Item as="button" onClick={() => {}}>
+              <Dropdown.Item eventKey="3">
                 <FontAwesomeIcon icon={Icons.faBullseye} /> Option 3
               </Dropdown.Item>
-              <Dropdown.Item as="button" onClick={() => {}}>
+              <Dropdown.Item eventKey="4">
                 <FontAwesomeIcon icon={Icons.faPlus} /> Create New Filtered View
               </Dropdown.Item>
             </DropdownButton>
@@ -53,8 +150,7 @@ const MainContainer = ({
               </button>
             </div>
           </div>
-          <div className="col-lg-12">            
-
+          <div className="col-lg-12">
             <table
               id="tblUrls"
               className="table dataTable"
@@ -69,17 +165,45 @@ const MainContainer = ({
                     <OverlayTrigger
                       placement="right"
                       trigger="click"
+                      rootClose={true}
                       overlay={
                         <Popover>
-                          <Popover.Header as="h3">Filter By Campaign</Popover.Header>
+                          <Popover.Header as="h3">
+                            <div className="d-flex justify-content-between">
+                              <span style={{ marginRight: "55px" }}>
+                                Filter By Campaign
+                              </span>
+                              <button
+                                className="btn-sm"
+                                style={{ border: "none" }}
+                                onClick={() => document.body.click()}
+                              >
+                                <FontAwesomeIcon icon={Icons.faClose} />
+                              </button>
+                            </div>
+                          </Popover.Header>
                           <Popover.Body>
-                          <div id="filterByCampaignContainer">
-              <select id="filterByCampaign">
-                <option value="">== All ==</option>
-                <option value="1">Campaign 1</option>
-                <option value="2">Campaign 2</option>
-              </select>
-            </div>
+                            <div
+                              id="filterByCampaignContainer"
+                              className="filter"
+                            >
+                              <DropdownButton
+                                key="filterByCampaign"
+                                title={filterByCampaign.title}
+                                className="url"
+                                onSelect={handleFilterByCampaignSelect}
+                              >
+                                <Dropdown.Item eventKey="">
+                                  == All ==
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="1">
+                                  Campaign 1
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="2">
+                                  Campaign 2
+                                </Dropdown.Item>
+                              </DropdownButton>
+                            </div>
                           </Popover.Body>
                         </Popover>
                       }
@@ -94,52 +218,81 @@ const MainContainer = ({
                     </OverlayTrigger>
                   </th>
                   <th width="15%" className="d-none d-md-table-cell">
-                    
                     <OverlayTrigger
                       placement="right"
                       trigger="click"
+                      rootClose={true}
                       overlay={
                         <Popover>
-                          <Popover.Header as="h3">Filter By Metric Container</Popover.Header>
+                          <Popover.Header as="h3">
+                            <div className="d-flex justify-content-between">
+                              <span style={{ marginRight: "55px" }}>
+                                Filter By Metric Container
+                              </span>
+                              <button
+                                className="btn-sm"
+                                style={{ border: "none" }}
+                                onClick={() => document.body.click()}
+                              >
+                                <FontAwesomeIcon icon={Icons.faClose} />
+                              </button>
+                            </div>
+                          </Popover.Header>
                           <Popover.Body>
-                          <div id="filterByMetricContainer">
-              <select id="filterByMetric">
-                <option value="">== All ==</option>
-                <option value="Doc" data-icon="fa-edit">
-                  eSign / Complete a Doc / Form
-                </option>
-                <option value="Product" data-icon="fa-shopping-cart">
-                  Make a Payment (Buy a Product)
-                </option>
-                <option value="Scheduler" data-icon="fa-calendar-plus">
-                  Schedule an Appointment
-                </option>
-                <option value="Chatbot" data-icon="fa-comments">
-                  Chat with my Bot
-                </option>
-                <option value="Review" data-icon="fa-star">
-                  Review (Complete Review Form)
-                </option>
-                <option
-                  value="ClickThrough"
-                  selected="selected"
-                  data-icon="fa-sign-out"
-                >
-                  Click Through / View Content
-                </option>
-              </select>
-            </div>
+                            <div
+                              id="filterByMetricContainer"
+                              className="filter"
+                            >
+                              <DropdownButton
+                                key="filterByMetric"
+                                title={filterByMetric.title}
+                                className="url"
+                                onSelect={handleFilterByMetricSelect}
+                              >
+                                <Dropdown.Item eventKey="">
+                                  == All ==
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="Doc">
+                                  <FontAwesomeIcon icon={Icons.faEdit} /> eSign
+                                  / Complete a Doc / Form
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="Product">
+                                  <FontAwesomeIcon
+                                    icon={Icons.faShoppingCart}
+                                  />{" "}
+                                  Make a Payment (Buy a Product)
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="Scheduler">
+                                  <FontAwesomeIcon
+                                    icon={Icons.faCalendarPlus}
+                                  />{" "}
+                                  Schedule an Appointment
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="ChatBot">
+                                  <FontAwesomeIcon icon={Icons.faComments} />{" "}
+                                  Chat with my Bot
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="Review">
+                                  <FontAwesomeIcon icon={Icons.faStar} /> Review
+                                  (Complete Review Form)
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="ClickThrough">
+                                  <FontAwesomeIcon icon={Icons.faSignOut} />{" "}
+                                  Click Through / View Content
+                                </Dropdown.Item>
+                              </DropdownButton>
+                            </div>
                           </Popover.Body>
                         </Popover>
                       }
                     >
                       <button
-                      type="button"
-                      className="btn btn-sm btnTHTypeFilter"
-                      id="btnTHTypeFilter"
-                    >
-                      <FontAwesomeIcon icon={Icons.faFilter} />
-                    </button>
+                        type="button"
+                        className="btn btn-sm btnTHTypeFilter"
+                        id="btnTHTypeFilter"
+                      >
+                        <FontAwesomeIcon icon={Icons.faFilter} />
+                      </button>
                     </OverlayTrigger>
                   </th>
                   <th
@@ -186,8 +339,7 @@ const MainContainer = ({
                     </a>
                   </td>
                   <td className="text-end d-none d-lg-table-cell">
-                    <a
-                      href
+                    <button
                       onClick={(e) => {
                         e.preventDefault();
                         setShowHistory(true);
@@ -199,12 +351,8 @@ const MainContainer = ({
                       title="History"
                     >
                       <FontAwesomeIcon icon={Icons.faHistory} />
-                    </a>{" "}
-                    <a
-                      href
-                      onClick={(e) => {
-                        e.preventDefault();
-                      }}
+                    </button>{" "}
+                    <button
                       className="btn btn-edit"
                       data-toggle="tooltip"
                       data-placement="bottom"
@@ -212,12 +360,8 @@ const MainContainer = ({
                       title="Edit"
                     >
                       <FontAwesomeIcon icon={Icons.faPencil} />
-                    </a>{" "}
-                    <a
-                      href
-                      onClick={(e) => {
-                        e.preventDefault();
-                      }}
+                    </button>{" "}
+                    <button
                       className="btn btn-delete"
                       data-toggle="tooltip"
                       data-placement="bottom"
@@ -225,7 +369,7 @@ const MainContainer = ({
                       title="Delete"
                     >
                       <FontAwesomeIcon icon={Icons.faTrashAlt} />
-                    </a>
+                    </button>
                   </td>
                 </tr>
                 <tr>
@@ -265,8 +409,7 @@ const MainContainer = ({
                     </a>
                   </td>
                   <td className="text-end d-none d-lg-table-cell">
-                    <a
-                      href
+                    <button
                       onClick={(e) => {
                         e.preventDefault();
                         setShowHistory(true);
@@ -278,7 +421,7 @@ const MainContainer = ({
                       title="History"
                     >
                       <FontAwesomeIcon icon={Icons.faHistory} />
-                    </a>{" "}
+                    </button>{" "}
                     <a
                       href="#"
                       className="btn btn-edit"
@@ -328,8 +471,7 @@ const MainContainer = ({
                     </a>
                   </td>
                   <td className="text-end  d-none d-lg-table-cell">
-                    <a
-                      href
+                    <button
                       onClick={(e) => {
                         e.preventDefault();
                         setShowHistory(true);
@@ -341,7 +483,7 @@ const MainContainer = ({
                       title="History"
                     >
                       <FontAwesomeIcon icon={Icons.faHistory} />
-                    </a>{" "}
+                    </button>{" "}
                     <a
                       href="#"
                       className="btn btn-edit"

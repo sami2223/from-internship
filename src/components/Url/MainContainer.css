@@ -1,0 +1,16 @@
+.filter .dropdown-toggle::after {
+  display: inline-block;
+  /* margin-left: 8rem; */
+}
+
+.filter .dropdown-toggle {
+  background: #186abc;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter .dropdown-toggle:hover {
+  background-color: #186abc;
+  border: none;
+}

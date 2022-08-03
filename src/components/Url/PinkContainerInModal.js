@@ -95,8 +95,8 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                   <div className="row align-items-center">
                     <div className="col-lg-12">
                       <div className="input-group">
-                        <select className="form-select urlTypeList">
-                          <option value="URL" selected="selected">
+                        <select className="form-select urlTypeList" defaultValue="URL">
+                          <option value="URL">
                             URL
                           </option>
                         </select>
@@ -118,7 +118,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                     >
                       <div className="input-group">
                         <select className="form-select urlTypeList">
-                          <option value="URL" selected="selected">
+                          <option value="URL">
                             URL
                           </option>
                         </select>
@@ -140,7 +140,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                     >
                       <div className="input-group">
                         <select className="form-select urlTypeList">
-                          <option value="URL" selected="selected">
+                          <option value="URL" >
                             URL
                           </option>
                         </select>
@@ -168,7 +168,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                               name="tagScoreOpt"
                               className="form-select mb-1 mb-lg-0"
                             >
-                              <option value="lessthan" selected="selected">
+                              <option value="lessthan" >
                                 {" "}
                                 Less Than
                               </option>
@@ -189,7 +189,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                             <div className="input-group">
                               <div className="input-group-text">go to...</div>
                               <select className="form-select urlTypeList">
-                                <option value="URL" selected="selected">
+                                <option value="URL" >
                                   URL
                                 </option>
                               </select>
@@ -242,7 +242,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                           Otherwise go to...
                         </div>
                         <select className="form-select urlTypeList">
-                          <option value="URL" selected="selected">
+                          <option value="URL" >
                             URL
                           </option>
                         </select>
@@ -282,7 +282,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                               name="tagScoreOpt"
                               className="form-select mb-1 mb-lg-0"
                             >
-                              <option value="lessthan" selected="selected">
+                              <option value="lessthan" >
                                 Less Than
                               </option>
                               <option value="morethan"> More Than</option>
@@ -302,7 +302,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                             <div className="input-group">
                               <div className="input-group-text">go to...</div>
                               <select className="form-select urlTypeList">
-                                <option value="URL" selected="selected">
+                                <option value="URL" >
                                   URL
                                 </option>
                               </select>
@@ -355,7 +355,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                           Otherwise go to...
                         </div>
                         <select className="form-select urlTypeList">
-                          <option value="URL" selected="selected">
+                          <option value="URL" >
                             URL
                           </option>
                         </select>
@@ -401,7 +401,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                               </select>
                               <div className="input-group-text">go to...</div>
                               <select className="form-select urlTypeList">
-                                <option value="URL" selected="selected">
+                                <option value="URL" >
                                   URL
                                 </option>
                               </select>
@@ -454,7 +454,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                           Otherwise go to...
                         </div>
                         <select className="form-select urlTypeList">
-                          <option value="URL" selected="selected">
+                          <option value="URL" >
                             URL
                           </option>
                         </select>
@@ -489,7 +489,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                           </select>
                           <div className="input-group-text">go to...</div>
                           <select className="form-select urlTypeList">
-                            <option value="URL" selected="selected">
+                            <option value="URL" >
                               URL
                             </option>
                           </select>
@@ -510,7 +510,7 @@ const PinkContainerInModal = ({ Icons, FontAwesomeIcon }) => {
                           Otherwise go to...
                         </div>
                         <select className="form-select urlTypeList">
-                          <option value="URL" selected="selected">
+                          <option value="URL" >
                             URL
                           </option>
                         </select>

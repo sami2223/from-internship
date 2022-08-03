@@ -223,6 +223,31 @@
 .ChatDockPrivateNoteTools a:hover {
   color: #333;
 }
+.ChatDockPrivateNoteTools span {
+  color: #777;
+  font-size: 18px;
+  margin: 0 5px;
+}
+.ChatDockPrivateNoteTools span:hover {
+  color: #333;
+}
+
+.historyDropdownbtn .dropdown-toggle::after {
+  display: inline-block;
+  /* margin-left: 8rem; */
+}
+
+.historyDropdownbtn .dropdown-toggle {
+  background: #186abc;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.historyDropdownbtn .dropdown-toggle:hover {
+  background-color: #186abc;
+  border: none;
+}
 
 @media (max-width: 991px) {
   .SCChatDockNonSocialAssetOnly {

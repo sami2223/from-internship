@@ -184,7 +184,7 @@
 }
 .url .dropdown-toggle:hover {
   background-color: #186abc;
-  border: 1px solid #4a92db;
+  border: none;
 }
 #tblUrls_filter input {
   background-color: transparent;
